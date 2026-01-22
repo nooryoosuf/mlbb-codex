@@ -4,11 +4,13 @@ import Link from "next/link";
 import { ArrowLeft, Users, FileText, TreePine, Sword, CircleDollarSign, TrendingUp, Map, Zap, Shield, Circle, Activity, Info, Target } from "lucide-react";
 import { motion } from "framer-motion";
 import HeroVideoBackdrop from "@/components/hero/HeroVideoBackdrop";
-import StatRadar from "@/components/hero/StatRadar";
-import SkillTerminal from "@/components/hero/SkillTerminal";
+import TacticalRadar from "@/components/hero/TacticalRadar";
+import AbilitiesModule from "@/components/hero/AbilitiesModule";
+import SkinsGrid from "@/components/hero/SkinsGrid";
+import ComprehensiveBuildPanel from "@/components/hero/ComprehensiveBuildPanel";
+import GlobalRanking from "@/components/hero/GlobalRanking";
 import { Hero } from "@/data/heroes";
 import AudioModule from "@/components/hero/AudioModule";
-import EquipmentDock from "@/components/hero/EquipmentDock";
 import StatusColumn from "@/components/hero/StatusColumn";
 import LoreDecryption from "@/components/hero/LoreDecryption";
 
@@ -35,29 +37,21 @@ export default function HeroClientView({ hero }: Props) {
             <HeroVideoBackdrop />
 
             {/* Elite Standee Container */}
-            <div className="absolute right-0 top-0 h-full w-full md:w-[60%] z-[1] overflow-hidden pointer-events-none">
+            {/* Elite Standee Container - INCREASED SIZE */}
+            <div className="absolute right-0 top-0 h-[85vh] w-full lg:w-[65%] z-[1] overflow-hidden pointer-events-none mt-10">
                 <motion.div
-                    className="relative w-full h-full flex items-center justify-center translate-x-24 md:translate-x-0"
-                    initial={{ opacity: 0, scale: 1.05 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    className="relative w-full h-full flex items-center justify-end pr-0 lg:pr-48"
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1.2, ease: "easeOut" }}
                 >
                     <img
                         src={hero.image}
                         alt={hero.name}
-                        className="h-full w-auto object-cover object-right-top md:object-center opacity-80 mix-blend-normal mask-image-linear-to-b"
-                        style={{ maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)' }}
+                        className="h-[110%] w-auto object-contain object-top opacity-90 mix-blend-normal drop-shadow-[0_0_50px_rgba(0,0,0,0.5)] [mask-image:linear-gradient(to_bottom,black_40%,transparent_95%)]"
                     />
-                    {/* Radial depth on image - Adjusted for visibility */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent z-[2]" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-[2]" />
-
-                    {/* Floating HUD over image */}
-                    <div className="absolute top-1/2 right-12 -translate-y-1/2 hidden xl:flex flex-col gap-8 opacity-40">
-                        <div className="vertical-text font-mono text-xs tracking-[1em] text-white/50">AUTHENTIFIED_DATA_VAULT</div>
-                        <div className="w-[1px] h-32 bg-white/20 ml-1.5" />
-                        <div className="vertical-text font-mono text-[0.6rem] tracking-widest text-accent font-bold">ID_{hero.id.toUpperCase()}</div>
-                    </div>
+                    {/* Simplified mask/gradient for cleaner look */}
+                    <div className="absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-black via-black/80 to-transparent" />
                 </motion.div>
             </div>
 
@@ -65,8 +59,9 @@ export default function HeroClientView({ hero }: Props) {
                 <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> TERMINAL_EXIT
             </Link>
 
-            <div className="relative z-[10] pt-40 pb-32 px-8 md:px-16 lg:px-24 grid grid-cols-1 xl:grid-cols-[1fr_500px] gap-24 max-w-[1920px] mx-auto">
-                <div className="flex flex-col">
+
+            <div className="relative z-[10] pt-40 pb-32 px-6 md:px-12 lg:px-20 grid grid-cols-1 xl:grid-cols-[1fr_450px] gap-12 max-w-[1920px] mx-auto items-start">
+                <div className="flex flex-col min-w-0">
                     <motion.div
                         initial={{ x: -100, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
@@ -128,9 +123,9 @@ export default function HeroClientView({ hero }: Props) {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
                     >
-                        {/* Secondary Intel Grid */}
+                        {/* Secondary Intel Grid - MOVED TO LOWER SECTION */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div className="relative bg-[#0b0e14]/60 backdrop-blur-md p-8 clip-valorant-card group overflow-hidden">
+                            <div className="relative bg-[#0b0e14]/60 backdrop-blur-md p-8 clip-valorant-card group overflow-hidden h-[180px] flex flex-col justify-center">
                                 <div className="absolute inset-0 bg-transparent pointer-events-none transition-all duration-300 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1)] group-hover:shadow-[inset_0_0_0_1px_var(--c-accent)] border-l-4 border-l-accent" />
                                 <div className="relative z-10 space-y-4">
                                     <div className="font-mono text-[0.6rem] text-accent tracking-[0.4em] uppercase flex items-center gap-2">
@@ -142,7 +137,8 @@ export default function HeroClientView({ hero }: Props) {
                                     <p className="font-mono text-xs text-[#666] leading-relaxed uppercase">Recommended path for maximum gold efficiency and objective control.</p>
                                 </div>
                             </div>
-                            <div className="relative bg-[#0b0e14]/60 backdrop-blur-md p-8 clip-valorant-card group overflow-hidden">
+
+                            <div className="relative bg-[#0b0e14]/60 backdrop-blur-md p-8 clip-valorant-card group overflow-hidden h-[180px] flex flex-col justify-center">
                                 <div className="absolute inset-0 bg-transparent pointer-events-none transition-all duration-300 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1)] group-hover:shadow-[inset_0_0_0_1px_var(--c-accent)] border-l-4 border-l-accent" />
                                 <div className="relative z-10 space-y-4">
                                     <div className="font-mono text-[0.6rem] text-accent tracking-[0.4em] uppercase flex items-center gap-2">
@@ -165,27 +161,25 @@ export default function HeroClientView({ hero }: Props) {
                             <div className="font-display text-2xl text-white tracking-[0.2em] flex items-center gap-4 uppercase">
                                 <Users size={24} className="text-accent" /> KNOWN_SYNERGIES_&_RIVALS
                             </div>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
                                 {hero.relationships.map((rel, i) => (
-                                    <Link href={rel.heroId ? `/hero/${rel.heroId}` : '#'} key={i} className="relative bg-[#0b0e14]/40 border border-white/10 p-5 flex items-center gap-6 group transition-all clip-valorant-card hover:bg-white/5">
-                                        <div className="absolute inset-0 bg-transparent pointer-events-none transition-all duration-300 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1)] group-hover:shadow-[inset_0_0_0_1px_#ff4655]" />
-                                        <div className="relative">
-                                            <div className="absolute inset-0 border border-accent/40 scale-110 opacity-0 group-hover:opacity-100 transition-all" />
-                                            <img src={rel.image} alt={rel.name} className="w-16 h-16 grayscale group-hover:grayscale-0 transition-all border border-white/10" />
+                                    <Link href={rel.heroId ? `/hero/${rel.heroId}` : '#'} key={i} className="relative flex flex-col items-center gap-3 min-w-[100px] group">
+                                        <div className="w-20 h-20 rounded-full border-2 border-white/10 p-1 group-hover:border-accent transition-colors relative">
+                                            <img src={rel.image} alt={rel.name} className="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all" />
+                                            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-[#0b0e14] border border-white/20 px-2 py-0.5 text-[0.5rem] font-mono text-white whitespace-nowrap uppercase tracking-wider group-hover:text-accent group-hover:border-accent transition-colors">
+                                                {rel.type}
+                                            </div>
                                         </div>
-                                        <div className="flex flex-col">
-                                            <span className="font-display text-xl text-white group-hover:text-accent transition-colors uppercase">{rel.name}</span>
-                                            <span className="font-mono text-[0.6rem] text-[#666] uppercase group-hover:text-accent tracking-tighter transition-colors">// {rel.type}</span>
-                                        </div>
+                                        <span className="font-display text-sm text-white uppercase group-hover:text-accent transition-colors">{rel.name}</span>
                                     </Link>
                                 ))}
                             </div>
                         </div>
 
                         {/* Inspiration Footnote */}
-                        <div className="bg-white/[0.02] border-l border-white/10 p-10 font-mono text-sm text-[#8b9bb4] italic leading-relaxed relative">
-                            <div className="absolute top-0 right-0 p-2 font-mono text-[0.5rem] tracking-widest text-[#222]">DEV_FOOTNOTE</div>
-                            "{hero.inspiration}"
+                        {/* PRO RANKING SECTION */}
+                        <div className="mt-8">
+                            <GlobalRanking heroId={hero.id} primaryColor={hero.primaryColor} />
                         </div>
                     </motion.div>
 
@@ -204,57 +198,44 @@ export default function HeroClientView({ hero }: Props) {
                     </div>
                 </div>
 
-                {/* Right Column: Tactical Widgets */}
-                <div className="flex flex-col gap-12">
-                    {/* Stat Radar Widget */}
+                {/* Right Column: Tactical Widgets & Visuals */}
+                <div className="flex flex-col gap-12 relative z-20 mt-20">
+                    {/* Tactical Radar Widget */}
                     <motion.div
-                        className="relative bg-[#0b0e14]/60 backdrop-blur-md p-8 clip-valorant-card group overflow-hidden"
+                        className="relative bg-[#0b0e14]/80 backdrop-blur-md p-8 border border-white/5 clip-valorant-card group overflow-hidden"
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.4 }}
+                        style={{ borderColor: `${hero.primaryColor}20` }}
                     >
-                        <div className="absolute inset-0 bg-transparent pointer-events-none transition-all duration-300 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1)] group-hover:shadow-[inset_0_0_0_1px_var(--c-accent)]" />
-                        <div className="relative z-10 space-y-8">
-                            <div className="flex items-center gap-3 font-mono text-[0.6rem] text-accent tracking-[0.5em] uppercase">
-                                <Target size={14} /> CAPABILITY_MATRIX
-                            </div>
-                            <StatRadar stats={hero.stats} />
+                        <div className="font-mono text-[0.6rem] text-accent tracking-[0.5em] uppercase mb-6" style={{ color: hero.primaryColor }}>
+                            // TELEMETRY_DATA
                         </div>
-                    </motion.div>
-
-                    {/* Attributes Bar Widget */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.5 }}
-                    >
-                        <StatusColumn
-                            mobility={hero.stats.offense}
-                            armor={hero.stats.durability}
-                            resource={hero.resource}
-                            resourceValue={hero.stats.control}
-                            accentColor={hero.primaryColor}
+                        <TacticalRadar
+                            stats={{
+                                ...hero.stats,
+                                effect: hero.stats.control
+                            }}
+                            primaryColor={hero.primaryColor}
                         />
                     </motion.div>
 
-                    {/* Equipment Array Widget */}
+                    {/* Abilities Module */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.5 }}
+                    >
+                        <AbilitiesModule skills={hero.skills} accentColor={hero.primaryColor} />
+                    </motion.div>
+
+                    {/* Skins Grid */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6 }}
-                        className="space-y-4"
-                    >
-                        <div className="font-mono text-[0.6rem] text-[#444] tracking-[0.5em] uppercase px-2">OPTIMAL_LOADOUT_ARRAY</div>
-                        <EquipmentDock equipment={hero.equipment} />
-                    </motion.div>
-
-                    {/* Skill Terminal Module */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.7 }}
                     >
-                        <SkillTerminal skills={hero.skills} />
+                        <SkinsGrid skins={hero.gallery} heroName={hero.name} />
                     </motion.div>
                 </div>
             </div>

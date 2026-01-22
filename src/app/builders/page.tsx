@@ -1,7 +1,8 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShieldAlert, Zap, Cpu, X, AlertTriangle, Layers, ShoppingBag, TrendingUp, ShieldCheck, Activity, Target } from "lucide-react";
+import { ShieldAlert, Zap, Cpu, X, AlertTriangle, Layers, ShoppingBag, TrendingUp, ShieldCheck, Activity, Target, ArrowLeft } from "lucide-react";
 import buildersData from "../../data/builders_data.json";
 import equipmentData from "../../data/equipment.json";
 import LoadoutGuide from "@/components/home/LoadoutGuide";
@@ -42,6 +43,10 @@ export default function BuildersHub() {
             {/* Background Layer inherited from globals */}
 
             <div className="w-full max-w-[1440px] z-10 space-y-32">
+                <Link href="/" className="inline-flex items-center gap-2 font-mono text-[0.6rem] text-accent tracking-widest uppercase hover:text-white mb-8 transition-colors group">
+                    <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" /> BACK_TO_CODEX
+                </Link>
+
                 {/* Protocol Header */}
                 <header className="flex flex-col md:flex-row justify-between items-end border-b border-white/10 pb-12 gap-8">
                     <div className="flex flex-col">
@@ -116,7 +121,7 @@ export default function BuildersHub() {
                     <header className="flex flex-col md:flex-row justify-between items-end gap-6 border-b border-white/10 pb-12">
                         <div className="flex flex-col">
                             <h2 className="font-display text-4xl text-white tracking-widest uppercase mb-4 flex items-center gap-4">
-                                <Zap className="text-neon-gold" /> COMBAT_MODULES
+                                <Zap className="text-neon-gold" /> <span className="text-white">COMBAT</span>_<span className="text-neon-gold">MODULES</span>
                             </h2>
                             <p className="font-mono text-sm text-[#666] tracking-widest uppercase">EQUIPMENT, EMBLEMS, AND BATTLE_CORE INTELLIGENCE</p>
                         </div>
@@ -128,7 +133,9 @@ export default function BuildersHub() {
                 <section className="space-y-12">
                     <div className="flex items-center gap-4">
                         <ShoppingBag className="text-neon-gold" size={20} />
-                        <h2 className="font-display text-2xl text-white tracking-[0.2em] uppercase">03 // EQUIPMENT_ARSENAL</h2>
+                        <h2 className="font-display text-2xl tracking-[0.2em] uppercase">
+                            <span className="text-white">03 // EQUIPMENT</span>_<span className="text-neon-gold">ARSENAL</span>
+                        </h2>
                         <div className="h-[1px] bg-white/10 grow ml-4" />
                         <span className="font-mono text-[0.6rem] text-neon-gold uppercase bg-neon-gold/10 px-3 py-1 border border-neon-gold/20">TIER_3_READY</span>
                     </div>

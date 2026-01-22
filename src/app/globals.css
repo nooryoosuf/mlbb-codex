@@ -127,6 +127,10 @@
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
   }
 
+  .clip-valorant-button {
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  }
+
   .clip-slanted {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
   }
@@ -143,6 +147,15 @@
 
   .glow-accent {
     text-shadow: 0 0 15px rgba(255, 70, 85, 0.4);
+  }
+
+  .border-industrial {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: border-color 100ms;
+  }
+
+  .border-industrial:hover {
+    border-color: rgba(255, 70, 85, 0.5);
   }
 
   .vertical-text {

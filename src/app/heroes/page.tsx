@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { Search, Filter, Shield, Sword, Zap, Target, Crosshair, Cpu, Menu } from "lucide-react";
+import { Search, Filter, Shield, Sword, Zap, Target, Crosshair, Cpu, Menu, ArrowLeft } from "lucide-react";
 import HeroVideoBackdrop from "@/components/hero/HeroVideoBackdrop";
 import { heroes } from "@/data/heroes";
 
@@ -26,12 +26,19 @@ export default function HeroesIndex() {
         <main className="min-h-screen bg-black text-white relative">
             <HeroVideoBackdrop />
 
+
             <div className="flex flex-col lg:flex-row relative z-10">
                 {/* Tactical Sidebar */}
-                <aside className="w-full lg:w-96 min-h-screen border-r border-white/10 bg-black/80 backdrop-blur-xl p-10 pt-32 space-y-12">
+                <aside className="w-full lg:w-96 min-h-screen border-r border-white/10 bg-black/80 backdrop-blur-xl p-10 pt-12 space-y-12">
+                    <Link href="/" className="inline-flex items-center gap-2 font-mono text-[0.6rem] text-accent tracking-widest uppercase hover:text-white mb-8 transition-colors group">
+                        <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" /> BACK_TO_CODEX
+                    </Link>
+
                     <header className="space-y-4">
                         <div className="font-mono text-[0.6rem] text-accent tracking-[0.5em] uppercase">// DATA_INDEXED</div>
-                        <h1 className="font-display text-6xl text-white tracking-tighter leading-none">HERO_VAULT</h1>
+                        <h1 className="font-display text-6xl text-white tracking-tighter leading-none uppercase">
+                            HERO_<span className="text-accent glow-accent">VAULT</span>
+                        </h1>
                         <p className="font-mono text-xs text-[#444] tracking-widest leading-relaxed">AUTHENTICATING_ROSTER_SIGNATURES... ACCESS_GRANTED [125_ENTRIES_LOADED]</p>
                     </header>
 
@@ -107,7 +114,9 @@ export default function HeroesIndex() {
                 <div className="flex-1 p-8 lg:p-20 pt-32 lg:pt-32">
                     <header className="flex justify-between items-end mb-16 border-b border-white/10 pb-12">
                         <div className="flex flex-col">
-                            <h2 className="font-display text-4xl text-white uppercase tracking-tighter mb-4">RESULTS_OUTPUT</h2>
+                            <h2 className="font-display text-4xl uppercase tracking-tighter mb-4">
+                                <span className="text-white">RESULTS</span>_<span className="text-accent">OUTPUT</span>
+                            </h2>
                             <div className="font-mono text-[0.65rem] text-accent tracking-[0.4em] uppercase">SYSTEM_MATCHES: {filteredHeroes.length}</div>
                         </div>
                         <div className="flex items-center gap-6 font-mono text-[0.6rem] text-[#444] tracking-widest">
@@ -122,10 +131,11 @@ export default function HeroesIndex() {
                                 <motion.div
                                     key={hero.id}
                                     layout
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    animate={{ opacity: 1, scale: 1 }}
+                                    initial={{ opacity: 0, scale: 0.9, y: 50 }}
+                                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "0px 0px -50px 0px" }}
                                     exit={{ opacity: 0, scale: 0.9 }}
-                                    transition={{ duration: 0.4, delay: idx * 0.02 }}
+                                    transition={{ duration: 0.5, delay: idx * 0.05, ease: "backOut" }}
                                 >
                                     <Link href={`/hero/${hero.id}`} className="group block h-full">
                                         <div className="relative aspect-[3/4] bg-black/40 border border-white/10 group-hover:border-accent transition-all duration-500 overflow-hidden clip-valorant-card">

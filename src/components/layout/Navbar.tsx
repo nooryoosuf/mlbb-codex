@@ -1,58 +1,57 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { Home, Hexagon, Menu } from "lucide-react";
+import { motion } from "framer-motion";
+import { Home, Hexagon, Menu, Terminal, Zap } from "lucide-react";
 
 export default function Navbar() {
     const pathname = usePathname();
 
     const links = [
-        { href: "/", label: "CODEX", icon: Home },
+        { href: "/", label: "HOME", icon: Home },
         { href: "/heroes", label: "HEROES", icon: Menu },
         { href: "/builders", label: "BUILDERS", icon: Hexagon },
+        { href: "/knowledge", label: "INTEL", icon: Terminal },
     ];
 
     return (
-        <motion.nav
-            className="fixed bottom-8 right-8 z-[100] md:left-auto left-4 right-4"
+        <motion.div
+            className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100]"
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-            <div className="flex items-center gap-3 bg-[#0b0e14]/70 backdrop-blur-md border border-white/10 p-2 rounded-full shadow-[0_0_20px_rgba(255,70,85,0.2)] md:w-auto w-full justify-center ring-1 ring-white/5">
-                {/* Brand Marker - Triangle Logo */}
-                <div className="w-10 h-10 flex items-center justify-center bg-accent text-black font-bold relative overflow-hidden clip-path-triangle [clip-path:polygon(50%_0%,0%_100%,100%_100%)] shadow-[0_0_15px_rgba(255,70,85,0.6)]">
-                    <div className="absolute inset-0 bg-white/30 skew-y-12 scale-150 translate-y-2" />
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="relative z-10 rotate-180">
-                        <path d="M12 2L2 22H22L12 2Z" />
-                    </svg>
-                </div>
+            <nav className="flex items-center gap-2 px-3 py-2 bg-black/40 backdrop-blur-xl border border-white/5 rounded-full shadow-2xl shadow-black/50 ring-1 ring-white/5 transition-all hover:bg-black/50 hover:border-white/10">
+                {links.map((link) => {
+                    const isActive = pathname === link.href;
+                    const Icon = link.icon;
 
-                <div className="flex items-center gap-2">
-                    {links.map((link) => {
-                        const isActive = pathname === link.href;
-                        const Icon = link.icon;
+                    return (
+                        <Link href={link.href} key={link.href} className="relative group">
+                            <div className={`
+                                flex items-center gap-3 px-5 py-3 rounded-full transition-all duration-300
+                                ${isActive
+                                    ? 'text-white bg-white/10 shadow-[inner_0_0_10px_rgba(255,255,255,0.05)]'
+                                    : 'text-white/40 hover:text-white hover:bg-white/5'
+                                }
+                            `}>
+                                <Icon size={20} strokeWidth={1.5} />
+                                <span className={`font-mono text-xs font-bold tracking-widest transition-all duration-300 ${isActive ? 'max-w-20 opacity-100' : 'max-w-0 opacity-0 overflow-hidden group-hover:max-w-20 group-hover:opacity-100'} whitespace-nowrap`}>
+                                    {link.label}
+                                </span>
+                            </div>
 
-                        return (
-                            <Link href={link.href} key={link.href} className="relative group">
-                                <div className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${isActive ? 'bg-white/10 text-white' : 'text-[#8b9bb4] hover:text-white hover:bg-white/5'}`}>
-                                    <Icon size={18} />
-                                    <span className="font-mono text-sm font-bold tracking-wider md:block hidden">{link.label}</span>
-                                </div>
-
-                                {isActive && (
-                                    <motion.div
-                                        layoutId="nav-glow"
-                                        className="absolute inset-0 rounded-full border border-accent shadow-[0_0_20px_rgba(255,70,85,0.6)] pointer-events-none"
-                                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                                    />
-                                )}
-                            </Link>
-                        );
-                    })}
-                </div>
-            </div>
-        </motion.nav>
+                            {isActive && (
+                                <motion.div
+                                    layoutId="nav-indicator"
+                                    className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent blur-[1px]"
+                                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                />
+                            )}
+                        </Link>
+                    );
+                })}
+            </nav>
+        </motion.div>
     );
 }
