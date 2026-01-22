@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Oswald, Rajdhani, Share_Tech_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
 
 const oswald = Oswald({
   variable: "--font-display",
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${oswald.variable} ${rajdhani.variable} ${shareTechMono.variable}`}>
         <div className="scanlines" />
+        <Navbar />
         {children}
       </body>
     </html>

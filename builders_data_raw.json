@@ -1,0 +1,159 @@
+{
+    "emblems": [
+        {
+            "name": "Basic Common Emblem",
+            "attributes": [
+                "Hybrid Regen: +12",
+                "HP: +275",
+                "Adaptive Attack: +22"
+            ],
+            "icon": "https://liquipedia.net/commons/images/f/f7/Emblem_Basic_Common_MLBB_V2.png"
+        },
+        {
+            "name": "Tank Emblem",
+            "attributes": [
+                "HP: +500",
+                "Hybrid Defense: +10",
+                "HP Regen: +4"
+            ],
+            "icon": "https://liquipedia.net/commons/images/f/f1/Emblem_Tank_MLBB_V2.png"
+        },
+        {
+            "name": "Assassin Emblem",
+            "attributes": [
+                "Adaptive Penetration: +14",
+                "Adaptive Attack: +10",
+                "Movement Speed: +3%"
+            ],
+            "icon": "https://liquipedia.net/commons/images/a/ac/Emblem_Assassin_MLBB_V2.png"
+        },
+        {
+            "name": "Mage Emblem",
+            "attributes": [
+                "Magic Power: +30",
+                "Cooldown Reduction: +5%",
+                "Magic Penetration: +8"
+            ],
+            "icon": "https://liquipedia.net/commons/images/7/70/Emblem_Mage_MLBB_V2.png"
+        },
+        {
+            "name": "Fighter Emblem",
+            "attributes": [
+                "Spell Vamp: +10%",
+                "Adaptive Attack: +22",
+                "Hybrid Defense: +6"
+            ],
+            "icon": "https://liquipedia.net/commons/images/b/ba/Custom_Fighter_Emblem.png"
+        },
+        {
+            "name": "Support Emblem",
+            "attributes": [
+                "Healing Effect: +12%",
+                "Cooldown Reduction: +10%",
+                "Movement Speed: +6%"
+            ],
+            "icon": "https://liquipedia.net/commons/images/e/e2/Emblem_Support_MLBB_V2.png"
+        },
+        {
+            "name": "Marksman Emblem",
+            "attributes": [
+                "Attack Speed: +15%",
+                "Adaptive Attack: +16",
+                "Lifesteal: +5%"
+            ],
+            "icon": "https://liquipedia.net/commons/images/c/cc/Emblem_Marksman_MLBB_V2.png"
+        }
+    ],
+    "talents": [
+        {
+            "name": "Thrill",
+            "icon": "https://liquipedia.net/commons/images/d/df/Talent_Thrill_ML_V2.png",
+            "description": "Gain 16 Adaptive Attack"
+        },
+        {
+            "name": "Swift",
+            "icon": "https://liquipedia.net/commons/images/c/c0/Talent_Swift_ML_V2.png",
+            "description": "Gain 10% extra Attack Speed"
+        },
+        {
+            "name": "Wilderness Blessing",
+            "icon": "https://liquipedia.net/commons/images/3/3d/Talent_Wilderness_Blessing_ML_V2.png",
+            "description": "Extra Movement Speed in Jungle and River. Movement Speed in the Jungle and Rive is increased by 10%. This bonus is halved when in combat wih enemy heroes, Lord or Turtle"
+        },
+        {
+            "name": "Seasoned Hunter",
+            "icon": "https://liquipedia.net/commons/images/5/5d/Talent_Seasoned_Hunter_ML_V2.png",
+            "description": "Increase Jungling Speed. Damage against Lord and Turtle is increased by 15%. This bonus is halved against regular Creeps and doesn't affect the damage of Retribution."
+        },
+        {
+            "name": "Impure Rage",
+            "icon": "https://liquipedia.net/commons/images/e/e3/Talent_Impure_Rage_ML_V2.png",
+            "description": "Extra Skill Damage & Restore Mana on Hit. Dealing damage with skills deals 4% of target's Max HP extra Adaptive Damage and restores 2% Mana on hit. If the hero does not use Mana restores 1% HP instead. Cooldown: 5s."
+        },
+        {
+            "name": "Quantum Charge",
+            "icon": "https://liquipedia.net/commons/images/7/73/Talent_Quantum_Charge_ML_V2.png",
+            "description": "Basic Attacks Grant HP Regen & Speed Up. Dealing damage with Basic Attacks increases Movement Speed by 30% for 1.5s and restores 75-180HP (scales with level). Cooldown: 8s."
+        },
+        {
+            "name": "War Cry",
+            "icon": "https://liquipedia.net/commons/images/d/d6/Talent_War_Cry_ML.png",
+            "description": "Increase Sustained Damage. After every 3 Separate Basic Attacks or skill hit an enemy hero, all damage dealt increases by 8% for 6s. Cooldown: 6s."
+        },
+        {
+            "name": "Temporal Reign",
+            "icon": "https://liquipedia.net/commons/images/c/c8/Talent_Temporal_Reign_ML.png",
+            "description": "Non-Ultimate Skills Cooldown Reduction. The next Ultimate cast decreases other active skills' remaining cooldowns by 1.5 times within 4s. Cooldown: 20s."
+        },
+        {
+            "name": "Vitality",
+            "icon": "https://liquipedia.net/commons/images/7/74/Talent_Vitality_ML_V2.png",
+            "description": "Gain 225 extra max HP."
+        },
+        {
+            "name": "Tenacity",
+            "icon": "https://liquipedia.net/commons/images/b/be/Talent_Tenacity_ML_V2.png",
+            "description": "Increase Defense at Low HP. When HP is below 50%, Physical & Magic Defense are increased by 15"
+        },
+        {
+            "name": "Concussive Blast",
+            "icon": "https://liquipedia.net/commons/images/b/be/Talent_Concussive_Blast_ML_V2.png",
+            "description": "HP-Based AOE Damage. After the next Basic Attack, deal 100(+7% Total HP) Magic Damage to nearby enemies. Cooldown: 15s"
+        },
+        {
+            "name": "Rupture",
+            "icon": "https://liquipedia.net/commons/images/d/da/Talent_Rupture_ML_V2.png",
+            "description": "Gain 5 Adaptive Penetration."
+        },
+        {
+            "name": "Master Assassin",
+            "icon": "https://liquipedia.net/commons/images/9/9d/Talent_Master_Assassin_ML_V2.png",
+            "description": "Increase Damage to Lone Heroes. If there is only one enemy hero nearby, damage dealt to them is increased by 7%"
+        },
+        {
+            "name": "Killing Spree",
+            "icon": "https://liquipedia.net/commons/images/e/e6/Talent_Killing_Spree_ML_V2.png",
+            "description": "Regen and Speed Up After Kill. After killing an enemy hero, instantly recover 15% of Lost HP and gain 20% Movement Speed. Duration: 3s"
+        },
+        {
+            "name": "Festival of Blood",
+            "icon": "https://liquipedia.net/commons/images/2/26/Talent_Festival_of_Blood_ML_V2.png",
+            "description": "Get Extra Spell Vamp. Gain 6% Spell Vamp. Each hero kill or assist grant an additional 0.5% Spell Vamp, up to 8 stacks"
+        },
+        {
+            "name": "Brave Smite",
+            "icon": "https://liquipedia.net/commons/images/1/12/Talent_Brave_Smite_ML_V2.png",
+            "description": "Skill Damage Grants HP Regen. Dealing skill damage to an enemy hero recovers 5% Max HP. Cooldown: 6s."
+        },
+        {
+            "name": "Bargain Hunter",
+            "icon": "https://liquipedia.net/commons/images/1/18/Talent_Bargain_Hunter_ML_V2.png",
+            "description": "Reduce Equipment Cost. Equipment can be purchased at 95% of their base price."
+        },
+        {
+            "name": "Lethal Ignition",
+            "icon": "https://liquipedia.net/commons/images/3/3f/Talent_Lethal_Ignition_ML_V2.png",
+            "description": "Extra Damage on Multi-Hits. Dealing damage greater than 7% of an enemy hero's Max HP 3 times within 5s will scorch the target for Adaptive Damage. Cooldown: 15s."
+        }
+    ]
+}
