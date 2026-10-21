@@ -36,34 +36,37 @@ export default function ItemBrowser() {
 
     return (
         <div>
-            <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-stretch">
                 <div className="relative flex-1">
-                    <Search size={16} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-faint" aria-hidden="true" />
+                    <span className="pointer-events-none absolute left-0 top-0 grid h-full w-11 place-items-center border-r border-line text-faint" aria-hidden="true">
+                        <Search size={15} />
+                    </span>
                     <input
                         value={query}
                         onChange={(event) => setQuery(event.target.value)}
                         type="search"
-                        placeholder="Search items by name or effect…"
+                        placeholder="Search items"
                         aria-label="Search items"
-                        className="h-11 w-full rounded-md border border-line bg-elevated pl-9 pr-9 text-sm text-fg outline-none transition-colors placeholder:text-faint focus:border-accent"
+                        className="field pl-14"
                     />
                     {query && (
                         <button
                             type="button"
                             onClick={() => setQuery("")}
                             aria-label="Clear search"
-                            className="absolute right-2.5 top-1/2 grid h-6 w-6 -translate-y-1/2 place-items-center rounded text-faint hover:text-fg"
+                            className="absolute right-0 top-0 grid h-full w-11 place-items-center text-faint transition-colors hover:text-fg"
                         >
-                            <X size={14} aria-hidden="true" />
+                            <X size={15} aria-hidden="true" />
                         </button>
                     )}
                 </div>
-                <p className="text-sm text-muted">
-                    <span className="font-mono text-fg">{results.length}</span> items
-                </p>
+                <div className="flex items-center justify-between gap-3 border border-line bg-elevated px-4 sm:w-56">
+                    <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-faint">Results</span>
+                    <span className="display text-2xl leading-none">{results.length}</span>
+                </div>
             </div>
 
-            <div className="mb-6 flex flex-wrap gap-2">
+            <div className="mb-8 flex flex-wrap gap-1.5 border-b border-line pb-5">
                 {categories.map(([name, count]) => {
                     const active = category === name;
                     return (
@@ -72,13 +75,11 @@ export default function ItemBrowser() {
                             type="button"
                             onClick={() => setCategory(name)}
                             aria-pressed={active}
-                            className={`inline-flex h-8 items-center gap-1.5 rounded-full border px-3 text-xs font-medium transition-colors ${active
-                                    ? "border-accent bg-accent-soft text-accent"
-                                    : "border-line text-muted hover:border-line-strong hover:text-fg"
-                                }`}
+                            data-active={active}
+                            className="tag"
                         >
                             {name}
-                            <span className="font-mono text-[10px] opacity-70">{count}</span>
+                            <span className="opacity-60">{count}</span>
                         </button>
                     );
                 })}
@@ -101,9 +102,10 @@ function ItemCard({ item }: { item: Item }) {
     return (
         <Link
             href={`/items/${item.slug}`}
-            className="group flex gap-3.5 rounded-card border border-line bg-elevated p-3.5 transition-colors hover:border-line-strong"
+            className="group relative flex gap-4 border border-line bg-elevated p-3.5 transition-colors hover:border-line-strong"
         >
-            <div className="h-14 w-14 shrink-0">
+            <span className="absolute left-0 top-0 h-full w-px scale-y-0 bg-accent transition-transform duration-300 group-hover:scale-y-100" aria-hidden="true" />
+            <div className="h-14 w-14 shrink-0 border border-line bg-subtle">
                 <SmartImage
                     image={itemIcon(item.image)}
                     alt={`${item.name} icon`}
@@ -113,16 +115,18 @@ function ItemCard({ item }: { item: Item }) {
             </div>
             <div className="min-w-0 flex-1">
                 <div className="flex items-start justify-between gap-2">
-                    <h2 className="truncate text-sm font-semibold text-fg">{item.name}</h2>
+                    <h2 className="display truncate text-lg leading-none transition-colors group-hover:text-accent">
+                        {item.name}
+                    </h2>
                     <ArrowUpRight size={13} className="mt-0.5 shrink-0 text-faint opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true" />
                 </div>
-                <p className="truncate text-xs text-muted">{item.summary}</p>
+                <p className="mt-1.5 truncate text-xs text-muted">{item.summary}</p>
                 {item.bonus && (
                     <p className="mt-1 line-clamp-2 text-[11px] leading-relaxed text-faint">{item.bonus}</p>
                 )}
-                <div className="mt-1.5 flex items-center gap-2 text-[10px] text-faint">
-                    {item.category && <span className="uppercase tracking-wider">{item.category}</span>}
-                    {item.price !== null && <span className="font-mono">{item.price}g</span>}
+                <div className="mt-2 flex items-center gap-3 font-mono text-[9px] uppercase tracking-[0.14em] text-faint">
+                    {item.category && <span>{item.category}</span>}
+                    {item.price !== null && <span className="text-accent/80">{item.price}g</span>}
                 </div>
             </div>
         </Link>

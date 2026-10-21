@@ -26,16 +26,16 @@ export default function FavouritesTool() {
 
     return (
         <div>
-            <div className="mb-5 flex items-center justify-between gap-3">
-                <p className="text-sm text-muted">
-                    <span className="font-mono text-fg">{saved.length}</span> saved
+            <div className="mb-5 flex items-center justify-between gap-3 border-b border-line pb-4">
+                <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-faint">
+                    <span className="text-fg">{saved.length}</span> saved locally
                 </p>
                 <button
                     type="button"
                     onClick={clear}
-                    className="inline-flex items-center gap-1.5 text-xs font-medium text-muted transition-colors hover:text-danger"
+                    className="inline-flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-[0.16em] text-muted transition-colors hover:text-danger"
                 >
-                    <Trash2 size={13} aria-hidden="true" /> Clear all
+                    <Trash2 size={12} aria-hidden="true" /> Clear all
                 </button>
             </div>
 
@@ -45,8 +45,8 @@ export default function FavouritesTool() {
                 ))}
             </div>
 
-            <p className="mt-8 flex items-center gap-1.5 text-xs text-faint">
-                <Heart size={12} aria-hidden="true" /> Saved locally. No account required.
+            <p className="mt-8 flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-[0.14em] text-faint">
+                <Heart size={11} aria-hidden="true" /> Saved locally. No account required.
             </p>
         </div>
     );

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Heart, Crosshair, Swords, Wand2 } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import PageHeader from "@/components/layout/PageHeader";
+import { Reveal } from "@/components/ui/motion";
 
 export const metadata: Metadata = {
     title: "Tools",
@@ -12,56 +14,61 @@ const TOOLS = [
     {
         href: "/tools/compare",
         title: "Compare heroes",
-        description: "Put two heroes side by side across base stats, abilities, and matchups.",
-        icon: Swords,
+        description: "Put two heroes side by side across base stats, abilities and matchups.",
     },
     {
         href: "/tools/counters",
         title: "Counter explorer",
         description: "See strong and weak matchups plus synergy partners for any hero.",
-        icon: Crosshair,
-    },
-    {
-        href: "/tools/favourites",
-        title: "Favourites",
-        description: "Your saved shortlist, stored locally in this browser.",
-        icon: Heart,
     },
     {
         href: "/tools/random",
         title: "Random picker",
         description: "Draw a hero, optionally filtered by role and lane.",
-        icon: Wand2,
+    },
+    {
+        href: "/tools/favourites",
+        title: "Favourites",
+        description: "Your saved shortlist, stored locally in this browser.",
     },
 ];
 
 export default function ToolsPage() {
     return (
-        <div className="mx-auto max-w-shell px-4 py-12 sm:px-6 lg:px-8">
-            <header className="mb-10 max-w-2xl">
-                <div className="eyebrow mb-3">Toolkit</div>
-                <h1 className="font-display text-4xl leading-tight sm:text-5xl">Tools</h1>
-                <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-                    Practical helpers built on the same verified hero dataset.
-                </p>
-            </header>
-
-            <div className="grid gap-3 sm:grid-cols-2">
-                {TOOLS.map((tool) => (
-                    <Link
-                        key={tool.href}
-                        href={tool.href}
-                        className="group flex items-start gap-4 rounded-panel border border-line bg-elevated p-6 transition-colors hover:border-line-strong"
-                    >
-                        <tool.icon size={20} className="mt-0.5 shrink-0 text-accent" aria-hidden="true" />
-                        <div className="min-w-0 flex-1">
-                            <h2 className="font-display text-2xl">{tool.title}</h2>
-                            <p className="mt-1 text-sm leading-relaxed text-muted">{tool.description}</p>
-                        </div>
-                        <ArrowRight size={16} className="mt-1 shrink-0 text-faint transition-transform group-hover:translate-x-1 group-hover:text-accent" aria-hidden="true" />
-                    </Link>
-                ))}
+        <>
+            <PageHeader
+                index="04"
+                eyebrow="Toolkit"
+                title="Plan before you queue"
+                description="Practical helpers built on the same verified dataset."
+            />
+            <div className="mx-auto max-w-shell px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
+                <div className="border-t border-line">
+                    {TOOLS.map((tool, index) => (
+                        <Reveal key={tool.href} delay={index * 0.05}>
+                            <Link
+                                href={tool.href}
+                                className="group grid grid-cols-[2.5rem_1fr_auto] items-center gap-4 border-b border-line py-6 transition-colors hover:bg-elevated sm:grid-cols-[4rem_18rem_1fr_auto] sm:gap-6"
+                            >
+                                <span className="font-mono text-[10px] text-faint transition-colors group-hover:text-accent">
+                                    {String(index + 1).padStart(2, "0")}
+                                </span>
+                                <span className="display text-3xl transition-colors group-hover:text-accent sm:text-4xl">
+                                    {tool.title}
+                                </span>
+                                <span className="col-span-2 text-sm leading-relaxed text-muted sm:col-span-1">
+                                    {tool.description}
+                                </span>
+                                <ArrowUpRight
+                                    size={20}
+                                    className="text-faint transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
+                                    aria-hidden="true"
+                                />
+                            </Link>
+                        </Reveal>
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     );
 }

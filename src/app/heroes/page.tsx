@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import HeroBrowser from "@/components/hero/HeroBrowser";
-import { heroes } from "@/data";
+import PageHeader from "@/components/layout/PageHeader";
+import { heroes, items } from "@/data";
 
 export const metadata: Metadata = {
     title: "Heroes",
@@ -10,16 +11,23 @@ export const metadata: Metadata = {
 
 export default function HeroesPage() {
     return (
-        <div className="mx-auto max-w-shell px-4 py-12 sm:px-6 lg:px-8">
-            <header className="mb-10 max-w-2xl">
-                <div className="eyebrow mb-3">The roster</div>
-                <h1 className="font-display text-4xl leading-tight sm:text-5xl">Every hero, in one place</h1>
-                <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-                    Search the full roster, combine role and lane filters, and open any hero for
-                    verified stats, skills, skins, and matchups.
-                </p>
-            </header>
-            <HeroBrowser />
-        </div>
+        <>
+            <PageHeader
+                index="01"
+                eyebrow="The roster"
+                title="Every hero. One codex."
+                description={`Search all ${heroes.length} heroes, combine role and lane filters, and open any dossier for verified stats, abilities, skins and matchups.`}
+                meta={
+                    <div className="flex flex-wrap gap-6 font-mono text-[10px] uppercase tracking-[0.18em] text-faint">
+                        <span><span className="text-fg">{heroes.length}</span> heroes</span>
+                        <span><span className="text-fg">{items.length}</span> items</span>
+                        <span><span className="text-fg">134</span> dossiers</span>
+                    </div>
+                }
+            />
+            <div className="mx-auto max-w-shell px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
+                <HeroBrowser />
+            </div>
+        </>
     );
 }

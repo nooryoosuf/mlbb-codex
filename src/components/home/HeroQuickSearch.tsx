@@ -25,60 +25,71 @@ export default function HeroQuickSearch() {
     }, [deferred]);
 
     return (
-        <div className="relative">
-            <div className="relative">
-                <Search size={16} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-faint" aria-hidden="true" />
+        <div className="relative z-20">
+            <div className="relative flex items-stretch border border-line-strong bg-elevated transition-colors focus-within:border-accent">
+                <span className="grid w-12 shrink-0 place-items-center border-r border-line text-accent" aria-hidden="true">
+                    <Search size={17} />
+                </span>
                 <input
                     value={query}
                     onChange={(event) => setQuery(event.target.value)}
                     type="search"
-                    placeholder="Jump to a hero — try “Fanny”, “Mage”, or “Jungle”"
+                    placeholder="Search heroes, roles, lanes"
                     aria-label="Quick hero search"
-                    className="h-11 w-full rounded-md border border-line bg-elevated pl-9 pr-9 text-sm text-fg outline-none transition-colors placeholder:text-faint focus:border-accent"
+                    className="h-14 w-full bg-transparent px-4 text-base text-fg outline-none placeholder:font-mono placeholder:text-[11px] placeholder:uppercase placeholder:tracking-[0.18em] placeholder:text-faint sm:text-lg"
                 />
-                {query && (
+                {query ? (
                     <button
                         type="button"
                         onClick={() => setQuery("")}
                         aria-label="Clear search"
-                        className="absolute right-2.5 top-1/2 grid h-6 w-6 -translate-y-1/2 place-items-center rounded text-faint hover:text-fg"
+                        className="grid w-12 shrink-0 place-items-center text-faint transition-colors hover:text-fg"
                     >
-                        <X size={14} aria-hidden="true" />
+                        <X size={16} aria-hidden="true" />
                     </button>
+                ) : (
+                    <span className="hidden shrink-0 items-center pr-4 font-mono text-[9px] uppercase tracking-[0.2em] text-faint sm:flex">
+                        Type to filter
+                    </span>
                 )}
             </div>
 
             {deferred.trim() && (
-                <div className="absolute inset-x-0 top-[calc(100%+0.5rem)] z-30 overflow-hidden rounded-card border border-line-strong bg-elevated shadow-panel">
+                <div className="absolute inset-x-0 top-[calc(100%+2px)] overflow-hidden border border-line-strong bg-elevated shadow-panel clip-notch">
                     {matches.length === 0 ? (
-                        <p className="px-4 py-5 text-sm text-muted">
-                            No heroes match “{deferred}”.
+                        <p className="px-5 py-6 font-mono text-[11px] uppercase tracking-[0.16em] text-faint">
+                            No heroes match &ldquo;{deferred}&rdquo;
                         </p>
                     ) : (
-                        <ul className="max-h-80 overflow-y-auto p-1.5">
+                        <ul className="max-h-[22rem] overflow-y-auto">
                             {matches.map((hero) => (
-                                <li key={hero.slug}>
+                                <li key={hero.slug} className="border-b border-line last:border-b-0">
                                     <Link
                                         href={`/hero/${hero.slug}`}
                                         onClick={() => setQuery("")}
-                                        className="flex items-center gap-3 rounded px-2.5 py-2 transition-colors hover:bg-subtle"
+                                        className="group flex items-center gap-4 px-3 py-2.5 transition-colors hover:bg-subtle"
                                     >
-                                        <div className="h-9 w-9 shrink-0 overflow-hidden rounded border border-line">
+                                        <div className="h-12 w-8 shrink-0 border border-line">
                                             <SmartImage
                                                 image={heroPortrait(hero)}
                                                 alt=""
                                                 name={hero.name}
-                                                rounded="rounded-none"
-                                                sizes="36px"
+                                                sizes="32px"
                                             />
                                         </div>
                                         <span className="min-w-0 flex-1">
-                                            <span className="block truncate text-sm font-medium text-fg">{hero.name}</span>
-                                            <span className="block truncate text-xs text-faint">
-                                                {[...hero.roles, ...hero.lanes].join(" · ")}
+                                            <span className="display block truncate text-lg leading-none transition-colors group-hover:text-accent">
+                                                {hero.name}
+                                            </span>
+                                            <span className="mt-1 block truncate font-mono text-[9px] uppercase tracking-[0.14em] text-faint">
+                                                {[...hero.roles, ...hero.lanes].join(" / ")}
                                             </span>
                                         </span>
-                                        <ArrowUpRight size={14} className="shrink-0 text-faint" aria-hidden="true" />
+                                        <ArrowUpRight
+                                            size={14}
+                                            className="shrink-0 text-faint opacity-0 transition-opacity group-hover:opacity-100 group-hover:text-accent"
+                                            aria-hidden="true"
+                                        />
                                     </Link>
                                 </li>
                             ))}

@@ -1,11 +1,11 @@
 "use client";
 
 import { useDeferredValue, useEffect, useMemo, useState } from "react";
-import { createStoredStore, useStoredStore } from "@/lib/store";
-import { Search, SlidersHorizontal, X, LayoutGrid, Rows3, Heart, Check } from "lucide-react";
+import { Search, SlidersHorizontal, X, LayoutGrid, Rows3, Heart, Check, ArrowUpRight } from "lucide-react";
 import HeroCard from "@/components/hero/HeroCard";
 import { EmptyState } from "@/components/ui/primitives";
 import { useFavourites } from "@/lib/use-favourites";
+import { createStoredStore, useStoredStore } from "@/lib/store";
 import { heroes, ROLES, LANES, type Role, type Lane, type Hero } from "@/data";
 
 type SortKey = "name" | "release" | "difficulty" | "lane";
@@ -80,6 +80,7 @@ export default function HeroBrowser() {
                     return a.name.localeCompare(b.name);
             }
         });
+
         return list;
     }, [deferredQuery, roles, lanes, favouritesOnly, favourites, sort]);
 
@@ -87,17 +88,17 @@ export default function HeroBrowser() {
     const hasFilters = activeFilterCount > 0 || query.trim().length > 0;
 
     function clearAll() {
-        setQuery("");
         setRoles([]);
         setLanes([]);
         setFavouritesOnly(false);
+        setQuery("");
     }
 
     const filterPanel = (
         <div className="space-y-7">
             <div>
                 <div className="eyebrow mb-3">Role</div>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                     {ROLES.map((role) => {
                         const active = roles.includes(role);
                         return (
@@ -106,12 +107,10 @@ export default function HeroBrowser() {
                                 type="button"
                                 onClick={() => setRoles((value) => toggleValue(value, role))}
                                 aria-pressed={active}
-                                className={`inline-flex h-8 items-center gap-1.5 rounded-full border px-3 text-xs font-medium transition-colors ${active
-                                        ? "border-accent bg-accent-soft text-accent"
-                                        : "border-line text-muted hover:border-line-strong hover:text-fg"
-                                    }`}
+                                data-active={active}
+                                className="tag"
                             >
-                                {active && <Check size={11} aria-hidden="true" />}
+                                {active && <Check size={10} aria-hidden="true" />}
                                 {role}
                             </button>
                         );
@@ -121,7 +120,7 @@ export default function HeroBrowser() {
 
             <div>
                 <div className="eyebrow mb-3">Lane</div>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                     {LANES.map((lane) => {
                         const active = lanes.includes(lane);
                         return (
@@ -130,12 +129,10 @@ export default function HeroBrowser() {
                                 type="button"
                                 onClick={() => setLanes((value) => toggleValue(value, lane))}
                                 aria-pressed={active}
-                                className={`inline-flex h-8 items-center gap-1.5 rounded-full border px-3 text-xs font-medium transition-colors ${active
-                                        ? "border-accent bg-accent-soft text-accent"
-                                        : "border-line text-muted hover:border-line-strong hover:text-fg"
-                                    }`}
+                                data-active={active}
+                                className="tag"
                             >
-                                {active && <Check size={11} aria-hidden="true" />}
+                                {active && <Check size={10} aria-hidden="true" />}
                                 {lane}
                             </button>
                         );
@@ -149,31 +146,27 @@ export default function HeroBrowser() {
                     type="button"
                     onClick={() => setFavouritesOnly((value) => !value)}
                     aria-pressed={favouritesOnly}
+                    data-active={favouritesOnly}
                     disabled={!ready}
-                    className={`inline-flex h-8 items-center gap-2 rounded-full border px-3 text-xs font-medium transition-colors disabled:opacity-50 ${favouritesOnly
-                            ? "border-accent bg-accent-soft text-accent"
-                            : "border-line text-muted hover:border-line-strong hover:text-fg"
-                        }`}
+                    className="tag disabled:opacity-50"
                 >
-                    <Heart size={12} fill={favouritesOnly ? "currentColor" : "none"} aria-hidden="true" />
+                    <Heart size={11} fill={favouritesOnly ? "currentColor" : "none"} aria-hidden="true" />
                     Favourites only
-                    {ready && favourites.length > 0 && <span className="font-mono text-[10px]">{favourites.length}</span>}
+                    {ready && favourites.length > 0 && <span className="opacity-70">{favourites.length}</span>}
                 </button>
             </div>
 
             <div>
                 <div className="eyebrow mb-3">Sort by</div>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                     {SORTS.map((option) => (
                         <button
                             key={option.key}
                             type="button"
                             onClick={() => setSort(option.key)}
                             aria-pressed={sort === option.key}
-                            className={`h-8 rounded-full border px-3 text-xs font-medium transition-colors ${sort === option.key
-                                    ? "border-accent bg-accent-soft text-accent"
-                                    : "border-line text-muted hover:border-line-strong hover:text-fg"
-                                }`}
+                            data-active={sort === option.key}
+                            className="tag"
                         >
                             {option.label}
                         </button>
@@ -185,9 +178,9 @@ export default function HeroBrowser() {
                 <button
                     type="button"
                     onClick={clearAll}
-                    className="text-xs font-medium text-accent underline-offset-4 hover:underline"
+                    className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent transition-colors hover:text-accent-strong"
                 >
-                    Clear all filters
+                    Reset filters
                 </button>
             )}
         </div>
@@ -195,25 +188,27 @@ export default function HeroBrowser() {
 
     return (
         <div>
-            <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-stretch">
                 <div className="relative flex-1">
-                    <Search size={16} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-faint" aria-hidden="true" />
+                    <span className="pointer-events-none absolute left-0 top-0 grid h-full w-11 place-items-center border-r border-line text-faint" aria-hidden="true">
+                        <Search size={15} />
+                    </span>
                     <input
                         value={query}
                         onChange={(event) => setQuery(event.target.value)}
                         type="search"
-                        placeholder="Search by name, role, lane, specialty…"
+                        placeholder="Search heroes"
                         aria-label="Search heroes"
-                        className="h-11 w-full rounded-md border border-line bg-elevated pl-9 pr-9 text-sm text-fg outline-none transition-colors placeholder:text-faint focus:border-accent"
+                        className="field pl-14"
                     />
                     {query && (
                         <button
                             type="button"
                             onClick={() => setQuery("")}
                             aria-label="Clear search"
-                            className="absolute right-2.5 top-1/2 grid h-6 w-6 -translate-y-1/2 place-items-center rounded text-faint hover:text-fg"
+                            className="absolute right-0 top-0 grid h-full w-11 place-items-center text-faint transition-colors hover:text-fg"
                         >
-                            <X size={14} aria-hidden="true" />
+                            <X size={15} aria-hidden="true" />
                         </button>
                     )}
                 </div>
@@ -222,24 +217,22 @@ export default function HeroBrowser() {
                     <button
                         type="button"
                         onClick={() => setFiltersOpen(true)}
-                        className="inline-flex h-11 items-center gap-2 rounded-md border border-line bg-elevated px-3 text-sm font-medium text-fg lg:hidden"
+                        className="btn btn-ghost h-11 gap-2 px-4 lg:hidden"
                     >
-                        <SlidersHorizontal size={15} aria-hidden="true" />
+                        <SlidersHorizontal size={14} aria-hidden="true" />
                         Filters
-                        {activeFilterCount > 0 && (
-                            <span className="grid h-5 min-w-5 place-items-center rounded-full bg-accent px-1 font-mono text-[10px] font-bold text-accent-contrast">
-                                {activeFilterCount}
-                            </span>
-                        )}
+                        {activeFilterCount > 0 && <span className="text-accent">{activeFilterCount}</span>}
                     </button>
 
-                    <div className="flex h-11 items-center rounded-md border border-line bg-elevated p-1">
+                    <div className="flex h-11 items-stretch border border-line bg-elevated">
                         <button
                             type="button"
                             onClick={() => viewStore.write("grid")}
                             aria-pressed={view === "grid"}
                             aria-label="Grid view"
-                            className={`grid h-8 w-8 place-items-center rounded transition-colors ${view === "grid" ? "bg-subtle text-fg" : "text-faint hover:text-fg"}`}
+                            className={`grid w-11 place-items-center border-r border-line transition-colors ${
+                                view === "grid" ? "bg-subtle text-accent" : "text-faint hover:text-fg"
+                            }`}
                         >
                             <LayoutGrid size={15} aria-hidden="true" />
                         </button>
@@ -248,7 +241,9 @@ export default function HeroBrowser() {
                             onClick={() => viewStore.write("compact")}
                             aria-pressed={view === "compact"}
                             aria-label="Compact view"
-                            className={`grid h-8 w-8 place-items-center rounded transition-colors ${view === "compact" ? "bg-subtle text-fg" : "text-faint hover:text-fg"}`}
+                            className={`grid w-11 place-items-center transition-colors ${
+                                view === "compact" ? "bg-subtle text-accent" : "text-faint hover:text-fg"
+                            }`}
                         >
                             <Rows3 size={15} aria-hidden="true" />
                         </button>
@@ -256,23 +251,26 @@ export default function HeroBrowser() {
                 </div>
             </div>
 
-            <div className="flex gap-8">
-                <aside className="hidden w-56 shrink-0 lg:block">
-                    <div className="sticky top-24">{filterPanel}</div>
+            <div className="flex gap-10">
+                <aside className="hidden w-52 shrink-0 lg:block">
+                    <div className="sticky top-24 border-t border-line pt-6">{filterPanel}</div>
                 </aside>
 
                 <div className="min-w-0 flex-1">
-                    <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-                        <p className="text-sm text-muted" aria-live="polite">
-                            <span className="font-mono text-fg">{results.length}</span> of {heroes.length} heroes
+                    <div className="mb-5 flex flex-wrap items-end justify-between gap-3 border-b border-line pb-4">
+                        <p className="flex items-baseline gap-2.5" aria-live="polite">
+                            <span className="display text-3xl leading-none">{results.length}</span>
+                            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-faint">
+                                of {heroes.length} heroes
+                            </span>
                         </p>
                         {hasFilters && (
                             <button
                                 type="button"
                                 onClick={clearAll}
-                                className="text-xs font-medium text-muted underline-offset-4 hover:text-fg hover:underline"
+                                className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted transition-colors hover:text-accent"
                             >
-                                Reset
+                                Clear all
                             </button>
                         )}
                     </div>
@@ -282,11 +280,7 @@ export default function HeroBrowser() {
                             title="No heroes match"
                             description="Try removing a filter or searching for a different name."
                             action={
-                                <button
-                                    type="button"
-                                    onClick={clearAll}
-                                    className="inline-flex h-9 items-center rounded-md border border-line-strong px-3 text-sm font-medium text-fg hover:bg-subtle"
-                                >
+                                <button type="button" onClick={clearAll} className="btn btn-ghost">
                                     Clear filters
                                 </button>
                             }
@@ -298,7 +292,7 @@ export default function HeroBrowser() {
                             ))}
                         </div>
                     ) : (
-                        <ul className="divide-y divide-line overflow-hidden rounded-card border border-line">
+                        <ul className="border-t border-line">
                             {results.map((hero) => (
                                 <CompactRow key={hero.slug} hero={hero} />
                             ))}
@@ -313,25 +307,25 @@ export default function HeroBrowser() {
                         type="button"
                         aria-label="Close filters"
                         onClick={() => setFiltersOpen(false)}
-                        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+                        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
                     />
-                    <div className="absolute inset-x-0 bottom-0 max-h-[85dvh] overflow-y-auto rounded-t-2xl border-t border-line-strong bg-elevated p-5 pb-8">
+                    <div className="absolute inset-x-0 bottom-0 max-h-[86dvh] overflow-y-auto border-t border-line-strong bg-bg p-5 pb-8">
                         <div className="mb-6 flex items-center justify-between">
-                            <h2 className="font-display text-xl">Filters</h2>
+                            <h2 className="display text-2xl">Filters</h2>
                             <button
                                 type="button"
                                 onClick={() => setFiltersOpen(false)}
                                 aria-label="Close filters"
-                                className="grid h-8 w-8 place-items-center rounded-md text-muted hover:bg-subtle hover:text-fg"
+                                className="grid h-8 w-8 place-items-center text-muted transition-colors hover:text-fg"
                             >
-                                <X size={17} aria-hidden="true" />
+                                <X size={18} aria-hidden="true" />
                             </button>
                         </div>
                         {filterPanel}
                         <button
                             type="button"
                             onClick={() => setFiltersOpen(false)}
-                            className="mt-8 h-11 w-full rounded-md bg-accent text-sm font-semibold text-accent-contrast"
+                            className="btn btn-primary mt-9 w-full"
                         >
                             Show {results.length} heroes
                         </button>
@@ -346,39 +340,45 @@ function CompactRow({ hero }: { hero: Hero }) {
     const { isFavourite, toggle, ready } = useFavourites();
     const favourite = ready && isFavourite(hero.slug);
     return (
-        <li className="flex items-center gap-3 bg-elevated px-3 py-2.5 transition-colors hover:bg-subtle">
-            <a href={`/hero/${hero.slug}`} className="flex min-w-0 flex-1 items-center gap-3">
-                <div className="h-11 w-11 shrink-0 overflow-hidden rounded border border-line bg-subtle">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                        src={hero.portrait ?? ""}
-                        alt=""
-                        loading="lazy"
-                        className="h-full w-full object-cover"
-                    />
-                </div>
-                <span className="min-w-0 flex-1">
-                    <span className="block truncate text-sm font-medium text-fg">{hero.name}</span>
-                    <span className="block truncate text-xs text-faint">
-                        {[...hero.roles, ...hero.lanes].join(" · ")}
+        <li className="border-b border-line">
+            <div className="group flex items-center gap-4 transition-colors hover:bg-elevated">
+                <a href={`/hero/${hero.slug}`} className="flex min-w-0 flex-1 items-center gap-4 px-1 py-2.5">
+                    <div className="h-14 w-9 shrink-0 overflow-hidden border border-line bg-subtle">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={hero.portrait ?? ""} alt="" loading="lazy" className="h-full w-full object-cover object-top" />
+                    </div>
+                    <span className="min-w-0 flex-1">
+                        <span className="display block truncate text-xl leading-none transition-colors group-hover:text-accent">
+                            {hero.name}
+                        </span>
+                        <span className="mt-1 block truncate font-mono text-[9px] uppercase tracking-[0.14em] text-faint">
+                            {[...hero.roles, ...hero.lanes].join(" / ")}
+                        </span>
                     </span>
-                </span>
-                <span className="hidden shrink-0 font-mono text-[11px] text-faint sm:block">
-                    {hero.damageType ?? "—"}
-                </span>
-                <span className="hidden shrink-0 font-mono text-[11px] text-faint md:block">
-                    {hero.releaseYear ?? "—"}
-                </span>
-            </a>
-            <button
-                type="button"
-                onClick={() => toggle(hero.slug)}
-                aria-pressed={favourite}
-                aria-label={`${favourite ? "Remove" : "Add"} ${hero.name} ${favourite ? "from" : "to"} favourites`}
-                className={`grid h-8 w-8 shrink-0 place-items-center rounded transition-colors ${favourite ? "text-accent" : "text-faint hover:text-fg"}`}
-            >
-                <Heart size={14} fill={favourite ? "currentColor" : "none"} aria-hidden="true" />
-            </button>
+                    <span className="hidden w-24 shrink-0 font-mono text-[10px] uppercase tracking-[0.14em] text-faint sm:block">
+                        {hero.damageType ?? "—"}
+                    </span>
+                    <span className="hidden w-12 shrink-0 font-mono text-[10px] text-faint md:block">
+                        {hero.releaseYear ?? "—"}
+                    </span>
+                    <ArrowUpRight
+                        size={15}
+                        className="mr-2 shrink-0 text-faint opacity-0 transition-opacity group-hover:opacity-100"
+                        aria-hidden="true"
+                    />
+                </a>
+                <button
+                    type="button"
+                    onClick={() => toggle(hero.slug)}
+                    aria-pressed={favourite}
+                    aria-label={`${favourite ? "Remove" : "Add"} ${hero.name} ${favourite ? "from" : "to"} favourites`}
+                    className={`mr-1 grid h-8 w-8 shrink-0 place-items-center border transition-colors ${
+                        favourite ? "border-accent text-accent" : "border-transparent text-faint hover:text-fg"
+                    }`}
+                >
+                    <Heart size={14} fill={favourite ? "currentColor" : "none"} aria-hidden="true" />
+                </button>
+            </div>
         </li>
     );
 }

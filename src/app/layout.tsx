@@ -1,17 +1,17 @@
-import type { Metadata } from "next";
-import { Instrument_Serif, Manrope, JetBrains_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Anton, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 
-const display = Instrument_Serif({
+const display = Anton({
     variable: "--font-display",
     subsets: ["latin"],
     weight: "400",
     display: "swap",
 });
 
-const ui = Manrope({
+const ui = Inter({
     variable: "--font-ui",
     subsets: ["latin"],
     weight: ["400", "500", "600", "700"],
@@ -21,7 +21,7 @@ const ui = Manrope({
 const mono = JetBrains_Mono({
     variable: "--font-mono",
     subsets: ["latin"],
-    weight: ["400", "500"],
+    weight: ["400", "500", "600"],
     display: "swap",
 });
 
@@ -52,6 +52,11 @@ export const metadata: Metadata = {
     alternates: { canonical: "/" },
 };
 
+export const viewport: Viewport = {
+    themeColor: "#08090b",
+    colorScheme: "dark light",
+};
+
 export default function RootLayout({
     children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -60,7 +65,7 @@ export default function RootLayout({
             <body className={`${display.variable} ${ui.variable} ${mono.variable}`}>
                 <a
                     href="#main"
-                    className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-accent-contrast"
+                    className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-accent focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:uppercase focus:tracking-widest focus:text-accent-contrast"
                 >
                     Skip to content
                 </a>

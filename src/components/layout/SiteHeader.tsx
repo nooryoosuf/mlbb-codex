@@ -3,17 +3,18 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Menu, Search, X, Heart, Sun, Moon, ArrowRight } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, Search, X, Heart, Sun, Moon, ArrowUpRight } from "lucide-react";
 import CommandPalette from "@/components/search/CommandPalette";
 import { useTheme } from "@/lib/use-theme";
 import { useFavourites } from "@/lib/use-favourites";
 import { useScrolled } from "@/lib/store";
 
 const NAV = [
-    { href: "/heroes", label: "Heroes" },
-    { href: "/items", label: "Items" },
-    { href: "/emblems", label: "Emblems" },
-    { href: "/tools", label: "Tools" },
+    { href: "/heroes", label: "Heroes", code: "01" },
+    { href: "/items", label: "Items", code: "02" },
+    { href: "/emblems", label: "Emblems", code: "03" },
+    { href: "/tools", label: "Tools", code: "04" },
 ];
 
 export default function SiteHeader() {
@@ -45,62 +46,69 @@ export default function SiteHeader() {
     return (
         <>
             <header
-                className={`sticky top-0 z-50 border-b transition-colors duration-300 ${scrolled ? "border-line bg-bg/85 backdrop-blur-xl" : "border-transparent bg-transparent"
-                    }`}
+                className={`sticky top-0 z-50 transition-colors duration-300 ${
+                    scrolled || open
+                        ? "border-b border-line bg-bg/90 backdrop-blur-xl"
+                        : "border-b border-transparent bg-transparent"
+                }`}
             >
-                <div className="mx-auto flex h-16 max-w-shell items-center gap-3 px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto flex h-14 max-w-shell items-center gap-2 px-4 sm:px-6 lg:px-8">
                     <Link href="/" className="group flex items-center gap-2.5" aria-label="MLBB Codex home">
-                        <span className="grid h-8 w-8 place-items-center rounded-md border border-line-strong bg-elevated font-display text-lg leading-none text-accent transition-colors group-hover:border-accent">
+                        <span className="clip-notch-sm grid h-7 w-7 place-items-center bg-accent font-display text-sm leading-none text-accent-contrast transition-transform duration-300 group-hover:-translate-y-0.5">
                             C
                         </span>
-                        <span className="hidden font-display text-lg tracking-tight sm:block">
-                            MLBB <span className="text-accent">Codex</span>
+                        <span className="display hidden text-lg leading-none tracking-wide sm:block">
+                            MLBB<span className="text-accent">/</span>CODEX
                         </span>
                     </Link>
 
-                    <nav className="ml-4 hidden items-center gap-1 md:flex" aria-label="Primary">
+                    <nav className="ml-6 hidden h-full items-center md:flex" aria-label="Primary">
                         {NAV.map((item) => {
                             const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
                             return (
                                 <Link
                                     key={item.href}
                                     href={item.href}
-                                onClick={() => setOpen(false)}
                                     aria-current={active ? "page" : undefined}
-                                    className={`relative rounded-md px-3 py-2 text-sm font-medium transition-colors ${active ? "text-fg" : "text-muted hover:text-fg"
-                                        }`}
+                                    className={`group relative flex h-full items-center px-3.5 font-mono text-[10px] uppercase tracking-[0.22em] transition-colors ${
+                                        active ? "text-fg" : "text-muted hover:text-fg"
+                                    }`}
                                 >
+                                    <span className="mr-1.5 text-[8px] text-accent">{item.code}</span>
                                     {item.label}
-                                    {active && (
-                                        <span className="absolute inset-x-3 -bottom-[13px] h-px bg-accent" aria-hidden="true" />
-                                    )}
+                                    <span
+                                        className={`absolute inset-x-3 bottom-0 h-[2px] origin-left bg-accent transition-transform duration-300 ${
+                                            active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                                        }`}
+                                        aria-hidden="true"
+                                    />
                                 </Link>
                             );
                         })}
                     </nav>
 
-                    <div className="ml-auto flex items-center gap-1.5">
+                    <div className="ml-auto flex items-center gap-1">
                         <button
                             type="button"
                             onClick={() => setPaletteOpen(true)}
-                            className="flex h-9 items-center gap-2 rounded-md border border-line bg-elevated px-2.5 text-sm text-muted transition-colors hover:border-line-strong hover:text-fg"
-                            aria-label="Search heroes"
+                            className="flex h-8 items-center gap-2 border border-line bg-elevated px-2.5 font-mono text-[10px] uppercase tracking-[0.18em] text-muted transition-colors hover:border-line-strong hover:text-fg"
+                            aria-label="Search heroes and items"
                         >
-                            <Search size={15} aria-hidden="true" />
+                            <Search size={13} aria-hidden="true" />
                             <span className="hidden lg:inline">Search</span>
-                            <kbd className="hidden rounded border border-line bg-subtle px-1.5 py-0.5 font-mono text-[10px] text-faint lg:inline">
+                            <kbd className="hidden border border-line px-1 py-px text-[9px] text-faint lg:inline">
                                 Ctrl K
                             </kbd>
                         </button>
 
                         <Link
                             href="/tools/favourites"
-                            className="relative grid h-9 w-9 place-items-center rounded-md text-muted transition-colors hover:bg-subtle hover:text-fg"
+                            className="relative grid h-8 w-8 place-items-center text-muted transition-colors hover:text-fg"
                             aria-label={`Favourites${favourites.length ? ` (${favourites.length})` : ""}`}
                         >
-                            <Heart size={17} aria-hidden="true" />
+                            <Heart size={16} aria-hidden="true" />
                             {favourites.length > 0 && (
-                                <span className="absolute right-1 top-1 grid h-4 min-w-4 place-items-center rounded-full bg-accent px-1 font-mono text-[9px] font-bold text-accent-contrast">
+                                <span className="absolute right-0.5 top-0.5 grid h-3.5 min-w-3.5 place-items-center bg-accent px-0.5 font-mono text-[8px] font-bold leading-none text-accent-contrast">
                                     {favourites.length}
                                 </span>
                             )}
@@ -109,16 +117,16 @@ export default function SiteHeader() {
                         <button
                             type="button"
                             onClick={toggle}
-                            className="grid h-9 w-9 place-items-center rounded-md text-muted transition-colors hover:bg-subtle hover:text-fg"
+                            className="grid h-8 w-8 place-items-center text-muted transition-colors hover:text-fg"
                             aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
                         >
-                            {theme === "dark" ? <Sun size={17} aria-hidden="true" /> : <Moon size={17} aria-hidden="true" />}
+                            {theme === "dark" ? <Sun size={16} aria-hidden="true" /> : <Moon size={16} aria-hidden="true" />}
                         </button>
 
                         <button
                             type="button"
                             onClick={() => setOpen((value) => !value)}
-                            className="grid h-9 w-9 place-items-center rounded-md text-muted transition-colors hover:bg-subtle hover:text-fg md:hidden"
+                            className="grid h-8 w-8 place-items-center text-muted transition-colors hover:text-fg md:hidden"
                             aria-label={open ? "Close menu" : "Open menu"}
                             aria-expanded={open}
                         >
@@ -128,30 +136,65 @@ export default function SiteHeader() {
                 </div>
             </header>
 
-            {open && (
-                <div className="fixed inset-x-0 top-16 z-40 border-b border-line bg-bg/98 backdrop-blur-xl md:hidden">
-                    <nav className="mx-auto max-w-shell px-4 py-3" aria-label="Mobile">
-                        {NAV.map((item) => (
-                            <Link
-                                key={item.href}
-                                href={item.href}
-                                onClick={() => setOpen(false)}
-                                className="flex items-center justify-between rounded-md px-3 py-3 text-base text-fg transition-colors hover:bg-subtle"
+            <AnimatePresence>
+                {open && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="fixed inset-x-0 bottom-0 top-14 z-40 overflow-y-auto bg-bg md:hidden"
+                    >
+                        <nav className="mx-auto max-w-shell px-4 py-8" aria-label="Mobile">
+                            {NAV.map((item, index) => (
+                                <motion.div
+                                    key={item.href}
+                                    initial={{ opacity: 0, y: 18 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.05 + index * 0.05, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                                >
+                                    <Link
+                                        href={item.href}
+                                        onClick={() => setOpen(false)}
+                                        className="group flex items-center justify-between border-b border-line py-4"
+                                    >
+                                        <span className="display text-4xl transition-colors group-hover:text-accent">
+                                            {item.label}
+                                        </span>
+                                        <span className="font-mono text-[10px] tracking-[0.2em] text-faint">{item.code}</span>
+                                    </Link>
+                                </motion.div>
+                            ))}
+                            <motion.div
+                                initial={{ opacity: 0, y: 18 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.3, duration: 0.4 }}
+                                className="mt-8 space-y-1"
                             >
-                                {item.label}
-                                <ArrowRight size={15} className="text-faint" aria-hidden="true" />
-                            </Link>
-                        ))}
-                        <Link
-                            href="/tools/favourites"
-                            className="flex items-center justify-between rounded-md px-3 py-3 text-base text-fg transition-colors hover:bg-subtle"
-                        >
-                            Favourites
-                            <span className="font-mono text-xs text-faint">{favourites.length}</span>
-                        </Link>
-                    </nav>
-                </div>
-            )}
+                                <Link
+                                    href="/tools/favourites"
+                                    onClick={() => setOpen(false)}
+                                    className="flex items-center justify-between py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-muted"
+                                >
+                                    Favourites
+                                    <span className="text-accent">{favourites.length}</span>
+                                </Link>
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        setOpen(false);
+                                        setPaletteOpen(true);
+                                    }}
+                                    className="flex w-full items-center justify-between py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-muted"
+                                >
+                                    Search
+                                    <ArrowUpRight size={14} aria-hidden="true" />
+                                </button>
+                            </motion.div>
+                        </nav>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
         </>

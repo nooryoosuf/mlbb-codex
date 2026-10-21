@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import RandomPicker from "@/components/tools/RandomPicker";
+import PageHeader from "@/components/layout/PageHeader";
 
 export const metadata: Metadata = {
     title: "Random hero picker",
@@ -9,15 +10,16 @@ export const metadata: Metadata = {
 
 export default function RandomPage() {
     return (
-        <div className="mx-auto max-w-shell px-4 py-10 sm:px-6 lg:px-8">
-            <header className="mb-8">
-                <div className="eyebrow mb-2">Tool</div>
-                <h1 className="font-display text-4xl">Random picker</h1>
-                <p className="mt-2 max-w-2xl text-sm text-muted">
-                    Let the codex decide. Restrict the pool by role or lane if you want a fair draw.
-                </p>
-            </header>
-            <RandomPicker />
-        </div>
+        <>
+            <PageHeader
+                index="04.4"
+                eyebrow="Tool"
+                title="Random picker"
+                description="Let the codex decide. Restrict the pool by role or lane for a fair draw."
+            />
+            <div className="mx-auto max-w-shell px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
+                <RandomPicker />
+            </div>
+        </>
     );
 }

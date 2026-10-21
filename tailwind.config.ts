@@ -25,26 +25,27 @@ export default {
                 success: "var(--success)",
             },
             fontFamily: {
-                display: ["var(--font-display)", "ui-serif", "Georgia", "serif"],
+                display: ["var(--font-display)", "\"Arial Narrow\"", "ui-sans-serif", "sans-serif"],
                 ui: ["var(--font-ui)", "ui-sans-serif", "system-ui", "sans-serif"],
                 mono: ["var(--font-mono)", "ui-monospace", "monospace"],
             },
             borderRadius: {
-                card: "0.75rem",
-                panel: "1rem",
+                card: "0px",
+                panel: "0px",
             },
             boxShadow: {
                 panel: "var(--shadow)",
             },
             maxWidth: {
-                shell: "84rem",
+                shell: "88rem",
             },
             transitionTimingFunction: {
                 editorial: "cubic-bezier(0.16, 1, 0.3, 1)",
+                snap: "cubic-bezier(0.22, 1, 0.36, 1)",
             },
             keyframes: {
                 "fade-up": {
-                    from: { opacity: "0", transform: "translateY(12px)" },
+                    from: { opacity: "0", transform: "translateY(14px)" },
                     to: { opacity: "1", transform: "translateY(0)" },
                 },
                 "fade-in": {
@@ -54,10 +55,14 @@ export default {
                 shimmer: {
                     "100%": { transform: "translateX(100%)" },
                 },
+                scan: {
+                    "0%": { transform: "translateY(-100%)" },
+                    "100%": { transform: "translateY(100%)" },
+                },
             },
             animation: {
-                "fade-up": "fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both",
-                "fade-in": "fade-in 0.4s ease-out both",
+                "fade-up": "fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both",
+                "fade-in": "fade-in 0.5s ease-out both",
                 shimmer: "shimmer 1.6s infinite",
             },
         },

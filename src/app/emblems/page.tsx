@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { emblems, talents } from "@/data/emblems";
 import { EmblemGrid } from "@/components/emblems/EmblemGrid";
+import PageHeader from "@/components/layout/PageHeader";
 
 export const metadata: Metadata = {
     title: "Emblems",
@@ -11,17 +12,22 @@ export const metadata: Metadata = {
 
 export default function EmblemsPage() {
     return (
-        <div className="mx-auto max-w-shell px-4 py-12 sm:px-6 lg:px-8">
-            <header className="mb-10 max-w-2xl">
-                <div className="eyebrow mb-3">Loadout</div>
-                <h1 className="font-display text-4xl leading-tight sm:text-5xl">Emblems</h1>
-                <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-                    The role-based emblem sets introduced in the current system, with their stats and the
-                    talent pool you can mix across them.
-                </p>
-            </header>
-
-            <EmblemGrid emblems={emblems} talents={talents} />
-        </div>
+        <>
+            <PageHeader
+                index="03"
+                eyebrow="Loadout"
+                title="Emblems"
+                description="The role-based emblem sets in the current system, with their stats and the talent pool you can mix across them."
+                meta={
+                    <div className="flex flex-wrap gap-6 font-mono text-[10px] uppercase tracking-[0.18em] text-faint">
+                        <span><span className="text-fg">{emblems.length}</span> emblems</span>
+                        <span><span className="text-fg">{talents.length}</span> talents</span>
+                    </div>
+                }
+            />
+            <div className="mx-auto max-w-shell px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
+                <EmblemGrid emblems={emblems} talents={talents} />
+            </div>
+        </>
     );
 }

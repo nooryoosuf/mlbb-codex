@@ -15,11 +15,13 @@ import {
     Clock,
     Droplet,
     ArrowUpRight,
+    ArrowLeft,
+    X,
+    Maximize2,
 } from "lucide-react";
 import SmartImage from "@/components/ui/SmartImage";
-import { Badge } from "@/components/ui/primitives";
 import { useFavourites } from "@/lib/use-favourites";
-import { heroSplash, heroPortrait, skinImage, skillIcon } from "@/lib/images";
+import { heroSplash, heroPortrait, skillIcon, skinImage } from "@/lib/images";
 import {
     formatStat,
     statRange,
@@ -38,14 +40,21 @@ const TYPE_LABEL: Record<string, string> = {
 export default function HeroProfile({ hero }: { hero: Hero }) {
     const { isFavourite, toggle, ready } = useFavourites();
     const [copied, setCopied] = useState(false);
-    const [activeSkin, setActiveSkin] = useState<string | null>(null);
     const [lightbox, setLightbox] = useState<string | null>(null);
 
     const favourite = ready && isFavourite(hero.slug);
     const neighbours = getHeroNeighbours(hero.slug);
     const related = getRelatedHeroes(hero, 6);
     const skinsWithArt = hero.skins.filter((skin) => skin.image);
-    const selectedSkin = skinsWithArt.find((skin) => skin.id === activeSkin) ?? null;
+    const [activeSkin, setActiveSkin] = useState(skinsWithArt[0]?.id ?? "");
+    const skinIndex = Math.max(0, skinsWithArt.findIndex((skin) => skin.id === activeSkin));
+    const selectedSkin = skinsWithArt[skinIndex] ?? null;
+
+    function stepSkin(direction: 1 | -1) {
+        if (skinsWithArt.length === 0) return;
+        const next = (skinIndex + direction + skinsWithArt.length) % skinsWithArt.length;
+        setActiveSkin(skinsWithArt[next].id);
+    }
 
     async function share() {
         const url = typeof window !== "undefined" ? window.location.href : "";
@@ -64,101 +73,97 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
 
     return (
         <div>
-            {/* ---------- Hero masthead ---------- */}
-            <section className="relative isolate border-b border-line">
-                <div className="absolute inset-0 -z-10 overflow-hidden">
+            {/* ---------- Masthead ---------- */}
+            <section className="relative isolate overflow-hidden border-b border-line">
+                <div className="pointer-events-none absolute inset-0 -z-10">
                     <SmartImage
                         image={heroSplash(hero)}
                         alt=""
                         name={hero.name}
                         priority
                         sizes="100vw"
-                        rounded="rounded-none"
-                        className="h-full w-full opacity-35"
-                        imgClassName="object-cover object-top"
+                        className="h-full w-full"
+                        imgClassName="object-cover object-top opacity-40"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/85 to-bg/45" />
+                    <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--bg)_0%,var(--bg)_35%,transparent_85%)]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(0deg,var(--bg)_0%,transparent_65%)]" />
+                    <div className="absolute inset-0 grid-lines opacity-40 [mask-image:radial-gradient(ellipse_at_20%_10%,black,transparent_70%)]" />
                 </div>
 
                 <div className="mx-auto max-w-shell px-4 pb-10 pt-6 sm:px-6 lg:px-8">
-                    <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-1.5 text-xs text-faint">
-                        <Link href="/" className="hover:text-fg">Home</Link>
-                        <span aria-hidden="true">/</span>
-                        <Link href="/heroes" className="hover:text-fg">Heroes</Link>
-                        <span aria-hidden="true">/</span>
+                    <nav aria-label="Breadcrumb" className="mb-10 flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.2em] text-faint">
+                        <Link href="/" className="transition-colors hover:text-fg">Home</Link>
+                        <span className="text-accent">/</span>
+                        <Link href="/heroes" className="transition-colors hover:text-fg">Heroes</Link>
+                        <span className="text-accent">/</span>
                         <span className="text-muted" aria-current="page">{hero.name}</span>
                     </nav>
 
-                    <div className="flex flex-col gap-8 sm:flex-row sm:items-end">
-                        <div className="relative w-28 shrink-0 sm:w-36">
-                            <SmartImage
-                                image={heroPortrait(hero)}
-                                alt={`${hero.name} portrait`}
-                                name={hero.name}
-                                priority
-                                sizes="144px"
-                                className="border border-line-strong shadow-panel"
-                            />
-                        </div>
-
+                    <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
                         <div className="min-w-0 flex-1">
-                            <div className="mb-2 flex flex-wrap items-center gap-2">
+                            <div className="mb-4 flex flex-wrap gap-1.5">
                                 {hero.roles.map((role) => (
-                                    <Badge key={role} tone="accent">{role}</Badge>
+                                    <span key={role} className="border border-accent bg-accent px-2 py-1 font-mono text-[9px] uppercase tracking-[0.16em] text-accent-contrast">
+                                        {role}
+                                    </span>
                                 ))}
                                 {hero.lanes.map((lane) => (
-                                    <Badge key={lane}>{lane}</Badge>
+                                    <span key={lane} className="border border-line-strong px-2 py-1 font-mono text-[9px] uppercase tracking-[0.16em] text-muted">
+                                        {lane}
+                                    </span>
                                 ))}
                             </div>
 
-                            <h1 className="font-display text-4xl leading-none tracking-tight sm:text-6xl">
-                                {hero.name}
-                            </h1>
-                            {hero.title && (
-                                <p className="mt-2 text-base text-muted sm:text-lg">{hero.title}</p>
-                            )}
+                            <h1 className="display text-[clamp(3rem,9vw,6.5rem)] leading-[0.82]">{hero.name}</h1>
+                            {hero.title && <p className="mt-3 text-base text-muted sm:text-lg">{hero.title}</p>}
 
-                            <div className="mt-5 flex flex-wrap items-center gap-2">
+                            <div className="mt-7 flex flex-wrap items-center gap-2">
                                 <button
                                     type="button"
                                     onClick={() => toggle(hero.slug)}
                                     aria-pressed={favourite}
-                                    className={`inline-flex h-9 items-center gap-2 rounded-md border px-3 text-sm font-medium transition-colors ${favourite
-                                            ? "border-accent bg-accent-soft text-accent"
-                                            : "border-line-strong text-fg hover:bg-subtle"
-                                        }`}
+                                    className={`btn h-10 px-4 ${favourite ? "btn-primary" : "btn-ghost"}`}
                                 >
-                                    <Heart size={14} fill={favourite ? "currentColor" : "none"} aria-hidden="true" />
+                                    <Heart size={13} fill={favourite ? "currentColor" : "none"} aria-hidden="true" />
                                     {favourite ? "Favourited" : "Favourite"}
                                 </button>
-                                <button
-                                    type="button"
-                                    onClick={share}
-                                    className="inline-flex h-9 items-center gap-2 rounded-md border border-line-strong px-3 text-sm font-medium text-fg transition-colors hover:bg-subtle"
-                                >
-                                    {copied ? <Check size={14} aria-hidden="true" /> : <Share2 size={14} aria-hidden="true" />}
-                                    {copied ? "Link copied" : "Share"}
+                                <button type="button" onClick={share} className="btn btn-ghost h-10 px-4">
+                                    {copied ? <Check size={13} aria-hidden="true" /> : <Share2 size={13} aria-hidden="true" />}
+                                    {copied ? "Copied" : "Share"}
                                 </button>
-                                {neighbours && (
-                                    <div className="ml-auto flex items-center gap-1">
-                                        <Link
-                                            href={`/hero/${neighbours.previous.slug}`}
-                                            className="inline-flex h-9 items-center gap-1 rounded-md border border-line-strong px-2.5 text-xs text-muted transition-colors hover:text-fg"
-                                            aria-label={`Previous hero: ${neighbours.previous.name}`}
-                                        >
-                                            <ChevronLeft size={14} aria-hidden="true" />
-                                            <span className="hidden sm:inline">{neighbours.previous.name}</span>
-                                        </Link>
-                                        <Link
-                                            href={`/hero/${neighbours.next.slug}`}
-                                            className="inline-flex h-9 items-center gap-1 rounded-md border border-line-strong px-2.5 text-xs text-muted transition-colors hover:text-fg"
-                                            aria-label={`Next hero: ${neighbours.next.name}`}
-                                        >
-                                            <span className="hidden sm:inline">{neighbours.next.name}</span>
-                                            <ChevronRight size={14} aria-hidden="true" />
-                                        </Link>
-                                    </div>
-                                )}
+                            </div>
+                        </div>
+
+                        <div className="flex shrink-0 items-end gap-4">
+                            {neighbours && (
+                                <div className="hidden flex-col gap-1 sm:flex">
+                                    <Link
+                                        href={`/hero/${neighbours.previous.slug}`}
+                                        className="group flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-faint transition-colors hover:text-accent"
+                                        aria-label={`Previous hero: ${neighbours.previous.name}`}
+                                    >
+                                        <ArrowLeft size={12} aria-hidden="true" />
+                                        {neighbours.previous.name}
+                                    </Link>
+                                    <Link
+                                        href={`/hero/${neighbours.next.slug}`}
+                                        className="group flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-faint transition-colors hover:text-accent"
+                                        aria-label={`Next hero: ${neighbours.next.name}`}
+                                    >
+                                        {neighbours.next.name}
+                                        <ArrowLeft size={12} className="rotate-180" aria-hidden="true" />
+                                    </Link>
+                                </div>
+                            )}
+
+                            <div className="w-28 border border-line-strong sm:w-36">
+                                <SmartImage
+                                    image={heroPortrait(hero)}
+                                    alt={`${hero.name} portrait`}
+                                    name={hero.name}
+                                    priority
+                                    sizes="144px"
+                                />
                             </div>
                         </div>
                     </div>
@@ -166,16 +171,19 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
             </section>
 
             <div className="mx-auto max-w-shell px-4 py-12 sm:px-6 lg:px-8">
-                <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_20rem]">
-                    <div className="min-w-0 space-y-12">
+                <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_20rem]">
+                    <div className="min-w-0 space-y-14">
                         {/* ---------- Overview ---------- */}
                         <section aria-labelledby="overview-heading">
-                            <h2 id="overview-heading" className="eyebrow mb-4">Overview</h2>
+                            <div className="mb-5 flex items-center gap-3">
+                                <span className="font-mono text-[10px] tracking-[0.2em] text-accent">01</span>
+                                <h2 id="overview-heading" className="eyebrow">Overview</h2>
+                            </div>
                             <p className="max-w-3xl text-base leading-relaxed text-muted">
                                 {hero.lore || `${hero.name} is a ${hero.roles.join("/").toLowerCase()} hero best played in the ${hero.lanes.join(" and ").toLowerCase()}.`}
                             </p>
 
-                            <dl className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-4">
+                            <dl className="mt-7 grid grid-cols-2 gap-px border border-line bg-line sm:grid-cols-4">
                                 <MetaCell label="Damage" value={hero.damageType} />
                                 <MetaCell label="Attack" value={hero.attackType} />
                                 <MetaCell label="Resource" value={hero.resource} />
@@ -183,10 +191,10 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
                             </dl>
 
                             {hero.specialties.length > 0 && (
-                                <div className="mt-4 flex flex-wrap items-center gap-2">
-                                    <span className="text-xs text-faint">Specialty:</span>
+                                <div className="mt-4 flex flex-wrap items-center gap-1.5">
+                                    <span className="mr-1 font-mono text-[9px] uppercase tracking-[0.18em] text-faint">Specialty</span>
                                     {hero.specialties.map((specialty) => (
-                                        <Badge key={specialty}>{specialty}</Badge>
+                                        <span key={specialty} className="tag h-6">{specialty}</span>
                                     ))}
                                 </div>
                             )}
@@ -194,12 +202,17 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
 
                         {/* ---------- Skills ---------- */}
                         <section aria-labelledby="skills-heading">
-                            <div className="mb-4 flex items-end justify-between gap-4">
-                                <h2 id="skills-heading" className="font-display text-3xl">Abilities</h2>
-                                <span className="font-mono text-xs text-faint">{hero.skills.length} skills</span>
+                            <div className="mb-5 flex items-end justify-between gap-4 border-b border-line pb-4">
+                                <div className="flex items-center gap-3">
+                                    <span className="font-mono text-[10px] tracking-[0.2em] text-accent">02</span>
+                                    <h2 id="skills-heading" className="display text-3xl">Abilities</h2>
+                                </div>
+                                <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">
+                                    {hero.skills.length} skills
+                                </span>
                             </div>
 
-                            <div className="divide-y divide-line overflow-hidden rounded-card border border-line">
+                            <div>
                                 {hero.skills.map((skill, index) => (
                                     <SkillRow key={skill.id} skill={skill} index={index} />
                                 ))}
@@ -207,51 +220,106 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
                         </section>
 
                         {/* ---------- Skins ---------- */}
-                        {skinsWithArt.length > 0 && (
+                        {skinsWithArt.length > 0 && selectedSkin && (
                             <section aria-labelledby="skins-heading">
-                                <div className="mb-4 flex items-end justify-between gap-4">
-                                    <h2 id="skins-heading" className="font-display text-3xl">Skins</h2>
-                                    <span className="font-mono text-xs text-faint">
+                                <div className="mb-5 flex items-end justify-between gap-4 border-b border-line pb-4">
+                                    <div className="flex items-center gap-3">
+                                        <span className="font-mono text-[10px] tracking-[0.2em] text-accent">03</span>
+                                        <h2 id="skins-heading" className="display text-3xl">Skins</h2>
+                                    </div>
+                                    <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">
                                         {skinsWithArt.length} with artwork
                                     </span>
                                 </div>
 
-                                <div className="grid grid-cols-3 gap-2.5 sm:grid-cols-4 lg:grid-cols-5">
-                                    {skinsWithArt.map((skin) => (
+                                <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_13rem]">
+                                    <div className="relative border border-line bg-[radial-gradient(ellipse_at_50%_0%,var(--accent-soft),transparent_65%)]">
                                         <button
-                                            key={skin.id}
                                             type="button"
-                                            onClick={() => {
-                                                setActiveSkin(skin.id);
-                                                setLightbox(skin.image);
-                                            }}
-                                            className={`group overflow-hidden rounded-card border text-left transition-colors ${selectedSkin?.id === skin.id
-                                                    ? "border-accent"
-                                                    : "border-line hover:border-line-strong"
-                                                }`}
+                                            onClick={() => setLightbox(selectedSkin.image)}
+                                            className="group relative grid h-[clamp(22rem,54vh,36rem)] w-full place-items-center p-4"
+                                            aria-label={`Open ${selectedSkin.name} at full size`}
                                         >
                                             <SmartImage
-                                                image={skinImage(skin.image)}
-                                                alt={`${skin.name} skin`}
-                                                name={skin.name}
-                                                rounded="rounded-none"
-                                                sizes="(max-width: 640px) 30vw, 15vw"
+                                                image={skinImage(selectedSkin.image)}
+                                                alt={`${selectedSkin.name} skin artwork`}
+                                                name={selectedSkin.name}
+                                                fit="contain"
+                                                aspect="auto"
+                                                sizes="(max-width: 1024px) 100vw, 55vw"
+                                                className="h-full w-full bg-transparent"
+                                                imgClassName="drop-shadow-[0_24px_60px_rgba(0,0,0,0.55)] transition-transform duration-500 ease-editorial group-hover:scale-[1.02]"
                                             />
-                                            <span className="block px-2 py-2">
-                                                <span className="block truncate text-xs font-medium text-fg">
-                                                    {skin.name}
-                                                </span>
-                                                {skin.rarity && (
-                                                    <span className="block truncate text-[10px] text-faint">
-                                                        {skin.rarity}
-                                                    </span>
-                                                )}
+                                            <span className="absolute right-3 top-3 inline-flex items-center gap-1.5 border border-line-strong bg-bg/70 px-2 py-1 font-mono text-[9px] uppercase tracking-[0.16em] text-faint backdrop-blur transition-colors group-hover:text-accent">
+                                                <Maximize2 size={10} aria-hidden="true" /> Full image
                                             </span>
                                         </button>
-                                    ))}
+
+                                        <div className="flex items-center justify-between gap-3 border-t border-line bg-bg/60 px-4 py-3">
+                                            <div className="min-w-0">
+                                                <h3 className="display truncate text-xl leading-none">{selectedSkin.name}</h3>
+                                                <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.16em] text-faint">
+                                                    {selectedSkin.rarity ?? "Skin"} · {String(skinIndex + 1).padStart(2, "0")} / {String(skinsWithArt.length).padStart(2, "0")}
+                                                </p>
+                                            </div>
+                                            <div className="flex shrink-0 items-center gap-1">
+                                                <button
+                                                    type="button"
+                                                    onClick={() => stepSkin(-1)}
+                                                    className="grid h-8 w-8 place-items-center border border-line text-muted transition-colors hover:border-accent hover:text-accent"
+                                                    aria-label="Previous skin"
+                                                >
+                                                    <ChevronLeft size={15} aria-hidden="true" />
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    onClick={() => stepSkin(1)}
+                                                    className="grid h-8 w-8 place-items-center border border-line text-muted transition-colors hover:border-accent hover:text-accent"
+                                                    aria-label="Next skin"
+                                                >
+                                                    <ChevronRight size={15} aria-hidden="true" />
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-2 overflow-x-auto pb-1 lg:max-h-[clamp(24rem,58vh,38rem)] lg:flex-col lg:overflow-y-auto lg:pb-0 lg:pr-1">
+                                        {skinsWithArt.map((skin) => {
+                                            const active = skin.id === selectedSkin.id;
+                                            return (
+                                                <button
+                                                    key={skin.id}
+                                                    type="button"
+                                                    onClick={() => setActiveSkin(skin.id)}
+                                                    aria-pressed={active}
+                                                    className={`group relative flex shrink-0 flex-col border text-left transition-colors ${
+                                                        active ? "border-accent bg-accent-soft/40" : "border-line bg-elevated hover:border-line-strong"
+                                                    }`}
+                                                >
+                                                    <div className="grid h-24 w-20 place-items-center p-1.5 sm:h-28 sm:w-full lg:h-28">
+                                                        <SmartImage
+                                                            image={skinImage(skin.image)}
+                                                            alt={`${skin.name} thumbnail`}
+                                                            name={skin.name}
+                                                            fit="contain"
+                                                            aspect="auto"
+                                                            sizes="112px"
+                                                            className="h-full w-full bg-transparent"
+                                                        />
+                                                    </div>
+                                                    <span className="block border-t border-line px-2 py-1.5">
+                                                        <span className="block truncate font-mono text-[9px] uppercase tracking-[0.1em] text-muted">
+                                                            {skin.name}
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
                                 </div>
-                                <p className="mt-3 text-xs text-faint">
-                                    Artwork shown for reference. Availability is not tracked here.
+
+                                <p className="mt-3 font-mono text-[9px] uppercase tracking-[0.16em] text-faint">
+                                    Artwork shown at full size. Availability is not tracked here.
                                 </p>
                             </section>
                         )}
@@ -259,8 +327,11 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
                         {/* ---------- Matchups ---------- */}
                         {(hero.strongAgainst.length > 0 || hero.weakAgainst.length > 0 || hero.synergies.length > 0) && (
                             <section aria-labelledby="matchups-heading">
-                                <h2 id="matchups-heading" className="mb-4 font-display text-3xl">Matchups</h2>
-                                <div className="grid gap-4 sm:grid-cols-3">
+                                <div className="mb-5 flex items-center gap-3 border-b border-line pb-4">
+                                    <span className="font-mono text-[10px] tracking-[0.2em] text-accent">04</span>
+                                    <h2 id="matchups-heading" className="display text-3xl">Matchups</h2>
+                                </div>
+                                <div className="grid gap-3 sm:grid-cols-3">
                                     <MatchupColumn
                                         title="Strong against"
                                         icon={Swords}
@@ -283,18 +354,21 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
                                         note={hero.relationNotes.assist}
                                     />
                                 </div>
-                                <p className="mt-3 text-xs text-faint">
-                                    Matchup notes are editorial guidance from the data source, not official win-rate statistics.
+                                <p className="mt-3 font-mono text-[9px] uppercase tracking-[0.16em] text-faint">
+                                    Editorial guidance from the data source, not official win-rate statistics.
                                 </p>
                             </section>
                         )}
                     </div>
 
                     {/* ---------- Sidebar ---------- */}
-                    <aside className="space-y-6">
-                        <section className="rounded-panel border border-line bg-elevated p-5">
-                            <h2 className="mb-4 font-display text-xl">Base stats</h2>
-                            <dl className="space-y-3">
+                    <aside className="space-y-4">
+                        <section className="border border-line bg-elevated">
+                            <div className="flex items-center justify-between border-b border-line px-5 py-3.5">
+                                <h2 className="display text-lg leading-none">Base stats</h2>
+                                <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-faint">Lv 1 → 15</span>
+                            </div>
+                            <dl className="space-y-3 px-5 py-4">
                                 <StatRow label="HP" value={statRange(hero.stats.hp)} />
                                 <StatRow label="HP regen" value={formatStat(hero.stats.hpRegen)} />
                                 {hero.stats.mana && hero.stats.mana[1] > 0 && (
@@ -308,15 +382,14 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
                                     <StatRow label="Attack range" value={formatStat(hero.stats.attackRange)} />
                                 )}
                             </dl>
-                            <p className="mt-4 border-t border-line pt-3 text-[11px] leading-relaxed text-faint">
-                                Values show level 1 → level 15 where the source provides both.
-                            </p>
                         </section>
 
                         {(hero.ratings.offense !== null || hero.ratings.difficulty !== null) && (
-                            <section className="rounded-panel border border-line bg-elevated p-5">
-                                <h2 className="mb-4 font-display text-xl">Ratings</h2>
-                                <div className="space-y-3.5">
+                            <section className="border border-line bg-elevated">
+                                <div className="border-b border-line px-5 py-3.5">
+                                    <h2 className="display text-lg leading-none">Ratings</h2>
+                                </div>
+                                <div className="space-y-4 px-5 py-4">
                                     <RatingBar label="Offense" value={hero.ratings.offense} />
                                     <RatingBar label="Durability" value={hero.ratings.durability} />
                                     <RatingBar label="Ability effects" value={hero.ratings.abilityEffects} />
@@ -326,26 +399,24 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
                         )}
 
                         {related.length > 0 && (
-                            <section className="rounded-panel border border-line bg-elevated p-5">
-                                <h2 className="mb-3 font-display text-xl">Related heroes</h2>
-                                <ul className="space-y-1">
+                            <section className="border border-line bg-elevated">
+                                <div className="border-b border-line px-5 py-3.5">
+                                    <h2 className="display text-lg leading-none">Related heroes</h2>
+                                </div>
+                                <ul className="p-2">
                                     {related.map((other) => (
                                         <li key={other.slug}>
                                             <Link
                                                 href={`/hero/${other.slug}`}
-                                                className="flex items-center gap-2.5 rounded px-1.5 py-1.5 transition-colors hover:bg-subtle"
+                                                className="group flex items-center gap-3 px-2 py-2 transition-colors hover:bg-subtle"
                                             >
-                                                <span className="h-8 w-8 shrink-0 overflow-hidden rounded border border-line">
-                                                    <SmartImage
-                                                        image={heroPortrait(other)}
-                                                        alt=""
-                                                        name={other.name}
-                                                        rounded="rounded-none"
-                                                        sizes="32px"
-                                                    />
+                                                <span className="h-9 w-6 shrink-0 overflow-hidden border border-line">
+                                                    <SmartImage image={heroPortrait(other)} alt="" name={other.name} sizes="24px" />
                                                 </span>
-                                                <span className="min-w-0 flex-1 truncate text-sm">{other.name}</span>
-                                                <ArrowUpRight size={13} className="shrink-0 text-faint" aria-hidden="true" />
+                                                <span className="min-w-0 flex-1 truncate text-sm transition-colors group-hover:text-accent">
+                                                    {other.name}
+                                                </span>
+                                                <ArrowUpRight size={12} className="shrink-0 text-faint" aria-hidden="true" />
                                             </Link>
                                         </li>
                                     ))}
@@ -355,13 +426,15 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
 
                         <Link
                             href={`/tools/compare?a=${hero.slug}`}
-                            className="flex items-center justify-between gap-3 rounded-panel border border-line bg-elevated p-5 transition-colors hover:border-accent"
+                            className="group flex items-center justify-between gap-3 border border-line bg-elevated px-5 py-4 transition-colors hover:border-accent"
                         >
                             <span>
                                 <span className="block text-sm font-medium">Compare {hero.name}</span>
-                                <span className="block text-xs text-muted">Against any other hero</span>
+                                <span className="mt-0.5 block font-mono text-[9px] uppercase tracking-[0.16em] text-faint">
+                                    Against any other hero
+                                </span>
                             </span>
-                            <Crosshair size={17} className="shrink-0 text-accent" aria-hidden="true" />
+                            <Crosshair size={17} className="shrink-0 text-accent transition-transform group-hover:rotate-90" aria-hidden="true" />
                         </Link>
                     </aside>
                 </div>
@@ -370,27 +443,57 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
             {/* ---------- Lightbox ---------- */}
             {lightbox && (
                 <div
-                    className="fixed inset-0 z-[95] flex items-center justify-center bg-black/85 p-4 backdrop-blur"
+                    className="fixed inset-0 z-[95] flex flex-col bg-black/95 p-4"
                     role="dialog"
                     aria-modal="true"
-                    aria-label="Skin artwork"
-                    onClick={() => setLightbox(null)}
+                    aria-label="Skin artwork at full size"
                 >
+                    <div className="flex items-center justify-between gap-4 pb-3">
+                        <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/50">
+                            {selectedSkin?.name} · Full artwork
+                        </span>
+                        <div className="flex items-center gap-2">
+                            <button
+                                type="button"
+                                onClick={() => stepSkin(-1)}
+                                className="grid h-9 w-9 place-items-center border border-white/20 text-white/70 transition-colors hover:border-accent hover:text-accent"
+                                aria-label="Previous skin"
+                            >
+                                <ChevronLeft size={17} aria-hidden="true" />
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => stepSkin(1)}
+                                className="grid h-9 w-9 place-items-center border border-white/20 text-white/70 transition-colors hover:border-accent hover:text-accent"
+                                aria-label="Next skin"
+                            >
+                                <ChevronRight size={17} aria-hidden="true" />
+                            </button>
+                            <button
+                                type="button"
+                                className="grid h-9 w-9 place-items-center border border-white/20 text-white/70 transition-colors hover:border-accent hover:text-accent"
+                                onClick={() => setLightbox(null)}
+                                aria-label="Close image"
+                            >
+                                <X size={17} aria-hidden="true" />
+                            </button>
+                        </div>
+                    </div>
+
                     <button
                         type="button"
-                        className="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-md bg-white/10 text-white hover:bg-white/20"
+                        className="grid flex-1 place-items-center overflow-hidden"
                         onClick={() => setLightbox(null)}
                         aria-label="Close image"
                     >
-                        <Crosshair size={16} aria-hidden="true" />
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                            src={lightbox}
+                            alt={`${selectedSkin?.name ?? "Skin"} artwork`}
+                            className="max-h-full max-w-full object-contain"
+                            onClick={(event) => event.stopPropagation()}
+                        />
                     </button>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                        src={lightbox}
-                        alt="Skin artwork"
-                        className="max-h-[88dvh] max-w-full rounded-card object-contain"
-                        onClick={(event) => event.stopPropagation()}
-                    />
                 </div>
             )}
         </div>
@@ -399,18 +502,18 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
 
 function MetaCell({ label, value }: { label: string; value: string | null }) {
     return (
-        <div className="bg-elevated px-4 py-3">
-            <dt className="text-[10px] uppercase tracking-wider text-faint">{label}</dt>
-            <dd className="mt-0.5 truncate text-sm font-medium text-fg">{value ?? "—"}</dd>
+        <div className="bg-elevated px-4 py-3.5">
+            <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-faint">{label}</dt>
+            <dd className="mt-1 truncate font-mono text-xs text-fg">{value ?? "—"}</dd>
         </div>
     );
 }
 
 function StatRow({ label, value }: { label: string; value: string }) {
     return (
-        <div className="flex items-baseline justify-between gap-3">
+        <div className="flex items-baseline justify-between gap-3 border-b border-line pb-2.5 last:border-b-0 last:pb-0">
             <dt className="text-xs text-muted">{label}</dt>
-            <dd className="font-mono text-xs text-fg">{value}</dd>
+            <dd className="font-mono text-[11px] text-fg">{value}</dd>
         </div>
     );
 }
@@ -419,12 +522,12 @@ function RatingBar({ label, value }: { label: string; value: number | null }) {
     const pct = value === null ? 0 : Math.min(100, (value / 10) * 100);
     return (
         <div>
-            <div className="mb-1 flex items-baseline justify-between">
-                <span className="text-xs text-muted">{label}</span>
+            <div className="mb-1.5 flex items-baseline justify-between">
+                <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-faint">{label}</span>
                 <span className="font-mono text-[11px] text-fg">{value ?? "—"}</span>
             </div>
-            <div className="h-1 overflow-hidden rounded-full bg-subtle">
-                <div className="h-full rounded-full bg-accent/80" style={{ width: `${pct}%` }} />
+            <div className="h-px w-full bg-subtle">
+                <div className="h-px bg-accent" style={{ width: `${pct}%` }} />
             </div>
         </div>
     );
@@ -432,50 +535,50 @@ function RatingBar({ label, value }: { label: string; value: number | null }) {
 
 function SkillRow({ skill, index }: { skill: HeroSkill; index: number }) {
     return (
-        <article className="bg-elevated p-4 sm:p-5">
-            <div className="flex items-start gap-3.5">
-                <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded border border-line bg-subtle">
-                    <SmartImage
-                        image={skillIcon(skill.icon)}
-                        alt=""
-                        name={String(index + 1)}
-                        rounded="rounded-none"
-                        sizes="48px"
-                    />
-                </div>
+        <article className="group grid gap-3 border-b border-line py-5 sm:grid-cols-[2rem_3.5rem_1fr] sm:gap-4">
+            <span className="font-mono text-[10px] text-faint">
+                {String(index + 1).padStart(2, "0")}
+            </span>
+            <div className="h-12 w-12 shrink-0 border border-line bg-subtle transition-colors group-hover:border-accent/60">
+                <SmartImage
+                    image={skillIcon(skill.icon)}
+                    alt=""
+                    name={String(index + 1)}
+                    sizes="48px"
+                />
+            </div>
 
-                <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-center gap-2">
-                        <h3 className="text-base font-semibold text-fg">{skill.name}</h3>
-                        <span className="rounded-full border border-line px-2 py-0.5 text-[10px] uppercase tracking-wider text-faint">
-                            {TYPE_LABEL[skill.type] ?? skill.type}
+            <div className="min-w-0">
+                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                    <h3 className="display text-xl leading-none">{skill.name}</h3>
+                    <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-accent">
+                        {TYPE_LABEL[skill.type] ?? skill.type}
+                    </span>
+                    {skill.tags.slice(0, 3).map((tag) => (
+                        <span key={tag} className="font-mono text-[9px] uppercase tracking-[0.12em] text-faint">
+                            {tag}
                         </span>
-                        {skill.tags.slice(0, 3).map((tag) => (
-                            <span key={tag} className="text-[10px] text-faint">
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-
-                    {skill.description && (
-                        <p className="mt-2 text-sm leading-relaxed text-muted">{skill.description}</p>
-                    )}
-
-                    {(skill.cooldown || skill.cost) && (
-                        <div className="mt-2.5 flex flex-wrap items-center gap-4 text-[11px] text-faint">
-                            {skill.cooldown && (
-                                <span className="inline-flex items-center gap-1">
-                                    <Clock size={11} aria-hidden="true" /> {skill.cooldown}s
-                                </span>
-                            )}
-                            {skill.cost && (
-                                <span className="inline-flex items-center gap-1">
-                                    <Droplet size={11} aria-hidden="true" /> {skill.cost}
-                                </span>
-                            )}
-                        </div>
-                    )}
+                    ))}
                 </div>
+
+                {skill.description && (
+                    <p className="mt-2 text-sm leading-relaxed text-muted">{skill.description}</p>
+                )}
+
+                {(skill.cooldown || skill.cost) && (
+                    <div className="mt-2.5 flex flex-wrap items-center gap-4 font-mono text-[9px] uppercase tracking-[0.14em] text-faint">
+                        {skill.cooldown && (
+                            <span className="inline-flex items-center gap-1.5">
+                                <Clock size={10} aria-hidden="true" /> {skill.cooldown}s
+                            </span>
+                        )}
+                        {skill.cost && (
+                            <span className="inline-flex items-center gap-1.5">
+                                <Droplet size={10} aria-hidden="true" /> {skill.cost}
+                            </span>
+                        )}
+                    </div>
+                )}
             </div>
         </article>
     );
@@ -497,21 +600,20 @@ function MatchupColumn({
     const colour =
         tone === "success" ? "text-success" : tone === "danger" ? "text-danger" : "text-accent";
     return (
-        <div className="rounded-card border border-line bg-elevated p-4">
-            <h3 className={`mb-3 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider ${colour}`}>
-                <Icon size={13} aria-hidden="true" />
-                {title}
-            </h3>
+        <div className="border border-line bg-elevated p-4">
+            <div className="mb-3 flex items-center justify-between">
+                <h3 className={`inline-flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-[0.18em] ${colour}`}>
+                    <Icon size={12} aria-hidden="true" />
+                    {title}
+                </h3>
+                <span className="font-mono text-[9px] text-faint">{slugs.length}</span>
+            </div>
             {slugs.length === 0 ? (
                 <p className="text-xs text-faint">No data for this hero.</p>
             ) : (
                 <div className="flex flex-wrap gap-1.5">
                     {slugs.map((slug) => (
-                        <Link
-                            key={slug}
-                            href={`/hero/${slug}`}
-                            className="rounded-full border border-line px-2.5 py-1 text-[11px] text-muted transition-colors hover:border-line-strong hover:text-fg"
-                        >
+                        <Link key={slug} href={`/hero/${slug}`} className="tag h-6">
                             {slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}
                         </Link>
                     ))}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { items } from "@/data";
 import ItemBrowser from "@/components/items/ItemBrowser";
+import PageHeader from "@/components/layout/PageHeader";
 
 export const metadata: Metadata = {
     title: "Items",
@@ -10,15 +11,22 @@ export const metadata: Metadata = {
 
 export default function ItemsPage() {
     return (
-        <div className="mx-auto max-w-shell px-4 py-12 sm:px-6 lg:px-8">
-            <header className="mb-10 max-w-2xl">
-                <div className="eyebrow mb-3">Equipment</div>
-                <h1 className="font-display text-4xl leading-tight sm:text-5xl">Item database</h1>
-                <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-                    Every item in the current dataset with its bonuses, passive effects, and build path.
-                </p>
-            </header>
-            <ItemBrowser />
-        </div>
+        <>
+            <PageHeader
+                index="02"
+                eyebrow="Equipment"
+                title="Item database"
+                description="Every item in the current dataset with its bonuses, passive effects and build path."
+                meta={
+                    <div className="flex flex-wrap gap-6 font-mono text-[10px] uppercase tracking-[0.18em] text-faint">
+                        <span><span className="text-fg">{items.length}</span> items</span>
+                        <span><span className="text-fg">7</span> categories</span>
+                    </div>
+                }
+            />
+            <div className="mx-auto max-w-shell px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
+                <ItemBrowser />
+            </div>
+        </>
     );
 }

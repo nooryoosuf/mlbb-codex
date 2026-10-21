@@ -4,10 +4,10 @@ import type { ReactNode } from "react";
 type Tone = "neutral" | "accent" | "danger" | "success";
 
 const TONES: Record<Tone, string> = {
-    neutral: "border-line bg-subtle text-muted",
-    accent: "border-accent/35 bg-accent-soft text-accent",
-    danger: "border-danger/35 bg-danger/10 text-danger",
-    success: "border-success/35 bg-success/10 text-success",
+    neutral: "border-line-strong text-muted",
+    accent: "border-accent/45 bg-accent-soft text-accent",
+    danger: "border-danger/40 bg-danger/10 text-danger",
+    success: "border-success/40 bg-success/10 text-success",
 };
 
 export function Badge({
@@ -21,7 +21,7 @@ export function Badge({
 }) {
     return (
         <span
-            className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium leading-5 ${TONES[tone]} ${className}`}
+            className={`inline-flex items-center gap-1 border px-2 py-0.5 font-mono text-[10px] font-medium uppercase tracking-[0.14em] leading-4 ${TONES[tone]} ${className}`}
         >
             {children}
         </span>
@@ -30,22 +30,29 @@ export function Badge({
 
 export function SectionHeader({
     eyebrow,
+    index,
     title,
     description,
     action,
 }: {
     eyebrow?: string;
+    index?: string;
     title: string;
     description?: string;
     action?: ReactNode;
 }) {
     return (
-        <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-b border-line pb-5">
             <div className="min-w-0">
-                {eyebrow && <div className="eyebrow mb-2">{eyebrow}</div>}
-                <h2 className="font-display text-3xl leading-tight sm:text-4xl">{title}</h2>
+                {(eyebrow || index) && (
+                    <div className="mb-3 flex items-center gap-3">
+                        {index && <span className="font-mono text-[10px] tracking-[0.2em] text-accent">{index}</span>}
+                        {eyebrow && <span className="eyebrow">{eyebrow}</span>}
+                    </div>
+                )}
+                <h2 className="display text-3xl sm:text-4xl lg:text-5xl">{title}</h2>
                 {description && (
-                    <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">{description}</p>
+                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">{description}</p>
                 )}
             </div>
             {action}
@@ -68,14 +75,14 @@ export function StatBar({
     return (
         <div>
             <div className="mb-1.5 flex items-baseline justify-between gap-2">
-                <span className="text-xs text-muted">{label}</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-faint">{label}</span>
                 <span className="font-mono text-xs text-fg">
                     {value === null ? "—" : `${value}${suffix ?? ""}`}
                 </span>
             </div>
-            <div className="h-1.5 overflow-hidden rounded-full bg-subtle" role="presentation">
+            <div className="h-1 w-full bg-subtle" role="presentation">
                 <div
-                    className="h-full rounded-full bg-accent/80 transition-[width] duration-500"
+                    className="h-full bg-accent transition-[width] duration-700 ease-editorial"
                     style={{ width: `${pct}%` }}
                 />
             </div>
@@ -93,9 +100,9 @@ export function EmptyState({
     action?: ReactNode;
 }) {
     return (
-        <div className="grid place-items-center rounded-panel border border-dashed border-line-strong bg-elevated/50 px-6 py-16 text-center">
+        <div className="grid place-items-center border border-dashed border-line-strong px-6 py-20 text-center">
             <div className="max-w-sm">
-                <h3 className="font-display text-2xl">{title}</h3>
+                <h3 className="display text-2xl">{title}</h3>
                 {description && <p className="mt-2 text-sm leading-relaxed text-muted">{description}</p>}
                 {action && <div className="mt-6">{action}</div>}
             </div>
@@ -114,15 +121,8 @@ export function LinkButton({
     variant?: "primary" | "ghost";
     className?: string;
 }) {
-    const styles =
-        variant === "primary"
-            ? "bg-accent text-accent-contrast hover:bg-accent-strong"
-            : "border border-line-strong text-fg hover:bg-subtle";
     return (
-        <Link
-            href={href}
-            className={`inline-flex h-10 items-center justify-center gap-2 rounded-md px-4 text-sm font-semibold transition-colors ${styles} ${className}`}
-        >
+        <Link href={href} className={`btn ${variant === "primary" ? "btn-primary" : "btn-ghost"} ${className}`}>
             {children}
         </Link>
     );

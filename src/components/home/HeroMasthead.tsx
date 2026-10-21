@@ -1,117 +1,221 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Search, Sparkles } from "lucide-react";
+import { useEffect } from "react";
+import { motion, useMotionValue, useReducedMotion, useSpring } from "framer-motion";
+import { ArrowRight, ArrowUpRight, Search } from "lucide-react";
 import SmartImage from "@/components/ui/SmartImage";
 import { heroSplash, heroPortrait } from "@/lib/images";
-import { heroes, getHeroOfTheDay, type Hero } from "@/data";
+import { heroes, items, patches, getHeroOfTheDay, getLatestPatch, type Hero } from "@/data";
 import { useHydrated } from "@/lib/store";
+import { SplitLines } from "@/components/ui/motion";
 
-const QUICK_LINKS = [
-    { href: "/heroes", label: "Heroes" },
-    { href: "/items", label: "Items" },
-    { href: "/emblems", label: "Emblems" },
-    { href: "/tools/compare", label: "Compare" },
-    { href: "/tools/counters", label: "Counters" },
+const skinCount = heroes.reduce((total, hero) => total + hero.skins.length, 0);
+
+const STATS = [
+    { value: heroes.length, label: "Heroes" },
+    { value: items.length, label: "Items" },
+    { value: skinCount, label: "Skins" },
+    { value: patches.length, label: "Patches" },
 ];
 
 export default function HeroMasthead() {
-    // Resolved after hydration so the static build does not freeze on its build date.
     const hydrated = useHydrated();
     const spotlight: Hero = hydrated ? getHeroOfTheDay() : heroes[0];
+    const reduce = useReducedMotion();
+
+    const mx = useMotionValue(0);
+    const my = useMotionValue(0);
+    const x = useSpring(mx, { stiffness: 50, damping: 18, mass: 0.6 });
+    const y = useSpring(my, { stiffness: 50, damping: 18, mass: 0.6 });
+
+    useEffect(() => {
+        if (reduce) return;
+        const onMove = (event: PointerEvent) => {
+            if (event.pointerType !== "mouse") return;
+            mx.set((event.clientX / window.innerWidth - 0.5) * -18);
+            my.set((event.clientY / window.innerHeight - 0.5) * -12);
+        };
+        window.addEventListener("pointermove", onMove);
+        return () => window.removeEventListener("pointermove", onMove);
+    }, [mx, my, reduce]);
 
     return (
         <section className="relative isolate overflow-hidden border-b border-line">
-            <div className="absolute inset-0 -z-10">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_-10%,var(--accent-soft),transparent_55%)]" />
-                <div className="absolute inset-0 bg-[linear-gradient(var(--grid-line)_1px,transparent_1px),linear-gradient(90deg,var(--grid-line)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_at_50%_0%,black,transparent_75%)]" />
+            <div className="pointer-events-none absolute inset-0 -z-10">
+                <motion.div
+                    className="absolute inset-y-[-4%] right-0 w-full lg:w-[68%]"
+                    style={{ x, y }}
+                    initial={reduce ? false : { opacity: 0, scale: 1.04 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+                >
+                    <SmartImage
+                        image={heroSplash(spotlight)}
+                        alt=""
+                        name={spotlight.name}
+                        priority
+                        sizes="100vw"
+                        className="h-full w-full"
+                        imgClassName="object-cover object-top opacity-55 lg:opacity-80"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--bg)_0%,var(--bg)_28%,transparent_78%)]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(0deg,var(--bg)_0%,transparent_60%)]" />
+                </motion.div>
+
+                <div className="absolute inset-0 grid-lines opacity-70 [mask-image:radial-gradient(ellipse_at_30%_20%,black,transparent_72%)]" />
+                <div className="absolute -left-40 top-0 h-[36rem] w-[36rem] rounded-full bg-accent/10 blur-[140px]" />
+                <div className="absolute right-0 top-0 hidden h-full w-px bg-line-strong lg:block" style={{ left: "62%" }} />
             </div>
 
-            <div className="mx-auto grid max-w-shell gap-10 px-4 pb-14 pt-12 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14 lg:px-8 lg:pb-20 lg:pt-16">
-                <div className="max-w-xl">
-                    <div className="eyebrow mb-5 flex items-center gap-2">
-                        <Sparkles size={12} className="text-accent" aria-hidden="true" />
-                        Mobile Legends companion
+            <div className="mx-auto flex min-h-[86svh] max-w-shell flex-col px-4 pt-14 sm:px-6 lg:px-8">
+                <div className="grid flex-1 items-center gap-12 py-10 lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-16 lg:py-16">
+                    <div className="max-w-3xl">
+                        <motion.div
+                            initial={reduce ? false : { opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                            className="mb-6 flex flex-wrap items-center gap-3"
+                        >
+                            <span className="inline-flex items-center gap-2 border border-line-strong bg-bg/50 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.24em] text-muted backdrop-blur">
+                                <span className="h-1.5 w-1.5 animate-pulse bg-accent" />
+                                Mobile Legends companion
+                            </span>
+                            <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-faint">
+                                Patch {getLatestPatch()?.version ?? "—"}
+                            </span>
+                        </motion.div>
+
+                        <h1 className="display text-[clamp(2.9rem,8vw,6.6rem)]">
+                            <SplitLines
+                                lines={[
+                                    <span key="a">Know every hero.</span>,
+                                    <span key="b" className="text-accent">Master every match.</span>,
+                                ]}
+                            />
+                        </h1>
+
+                        <motion.p
+                            initial={reduce ? false : { opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                            className="mt-7 max-w-xl text-sm leading-relaxed text-muted sm:text-base"
+                        >
+                            Verified stats, skills, skins and matchups for all {heroes.length} heroes
+                            — plus the tools to compare them and plan your next build. No invented
+                            numbers, no filler.
+                        </motion.p>
+
+                        <motion.div
+                            initial={reduce ? false : { opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                            className="mt-9 flex flex-wrap items-center gap-2.5"
+                        >
+                            <Link href="/heroes" className="btn btn-primary">
+                                <Search size={14} aria-hidden="true" />
+                                Enter the codex
+                            </Link>
+                            <Link href={`/hero/${spotlight.slug}`} className="btn btn-ghost">
+                                Spotlight: {spotlight.name}
+                                <ArrowRight size={14} aria-hidden="true" />
+                            </Link>
+                        </motion.div>
                     </div>
 
-                    <h1 className="font-display text-[2.75rem] leading-[1.03] tracking-tight sm:text-6xl lg:text-[4.25rem]">
-                        Know every hero.
-                        <br />
-                        <span className="text-accent">Master every match.</span>
-                    </h1>
-
-                    <p className="mt-5 max-w-lg text-sm leading-relaxed text-muted sm:text-base">
-                        Verified stats, skills, skins, and matchups for all {heroes.length} Mobile Legends
-                        heroes — plus the tools to compare them and plan your next build.
-                    </p>
-
-                    <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                        <Link
-                            href="/heroes"
-                            className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-accent px-5 text-sm font-semibold text-accent-contrast transition-colors hover:bg-accent-strong"
-                        >
-                            <Search size={16} aria-hidden="true" />
-                            Browse the roster
-                        </Link>
+                    <motion.div
+                        initial={reduce ? false : { opacity: 0, y: 24 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                        className="w-full justify-self-end sm:max-w-sm lg:max-w-none"
+                    >
                         <Link
                             href={`/hero/${spotlight.slug}`}
-                            className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-line-strong px-5 text-sm font-semibold text-fg transition-colors hover:bg-subtle"
+                            className="group relative block border border-line-strong bg-bg/70 p-4 backdrop-blur-md clip-notch transition-colors hover:border-accent"
                         >
-                            Hero of the day
-                            <ArrowRight size={15} aria-hidden="true" />
-                        </Link>
-                    </div>
+                            <div className="mb-4 flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.24em] text-faint">
+                                <span>Hero of the day</span>
+                                <span className="text-accent">/ 01</span>
+                            </div>
 
-                    <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-line pt-6 text-sm">
-                        {QUICK_LINKS.map((link) => (
-                            <Link key={link.href} href={link.href} className="text-muted transition-colors hover:text-fg">
-                                {link.label}
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-
-                <div className="relative">
-                    <Link href={`/hero/${spotlight.slug}`} className="group block">
-                        <div className="relative overflow-hidden rounded-panel border border-line-strong bg-elevated shadow-panel">
-                            <SmartImage
-                                image={heroSplash(spotlight)}
-                                alt={`${spotlight.name} splash art`}
-                                name={spotlight.name}
-                                priority
-                                sizes="(max-width: 1024px) 100vw, 46vw"
-                                rounded="rounded-none"
-                                imgClassName="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                            />
-                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />
-
-                            <div className="absolute inset-x-0 bottom-0 flex items-end gap-3 p-4 sm:p-5">
-                                <div className="h-20 w-14 shrink-0 overflow-hidden rounded border border-white/20 sm:h-24 sm:w-16">
+                            <div className="flex items-stretch gap-4">
+                                <div className="w-16 shrink-0 border border-line-strong">
                                     <SmartImage
                                         image={heroPortrait(spotlight)}
                                         alt={`${spotlight.name} portrait`}
                                         name={spotlight.name}
-                                        rounded="rounded-none"
+                                        priority
                                         sizes="64px"
                                     />
                                 </div>
                                 <div className="min-w-0 flex-1">
-                                    <div className="text-[10px] font-semibold uppercase tracking-[0.14em] text-accent">
-                                        Hero of the day
-                                    </div>
-                                    <h2 className="truncate font-display text-2xl text-white sm:text-3xl">
+                                    <h2 className="display truncate text-3xl leading-none transition-colors group-hover:text-accent">
                                         {spotlight.name}
                                     </h2>
-                                    <p className="truncate text-xs text-white/70">
+                                    <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-muted">
                                         {spotlight.title ?? spotlight.roles.join(" · ")}
                                     </p>
+                                    <div className="mt-3 flex flex-wrap gap-1">
+                                        {[...spotlight.roles, ...spotlight.lanes].slice(0, 3).map((tag) => (
+                                            <span
+                                                key={tag}
+                                                className="border border-line px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-[0.14em] text-faint"
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
-                                <span className="hidden shrink-0 rounded-full border border-white/25 px-3 py-1 text-[11px] text-white/80 transition-colors group-hover:border-accent group-hover:text-accent sm:block">
-                                    View profile
+                            </div>
+
+                            <div className="mt-4 flex items-center justify-between border-t border-line pt-3">
+                                <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-faint">
+                                    {spotlight.releaseYear ?? "—"}
+                                </span>
+                                <span className="inline-flex items-center gap-1 font-mono text-[9px] uppercase tracking-[0.2em] text-accent">
+                                    Open dossier
+                                    <ArrowUpRight size={12} aria-hidden="true" />
                                 </span>
                             </div>
+                        </Link>
+                    </motion.div>
+                </div>
+
+                <motion.dl
+                    initial={reduce ? false : { opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.55 }}
+                    className="grid grid-cols-2 border-t border-line sm:grid-cols-4"
+                >
+                    {STATS.map((stat, index) => (
+                        <div
+                            key={stat.label}
+                            className={`flex items-baseline gap-3 px-1 py-5 sm:px-4 ${index !== 0 ? "sm:border-l sm:border-line" : ""} ${
+                                index % 2 === 1 ? "border-l border-line" : ""
+                            }`}
+                        >
+                            <dd className="display text-4xl leading-none sm:text-5xl">{stat.value}</dd>
+                            <dt className="eyebrow">{stat.label}</dt>
                         </div>
-                    </Link>
+                    ))}
+                </motion.dl>
+            </div>
+
+            <div className="marquee overflow-hidden border-t border-line py-2.5">
+                <div className="marquee-track">
+                    {[0, 1].map((copy) => (
+                        <div key={copy} className="flex shrink-0 items-center" aria-hidden={copy === 1}>
+                            {heroes.slice(0, 24).map((hero) => (
+                                <span
+                                    key={`${copy}-${hero.slug}`}
+                                    className="flex items-center font-mono text-[10px] uppercase tracking-[0.22em] text-faint"
+                                >
+                                    <span className="px-5">{hero.name}</span>
+                                    <span className="text-accent/60">/</span>
+                                </span>
+                            ))}
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
