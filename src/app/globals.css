@@ -11,10 +11,10 @@
     --fg-faint: #63625d;
     --border: rgba(242, 240, 233, 0.09);
     --border-strong: rgba(242, 240, 233, 0.22);
-    --accent: #e8b64f;
-    --accent-strong: #ffd57e;
-    --accent-contrast: #141005;
-    --accent-soft: rgba(232, 182, 79, 0.12);
+    --accent: #e30b5c;
+    --accent-strong: #ff2f74;
+    --accent-contrast: #ffffff;
+    --accent-soft: rgba(227, 11, 92, 0.14);
     --danger: #e2604c;
     --success: #7ec48f;
     --shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.9);
@@ -33,10 +33,10 @@
     --fg-faint: #8b8477;
     --border: rgba(18, 19, 22, 0.11);
     --border-strong: rgba(18, 19, 22, 0.24);
-    --accent: #9a5e12;
-    --accent-strong: #7d4a08;
-    --accent-contrast: #fffaf0;
-    --accent-soft: rgba(154, 94, 18, 0.1);
+    --accent: #b0003f;
+    --accent-strong: #8a0031;
+    --accent-contrast: #fff7f9;
+    --accent-soft: rgba(176, 0, 63, 0.1);
     --danger: #a8422f;
     --success: #3f7a51;
     --shadow: 0 24px 60px -30px rgba(18, 19, 22, 0.25);
@@ -267,7 +267,7 @@
     inset: 0;
     z-index: 2;
     pointer-events: none;
-    background: linear-gradient(100deg, transparent 20%, rgba(232, 182, 79, 0.16) 50%, transparent 80%);
+    background: linear-gradient(100deg, transparent 20%, rgba(227, 11, 92, 0.18) 50%, transparent 80%);
     transform: translateX(-120%);
     transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
   }

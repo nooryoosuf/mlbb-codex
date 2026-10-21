@@ -6,7 +6,7 @@ import { motion, useMotionValue, useReducedMotion, useSpring } from "framer-moti
 import { ArrowRight, ArrowUpRight, Search } from "lucide-react";
 import SmartImage from "@/components/ui/SmartImage";
 import { heroSplash, heroPortrait } from "@/lib/images";
-import { heroes, items, patches, getHeroOfTheDay, getLatestPatch, type Hero } from "@/data";
+import { heroes, items, patches, meta, getHeroOfTheDay, getLatestPatch, type Hero } from "@/data";
 import { useHydrated } from "@/lib/store";
 import { SplitLines } from "@/components/ui/motion";
 
@@ -18,6 +18,11 @@ const STATS = [
     { value: skinCount, label: "Skins" },
     { value: patches.length, label: "Patches" },
 ];
+
+const MOST_BANNED = [...meta.heroes]
+    .filter((entry) => entry.banRate !== null)
+    .sort((a, b) => (b.banRate ?? 0) - (a.banRate ?? 0))
+    .slice(0, 4);
 
 export default function HeroMasthead() {
     const hydrated = useHydrated();
@@ -86,7 +91,7 @@ export default function HeroMasthead() {
                             </span>
                         </motion.div>
 
-                        <h1 className="display text-[clamp(2.9rem,8vw,6.6rem)]">
+                        <h1 className="display whitespace-normal text-[clamp(2.6rem,8vw,6.6rem)] sm:whitespace-nowrap">
                             <SplitLines
                                 lines={[
                                     <span key="a">Know every hero.</span>,
@@ -127,7 +132,7 @@ export default function HeroMasthead() {
                         initial={reduce ? false : { opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                        className="w-full justify-self-end sm:max-w-sm lg:max-w-none"
+                        className="w-full justify-self-end space-y-3 sm:max-w-sm lg:max-w-none"
                     >
                         <Link
                             href={`/hero/${spotlight.slug}`}
@@ -178,6 +183,59 @@ export default function HeroMasthead() {
                                 </span>
                             </div>
                         </Link>
+
+                        <div className="border border-line bg-bg/70 backdrop-blur-md">
+                            <div className="flex items-center justify-between gap-2 border-b border-line px-3 py-2">
+                                <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-accent">
+                                    Live meta / ban rate
+                                </span>
+                                <span className="font-mono text-[8px] uppercase tracking-[0.12em] text-faint">
+                                    {meta.snapshot}
+                                </span>
+                            </div>
+                            <ol>
+                                {MOST_BANNED.map((entry, index) => (
+                                    <li key={entry.slug} className="border-b border-line last:border-b-0">
+                                        <Link
+                                            href={`/hero/${entry.slug}`}
+                                            className="group grid grid-cols-[0.9rem_1fr_auto] items-center gap-2 px-3 py-2"
+                                        >
+                                            <span className="font-mono text-[9px] text-faint">
+                                                {String(index + 1).padStart(2, "0")}
+                                            </span>
+                                            <span className="min-w-0">
+                                                <span className="flex items-center gap-1.5">
+                                                    <span className="truncate text-[12px] text-fg transition-colors group-hover:text-accent">
+                                                        {entry.name}
+                                                    </span>
+                                                    <span className="shrink-0 border border-line px-1 font-mono text-[8px] leading-4 text-faint">
+                                                        {entry.tier ?? "—"}
+                                                    </span>
+                                                </span>
+                                                <span className="mt-0.5 block font-mono text-[8px] uppercase tracking-[0.1em] text-faint">
+                                                    W {entry.winRate?.toFixed(1) ?? "—"} / P {entry.pickRate?.toFixed(1) ?? "—"}
+                                                </span>
+                                            </span>
+                                            <span className="text-right">
+                                                <span className="block font-mono text-sm leading-none text-accent">
+                                                    {entry.banRate?.toFixed(1)}%
+                                                </span>
+                                                <span className="mt-1 block font-mono text-[7px] uppercase tracking-[0.12em] text-faint">
+                                                    banned
+                                                </span>
+                                            </span>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ol>
+                            <Link
+                                href="/meta"
+                                className="flex items-center justify-between border-t border-line px-3 py-2 font-mono text-[9px] uppercase tracking-[0.16em] text-muted transition-colors hover:text-accent"
+                            >
+                                Full meta board
+                                <ArrowRight size={11} aria-hidden="true" />
+                            </Link>
+                        </div>
                     </motion.div>
                 </div>
 

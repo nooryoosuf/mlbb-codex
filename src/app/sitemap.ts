@@ -6,7 +6,7 @@ export const dynamic = "force-static";
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/$/, "");
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const staticRoutes = ["", "/heroes", "/items", "/emblems", "/tools", "/tools/compare", "/tools/counters", "/tools/favourites", "/tools/random"];
+    const staticRoutes = ["", "/meta", "/heroes", "/items", "/emblems", "/patches", "/tools", "/tools/compare", "/tools/counters", "/tools/favourites", "/tools/random"];
 
     return [
         ...staticRoutes.map((route) => ({

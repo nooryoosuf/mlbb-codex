@@ -56,9 +56,11 @@ export default function SiteFooter() {
                         <div>
                             <div className="eyebrow mb-4">Explore</div>
                             <ul className="space-y-2.5 text-sm text-muted">
+                                <li><Link href="/meta" className="transition-colors hover:text-accent">Live meta</Link></li>
                                 <li><Link href="/heroes" className="transition-colors hover:text-accent">Heroes</Link></li>
                                 <li><Link href="/items" className="transition-colors hover:text-accent">Items</Link></li>
                                 <li><Link href="/emblems" className="transition-colors hover:text-accent">Emblems</Link></li>
+                                <li><Link href="/patches" className="transition-colors hover:text-accent">Patch notes</Link></li>
                             </ul>
                         </div>
                         <div>

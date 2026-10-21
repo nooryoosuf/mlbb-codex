@@ -10,9 +10,11 @@ static site and deployed to GitHub Pages.
 
 | Route | Description |
 | --- | --- |
-| `/` | Editorial home: hero of the day, roster overview, latest patch, tool entry points |
+| `/` | Editorial home: live meta board, hero of the day, roster overview, patch highlights, tools |
+| `/meta` | Live ranked meta: win, pick and ban rates, tier letters, filters and sorting |
+| `/patches` | Recent patch notes with highlights and expandable sections |
 | `/heroes` | Hero catalogue with search, combined role/lane/favourite filters, sorting and grid/compact views |
-| `/hero/[slug]` | Hero dossier: stats, ratings, skills with cooldowns, skins, matchups, related heroes and neighbours |
+| `/hero/[id]` | Hero dossier: stats, ratings, live ranked rates, skills with cooldowns, 9:16 skins, matchups |
 | `/items` | Item catalogue grouped by category with search |
 | `/items/[slug]` | Item detail with stats and build context |
 | `/emblems` | Emblems and talents |
@@ -33,19 +35,33 @@ The site has no runtime data fetching. Two sources are merged at build time:
   splash art, items and patches. Wiki-derived content, licensed CC BY-SA.
 - **Moonton GMS API** — skill icons, cooldowns/costs, skill tags, English lore and
   hero relations.
+- **Mobile Legends Wiki (Fandom)** — vertical 9:16 skin posters (CC BY-SA) and
+  patch-note wikitext.
+- **MythicLab** (`mythiclab.app`) — official ranked win/pick/ban rates and tier
+  letters, republished from `mobilelegends.com/rank`. Credited in the UI.
 
 ```bash
-python scripts/fetch_mlbbdex.py   # cached fetch -> scripts/.cache/mlbbdex/
-python scripts/build_dataset.py   # merge + download art -> src/data/*.json, public/
+python scripts/fetch_mlbbdex.py    # cached fetch -> scripts/.cache/mlbbdex/
+python scripts/build_dataset.py    # merge + download art -> src/data/*.json, public/
+python scripts/fetch_skin_art.py   # 9:16 skin art URLs -> src/data/skin_art.json
+python scripts/fetch_meta.py       # live ranked rates -> src/data/meta.json
+python scripts/fetch_patches.py    # recent patch notes -> src/data/patch_notes.json
 ```
+
+`fetch_skin_art.py` resolves the Wiki's vertical poster for each skin and falls
+back to the local 240×390 thumbnail when the Wiki has no 9:16 render. Artwork is
+hotlinked from `static.wikia.nocookie.net` with the original dimensions recorded.
 
 `fetch_mlbbdex.py` caches every response on disk and backs off on HTTP 429, so the
 pipeline is safe to re-run. `build_dataset.py` writes:
 
 ```
-src/data/heroes.json    134 heroes, 586 skills, 1062 skins, relations, lore
-src/data/items.json     102 items with stats and icons
-src/data/patches.json   276 patches
+src/data/heroes.json      134 heroes, 586 skills, 1062 skins, relations, lore
+src/data/items.json       102 items with stats and icons
+src/data/patches.json     276 patch links
+src/data/skin_art.json    9:16 skin posters that exist on the Wiki
+src/data/meta.json        133 ranked hero rate rows + snapshot
+src/data/patch_notes.json 6 most recent patches, flattened sections
 public/heroes/          <slug>.webp portraits (240x390)
 public/splash/          <slug>.webp splash art (1280x720)
 public/assets/items/    <slug>.webp item icons
@@ -97,5 +113,6 @@ npm run build
 ## Attribution
 
 Unofficial fan project. Hero data and artwork belong to Moonton. Wiki-derived data
-is used under CC BY-SA via MLBBDex and the Mobile Legends Wiki. Not affiliated with
-Moonton or Mobile Legends.
+and 9:16 skin posters are used under CC BY-SA via MLBBDex and the Mobile Legends
+Wiki. Ranked statistics are republished from Moonton's official rank data through
+MythicLab. Not affiliated with Moonton or Mobile Legends.

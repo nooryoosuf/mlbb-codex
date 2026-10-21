@@ -12,7 +12,7 @@ export default function RandomPage() {
     return (
         <>
             <PageHeader
-                index="04.4"
+                index="06.4"
                 eyebrow="Tool"
                 title="Random picker"
                 description="Let the codex decide. Restrict the pool by role or lane for a fair draw."

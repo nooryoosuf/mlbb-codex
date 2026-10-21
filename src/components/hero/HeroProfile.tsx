@@ -22,11 +22,14 @@ import {
 import SmartImage from "@/components/ui/SmartImage";
 import { useFavourites } from "@/lib/use-favourites";
 import { heroSplash, heroPortrait, skillIcon, skinImage } from "@/lib/images";
+import { getSkinArt } from "@/data/skin-art";
 import {
     formatStat,
     statRange,
     getHeroNeighbours,
     getRelatedHeroes,
+    getMetaHero,
+    meta,
     type Hero,
     type HeroSkill,
 } from "@/data";
@@ -40,7 +43,7 @@ const TYPE_LABEL: Record<string, string> = {
 export default function HeroProfile({ hero }: { hero: Hero }) {
     const { isFavourite, toggle, ready } = useFavourites();
     const [copied, setCopied] = useState(false);
-    const [lightbox, setLightbox] = useState<string | null>(null);
+    const [lightboxOpen, setLightboxOpen] = useState(false);
 
     const favourite = ready && isFavourite(hero.slug);
     const neighbours = getHeroNeighbours(hero.slug);
@@ -49,6 +52,8 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
     const [activeSkin, setActiveSkin] = useState(skinsWithArt[0]?.id ?? "");
     const skinIndex = Math.max(0, skinsWithArt.findIndex((skin) => skin.id === activeSkin));
     const selectedSkin = skinsWithArt[skinIndex] ?? null;
+    const selectedArt = selectedSkin ? getSkinArt(hero.slug, selectedSkin.id) : null;
+    const ranked = getMetaHero(hero.slug);
 
     function stepSkin(direction: 1 | -1) {
         if (skinsWithArt.length === 0) return;
@@ -236,22 +241,27 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
                                     <div className="relative border border-line bg-[radial-gradient(ellipse_at_50%_0%,var(--accent-soft),transparent_65%)]">
                                         <button
                                             type="button"
-                                            onClick={() => setLightbox(selectedSkin.image)}
-                                            className="group relative grid h-[clamp(22rem,54vh,36rem)] w-full place-items-center p-4"
+                                            onClick={() => setLightboxOpen(true)}
+                                            className="group relative grid h-[clamp(26rem,62vh,42rem)] w-full place-items-center p-4"
                                             aria-label={`Open ${selectedSkin.name} at full size`}
                                         >
                                             <SmartImage
-                                                image={skinImage(selectedSkin.image)}
-                                                alt={`${selectedSkin.name} skin artwork`}
+                                                image={
+                                                    selectedArt
+                                                        ? { src: selectedArt.url, aspect: "9 / 16", local: false }
+                                                        : skinImage(selectedSkin.image)
+                                                }
+                                                alt={`${selectedSkin.name} full skin artwork`}
                                                 name={selectedSkin.name}
                                                 fit="contain"
                                                 aspect="auto"
-                                                sizes="(max-width: 1024px) 100vw, 55vw"
+                                                sizes="(max-width: 1024px) 100vw, 45vw"
                                                 className="h-full w-full bg-transparent"
                                                 imgClassName="drop-shadow-[0_24px_60px_rgba(0,0,0,0.55)] transition-transform duration-500 ease-editorial group-hover:scale-[1.02]"
                                             />
                                             <span className="absolute right-3 top-3 inline-flex items-center gap-1.5 border border-line-strong bg-bg/70 px-2 py-1 font-mono text-[9px] uppercase tracking-[0.16em] text-faint backdrop-blur transition-colors group-hover:text-accent">
-                                                <Maximize2 size={10} aria-hidden="true" /> Full image
+                                                <Maximize2 size={10} aria-hidden="true" />
+                                                {selectedArt ? "9:16 full art" : "Full image"}
                                             </span>
                                         </button>
 
@@ -260,6 +270,7 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
                                                 <h3 className="display truncate text-xl leading-none">{selectedSkin.name}</h3>
                                                 <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.16em] text-faint">
                                                     {selectedSkin.rarity ?? "Skin"} · {String(skinIndex + 1).padStart(2, "0")} / {String(skinsWithArt.length).padStart(2, "0")}
+                                                    {selectedArt ? ` · ${selectedArt.width}×${selectedArt.height}` : " · thumbnail"}
                                                 </p>
                                             </div>
                                             <div className="flex shrink-0 items-center gap-1">
@@ -319,7 +330,7 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
                                 </div>
 
                                 <p className="mt-3 font-mono text-[9px] uppercase tracking-[0.16em] text-faint">
-                                    Artwork shown at full size. Availability is not tracked here.
+                                    Vertical 9:16 art from the Mobile Legends Wiki (CC BY-SA) when available; otherwise the local thumbnail, uncropped.
                                 </p>
                             </section>
                         )}
@@ -363,6 +374,25 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
 
                     {/* ---------- Sidebar ---------- */}
                     <aside className="space-y-4">
+                        {ranked && (
+                            <section className="border border-line bg-elevated">
+                                <div className="flex items-center justify-between border-b border-line px-5 py-3.5">
+                                    <h2 className="display text-lg leading-none">Ranked now</h2>
+                                    <span className="border border-accent bg-accent px-1.5 py-0.5 font-mono text-[10px] leading-none text-accent-contrast">
+                                        {ranked.tier ?? "—"}
+                                    </span>
+                                </div>
+                                <div className="space-y-3 px-5 py-4">
+                                    <RateBar label="Win rate" value={ranked.winRate} tone="success" />
+                                    <RateBar label="Pick rate" value={ranked.pickRate} tone="fg" />
+                                    <RateBar label="Ban rate" value={ranked.banRate} tone="accent" />
+                                </div>
+                                <p className="border-t border-line px-5 py-2.5 font-mono text-[9px] uppercase tracking-[0.14em] text-faint">
+                                    {ranked.lane} · all ranks · 7 days · {meta.snapshot}
+                                </p>
+                            </section>
+                        )}
+
                         <section className="border border-line bg-elevated">
                             <div className="flex items-center justify-between border-b border-line px-5 py-3.5">
                                 <h2 className="display text-lg leading-none">Base stats</h2>
@@ -441,7 +471,7 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
             </div>
 
             {/* ---------- Lightbox ---------- */}
-            {lightbox && (
+            {lightboxOpen && (
                 <div
                     className="fixed inset-0 z-[95] flex flex-col bg-black/95 p-4"
                     role="dialog"
@@ -472,7 +502,7 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
                             <button
                                 type="button"
                                 className="grid h-9 w-9 place-items-center border border-white/20 text-white/70 transition-colors hover:border-accent hover:text-accent"
-                                onClick={() => setLightbox(null)}
+                                onClick={() => setLightboxOpen(false)}
                                 aria-label="Close image"
                             >
                                 <X size={17} aria-hidden="true" />
@@ -483,13 +513,14 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
                     <button
                         type="button"
                         className="grid flex-1 place-items-center overflow-hidden"
-                        onClick={() => setLightbox(null)}
+                        onClick={() => setLightboxOpen(false)}
                         aria-label="Close image"
                     >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                            src={lightbox}
+                            src={selectedArt?.url ?? selectedSkin?.image ?? ""}
                             alt={`${selectedSkin?.name ?? "Skin"} artwork`}
+                            referrerPolicy="no-referrer"
                             className="max-h-full max-w-full object-contain"
                             onClick={(event) => event.stopPropagation()}
                         />
@@ -528,6 +559,22 @@ function RatingBar({ label, value }: { label: string; value: number | null }) {
             </div>
             <div className="h-px w-full bg-subtle">
                 <div className="h-px bg-accent" style={{ width: `${pct}%` }} />
+            </div>
+        </div>
+    );
+}
+
+function RateBar({ label, value, tone }: { label: string; value: number | null; tone: "success" | "fg" | "accent" }) {
+    const pct = value === null ? 0 : Math.max(1, Math.min(100, value));
+    const color = tone === "success" ? "bg-success" : tone === "accent" ? "bg-accent" : "bg-fg/70";
+    return (
+        <div>
+            <div className="mb-1.5 flex items-baseline justify-between">
+                <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-faint">{label}</span>
+                <span className="font-mono text-[11px] text-fg">{value === null ? "—" : `${value.toFixed(2)}%`}</span>
+            </div>
+            <div className="h-1 w-full bg-subtle">
+                <div className={`h-1 ${color}`} style={{ width: `${pct}%` }} />
             </div>
         </div>
     );

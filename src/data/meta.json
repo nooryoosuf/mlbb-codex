@@ -1,0 +1,1205 @@
+{
+"snapshot": "2026-10-21",
+"source": "mobilelegends.com/rank (official) — All ranks, past 7 days",
+"attribution": "Data: official Mobile Legends ranked statistics (all ranks, rolling 7 days) as published at mobilelegends.com, plus community sources named on each page. MythicLab is an independent fan site, not affiliated with Moonton. Cite the page URL — numbers change as the meta moves.",
+"url": "https://mythiclab.app/tier-list",
+"heroes": [
+{
+"slug": "masha",
+"name": "Masha",
+"lane": "Jungle",
+"tier": "S",
+"winRate": 60.7,
+"pickRate": 0.55,
+"banRate": 33.94
+},
+{
+"slug": "marcel",
+"name": "Marcel",
+"lane": "Roam",
+"tier": "S",
+"winRate": 58.1,
+"pickRate": 0.28,
+"banRate": 33.92
+},
+{
+"slug": "argus",
+"name": "Argus",
+"lane": "Exp Lane",
+"tier": "A",
+"winRate": 56.32,
+"pickRate": 0.48,
+"banRate": 1.03
+},
+{
+"slug": "rafaela",
+"name": "Rafaela",
+"lane": "Roam",
+"tier": "S",
+"winRate": 55.69,
+"pickRate": 1.13,
+"banRate": 18.85
+},
+{
+"slug": "khufra",
+"name": "Khufra",
+"lane": "Roam",
+"tier": "A",
+"winRate": 54.74,
+"pickRate": 0.33,
+"banRate": 1.9
+},
+{
+"slug": "popol-and-kupa",
+"name": "Popol and Kupa",
+"lane": "Gold Lane",
+"tier": "B",
+"winRate": 54.68,
+"pickRate": 0.43,
+"banRate": 0.31
+},
+{
+"slug": "aulus",
+"name": "Aulus",
+"lane": "Exp Lane",
+"tier": "S",
+"winRate": 54.66,
+"pickRate": 0.93,
+"banRate": 44.49
+},
+{
+"slug": "gloo",
+"name": "Gloo",
+"lane": "Roam",
+"tier": "S",
+"winRate": 54.64,
+"pickRate": 0.74,
+"banRate": 38.81
+},
+{
+"slug": "minotaur",
+"name": "Minotaur",
+"lane": "Roam",
+"tier": "S",
+"winRate": 54.57,
+"pickRate": 1.04,
+"banRate": 8.42
+},
+{
+"slug": "valir",
+"name": "Valir",
+"lane": "Mid Lane",
+"tier": "A",
+"winRate": 54.36,
+"pickRate": 1.08,
+"banRate": 2.48
+},
+{
+"slug": "floryn",
+"name": "Floryn",
+"lane": "Roam",
+"tier": "S",
+"winRate": 54.01,
+"pickRate": 0.94,
+"banRate": 13.22
+},
+{
+"slug": "lolita",
+"name": "Lolita",
+"lane": "Roam",
+"tier": "B",
+"winRate": 54.01,
+"pickRate": 0.08,
+"banRate": 0.2
+},
+{
+"slug": "carmilla",
+"name": "Carmilla",
+"lane": "Roam",
+"tier": "S",
+"winRate": 53.85,
+"pickRate": 1.17,
+"banRate": 16.12
+},
+{
+"slug": "diggie",
+"name": "Diggie",
+"lane": "Roam",
+"tier": "A",
+"winRate": 53.6,
+"pickRate": 0.18,
+"banRate": 3.21
+},
+{
+"slug": "obsidia",
+"name": "Obsidia",
+"lane": "Gold Lane",
+"tier": "S",
+"winRate": 53.36,
+"pickRate": 2.38,
+"banRate": 26.22
+},
+{
+"slug": "bruno",
+"name": "Bruno",
+"lane": "Gold Lane",
+"tier": "B",
+"winRate": 53.07,
+"pickRate": 0.34,
+"banRate": 0.17
+},
+{
+"slug": "gord",
+"name": "Gord",
+"lane": "Mid Lane",
+"tier": "A",
+"winRate": 52.96,
+"pickRate": 0.6,
+"banRate": 0.57
+},
+{
+"slug": "zhask",
+"name": "Zhask",
+"lane": "Mid Lane",
+"tier": "B",
+"winRate": 52.83,
+"pickRate": 0.35,
+"banRate": 0.4
+},
+{
+"slug": "sun",
+"name": "Sun",
+"lane": "Exp Lane",
+"tier": "A",
+"winRate": 52.82,
+"pickRate": 1.66,
+"banRate": 21.87
+},
+{
+"slug": "lukas",
+"name": "Lukas",
+"lane": "Exp Lane",
+"tier": "S",
+"winRate": 52.76,
+"pickRate": 0.9,
+"banRate": 37.87
+},
+{
+"slug": "ling",
+"name": "Ling",
+"lane": "Jungle",
+"tier": "A",
+"winRate": 52.72,
+"pickRate": 0.69,
+"banRate": 0.68
+},
+{
+"slug": "yve",
+"name": "Yve",
+"lane": "Mid Lane",
+"tier": "B",
+"winRate": 52.63,
+"pickRate": 0.05,
+"banRate": 0.04
+},
+{
+"slug": "estes",
+"name": "Estes",
+"lane": "Roam",
+"tier": "A",
+"winRate": 52.62,
+"pickRate": 0.71,
+"banRate": 44.97
+},
+{
+"slug": "benedetta",
+"name": "Benedetta",
+"lane": "Jungle",
+"tier": "B",
+"winRate": 52.55,
+"pickRate": 0.37,
+"banRate": 0.31
+},
+{
+"slug": "edith",
+"name": "Edith",
+"lane": "Roam",
+"tier": "B",
+"winRate": 52.49,
+"pickRate": 0.31,
+"banRate": 0.17
+},
+{
+"slug": "hanabi",
+"name": "Hanabi",
+"lane": "Gold Lane",
+"tier": "A",
+"winRate": 52.48,
+"pickRate": 2.56,
+"banRate": 4.96
+},
+{
+"slug": "atlas",
+"name": "Atlas",
+"lane": "Roam",
+"tier": "S",
+"winRate": 52.43,
+"pickRate": 0.94,
+"banRate": 10
+},
+{
+"slug": "irithel",
+"name": "Irithel",
+"lane": "Gold Lane",
+"tier": "B",
+"winRate": 52.43,
+"pickRate": 0.41,
+"banRate": 0.26
+},
+{
+"slug": "belerick",
+"name": "Belerick",
+"lane": "Roam",
+"tier": "A",
+"winRate": 52.11,
+"pickRate": 1.74,
+"banRate": 55.87
+},
+{
+"slug": "bane",
+"name": "Bane",
+"lane": "Mid Lane",
+"tier": "B",
+"winRate": 51.79,
+"pickRate": 0.33,
+"banRate": 0.19
+},
+{
+"slug": "minsitthar",
+"name": "Minsitthar",
+"lane": "Exp Lane",
+"tier": "A",
+"winRate": 51.72,
+"pickRate": 0.63,
+"banRate": 4.76
+},
+{
+"slug": "kagura",
+"name": "Kagura",
+"lane": "Mid Lane",
+"tier": "A",
+"winRate": 51.7,
+"pickRate": 0.65,
+"banRate": 1.07
+},
+{
+"slug": "barats",
+"name": "Barats",
+"lane": "Exp Lane",
+"tier": "S",
+"winRate": 51.66,
+"pickRate": 0.66,
+"banRate": 3.93
+},
+{
+"slug": "cyclops",
+"name": "Cyclops",
+"lane": "Mid Lane",
+"tier": "B",
+"winRate": 51.55,
+"pickRate": 0.67,
+"banRate": 0.29
+},
+{
+"slug": "kadita",
+"name": "Kadita",
+"lane": "Jungle",
+"tier": "A",
+"winRate": 51.5,
+"pickRate": 0.79,
+"banRate": 3.4
+},
+{
+"slug": "silvanna",
+"name": "Silvanna",
+"lane": "Exp Lane",
+"tier": "B",
+"winRate": 51.39,
+"pickRate": 1.02,
+"banRate": 1.81
+},
+{
+"slug": "guinevere",
+"name": "Guinevere",
+"lane": "Exp Lane",
+"tier": "A",
+"winRate": 51.26,
+"pickRate": 0.82,
+"banRate": 2.17
+},
+{
+"slug": "cecilion",
+"name": "Cecilion",
+"lane": "Mid Lane",
+"tier": "A",
+"winRate": 51.22,
+"pickRate": 0.66,
+"banRate": 0.15
+},
+{
+"slug": "natalia",
+"name": "Natalia",
+"lane": "Jungle",
+"tier": "B",
+"winRate": 51.14,
+"pickRate": 0.27,
+"banRate": 1.63
+},
+{
+"slug": "fredrinn",
+"name": "Fredrinn",
+"lane": "Jungle",
+"tier": "A",
+"winRate": 51.12,
+"pickRate": 0.44,
+"banRate": 1.55
+},
+{
+"slug": "zetian",
+"name": "Zetian",
+"lane": "Mid Lane",
+"tier": "A",
+"winRate": 51.07,
+"pickRate": 1.58,
+"banRate": 4.07
+},
+{
+"slug": "hilda",
+"name": "Hilda",
+"lane": "Roam",
+"tier": "B",
+"winRate": 51.04,
+"pickRate": 0.58,
+"banRate": 10.1
+},
+{
+"slug": "faramis",
+"name": "Faramis",
+"lane": "Roam",
+"tier": "B",
+"winRate": 51.03,
+"pickRate": 0.09,
+"banRate": 0.3
+},
+{
+"slug": "alice",
+"name": "Alice",
+"lane": "Mid Lane",
+"tier": "A",
+"winRate": 50.91,
+"pickRate": 0.9,
+"banRate": 8.49
+},
+{
+"slug": "khaleed",
+"name": "Khaleed",
+"lane": "Exp Lane",
+"tier": "C",
+"winRate": 50.91,
+"pickRate": 0.12,
+"banRate": 0.08
+},
+{
+"slug": "beatrix",
+"name": "Beatrix",
+"lane": "Gold Lane",
+"tier": "B",
+"winRate": 50.85,
+"pickRate": 0.64,
+"banRate": 0.4
+},
+{
+"slug": "natan",
+"name": "Natan",
+"lane": "Gold Lane",
+"tier": "B",
+"winRate": 50.85,
+"pickRate": 0.27,
+"banRate": 0.13
+},
+{
+"slug": "aldous",
+"name": "Aldous",
+"lane": "Exp Lane",
+"tier": "B",
+"winRate": 50.83,
+"pickRate": 0.41,
+"banRate": 0.55
+},
+{
+"slug": "terizla",
+"name": "Terizla",
+"lane": "Exp Lane",
+"tier": "B",
+"winRate": 50.82,
+"pickRate": 0.34,
+"banRate": 0.17
+},
+{
+"slug": "hirara",
+"name": "Hirara",
+"lane": "Jungle",
+"tier": "S",
+"winRate": 50.72,
+"pickRate": 0.55,
+"banRate": 68.11
+},
+{
+"slug": "akai",
+"name": "Akai",
+"lane": "Roam",
+"tier": "B",
+"winRate": 50.7,
+"pickRate": 0.35,
+"banRate": 1.23
+},
+{
+"slug": "leomord",
+"name": "Leomord",
+"lane": "Exp Lane",
+"tier": "B",
+"winRate": 50.64,
+"pickRate": 0.31,
+"banRate": 0.53
+},
+{
+"slug": "eudora",
+"name": "Eudora",
+"lane": "Mid Lane",
+"tier": "S",
+"winRate": 50.58,
+"pickRate": 1.93,
+"banRate": 57.43
+},
+{
+"slug": "saber",
+"name": "Saber",
+"lane": "Jungle",
+"tier": "A",
+"winRate": 50.52,
+"pickRate": 1.03,
+"banRate": 23.56
+},
+{
+"slug": "brody",
+"name": "Brody",
+"lane": "Gold Lane",
+"tier": "A",
+"winRate": 50.49,
+"pickRate": 0.88,
+"banRate": 1.96
+},
+{
+"slug": "clint",
+"name": "Clint",
+"lane": "Gold Lane",
+"tier": "B",
+"winRate": 50.37,
+"pickRate": 0.64,
+"banRate": 0.63
+},
+{
+"slug": "badang",
+"name": "Badang",
+"lane": "Exp Lane",
+"tier": "A",
+"winRate": 50.34,
+"pickRate": 1.37,
+"banRate": 4.3
+},
+{
+"slug": "moskov",
+"name": "Moskov",
+"lane": "Gold Lane",
+"tier": "A",
+"winRate": 50.33,
+"pickRate": 1.01,
+"banRate": 0.33
+},
+{
+"slug": "vale",
+"name": "Vale",
+"lane": "Mid Lane",
+"tier": "C",
+"winRate": 50.29,
+"pickRate": 0.54,
+"banRate": 0.2
+},
+{
+"slug": "paquito",
+"name": "Paquito",
+"lane": "Jungle",
+"tier": "A",
+"winRate": 50.25,
+"pickRate": 1.5,
+"banRate": 31.12
+},
+{
+"slug": "zhuxin",
+"name": "Zhuxin",
+"lane": "Mid Lane",
+"tier": "B",
+"winRate": 50.23,
+"pickRate": 0.18,
+"banRate": 0.32
+},
+{
+"slug": "aamon",
+"name": "Aamon",
+"lane": "Jungle",
+"tier": "B",
+"winRate": 50.17,
+"pickRate": 0.63,
+"banRate": 2.29
+},
+{
+"slug": "julian",
+"name": "Julian",
+"lane": "Jungle",
+"tier": "B",
+"winRate": 50.17,
+"pickRate": 0.68,
+"banRate": 0.82
+},
+{
+"slug": "x-borg",
+"name": "X.Borg",
+"lane": "Exp Lane",
+"tier": "B",
+"winRate": 50.05,
+"pickRate": 0.6,
+"banRate": 1.84
+},
+{
+"slug": "kaja",
+"name": "Kaja",
+"lane": "Roam",
+"tier": "A",
+"winRate": 49.96,
+"pickRate": 0.54,
+"banRate": 15.29
+},
+{
+"slug": "ixia",
+"name": "Ixia",
+"lane": "Gold Lane",
+"tier": "B",
+"winRate": 49.9,
+"pickRate": 0.74,
+"banRate": 0.73
+},
+{
+"slug": "novaria",
+"name": "Novaria",
+"lane": "Mid Lane",
+"tier": "B",
+"winRate": 49.83,
+"pickRate": 1.28,
+"banRate": 3.97
+},
+{
+"slug": "hanzo",
+"name": "Hanzo",
+"lane": "Jungle",
+"tier": "B",
+"winRate": 49.82,
+"pickRate": 0.39,
+"banRate": 9.39
+},
+{
+"slug": "yi-sun-shin",
+"name": "Yi Sun-shin",
+"lane": "Gold Lane",
+"tier": "B",
+"winRate": 49.76,
+"pickRate": 1.11,
+"banRate": 4.32
+},
+{
+"slug": "layla",
+"name": "Layla",
+"lane": "Gold Lane",
+"tier": "C",
+"winRate": 49.73,
+"pickRate": 1.69,
+"banRate": 1.45
+},
+{
+"slug": "vexana",
+"name": "Vexana",
+"lane": "Mid Lane",
+"tier": "B",
+"winRate": 49.71,
+"pickRate": 1.53,
+"banRate": 1.16
+},
+{
+"slug": "xavier",
+"name": "Xavier",
+"lane": "Mid Lane",
+"tier": "B",
+"winRate": 49.68,
+"pickRate": 0.48,
+"banRate": 0.11
+},
+{
+"slug": "uranus",
+"name": "Uranus",
+"lane": "Roam",
+"tier": "B",
+"winRate": 49.55,
+"pickRate": 0.34,
+"banRate": 0.36
+},
+{
+"slug": "lylia",
+"name": "Lylia",
+"lane": "Mid Lane",
+"tier": "C",
+"winRate": 49.54,
+"pickRate": 0.48,
+"banRate": 0.38
+},
+{
+"slug": "suyou",
+"name": "Suyou",
+"lane": "Jungle",
+"tier": "B",
+"winRate": 49.54,
+"pickRate": 0.79,
+"banRate": 0.97
+},
+{
+"slug": "cici",
+"name": "Cici",
+"lane": "Exp Lane",
+"tier": "B",
+"winRate": 49.53,
+"pickRate": 0.58,
+"banRate": 1.02
+},
+{
+"slug": "miya",
+"name": "Miya",
+"lane": "Gold Lane",
+"tier": "A",
+"winRate": 49.47,
+"pickRate": 2.55,
+"banRate": 6.28
+},
+{
+"slug": "ruby",
+"name": "Ruby",
+"lane": "Exp Lane",
+"tier": "B",
+"winRate": 49.44,
+"pickRate": 0.32,
+"banRate": 0.28
+},
+{
+"slug": "sora",
+"name": "Sora",
+"lane": "Jungle",
+"tier": "B",
+"winRate": 49.43,
+"pickRate": 0.58,
+"banRate": 3.38
+},
+{
+"slug": "odette",
+"name": "Odette",
+"lane": "Mid Lane",
+"tier": "B",
+"winRate": 49.39,
+"pickRate": 0.59,
+"banRate": 0.32
+},
+{
+"slug": "angela",
+"name": "Angela",
+"lane": "Roam",
+"tier": "B",
+"winRate": 49.37,
+"pickRate": 1.71,
+"banRate": 10.56
+},
+{
+"slug": "nolan",
+"name": "Nolan",
+"lane": "Jungle",
+"tier": "A",
+"winRate": 49.31,
+"pickRate": 1.43,
+"banRate": 6.71
+},
+{
+"slug": "claude",
+"name": "Claude",
+"lane": "Gold Lane",
+"tier": "C",
+"winRate": 49.09,
+"pickRate": 0.73,
+"banRate": 0.22
+},
+{
+"slug": "hylos",
+"name": "Hylos",
+"lane": "Roam",
+"tier": "C",
+"winRate": 48.99,
+"pickRate": 0.31,
+"banRate": 0.27
+},
+{
+"slug": "yin",
+"name": "Yin",
+"lane": "Jungle",
+"tier": "B",
+"winRate": 48.99,
+"pickRate": 0.49,
+"banRate": 1.67
+},
+{
+"slug": "yu-zhong",
+"name": "Yu Zhong",
+"lane": "Exp Lane",
+"tier": "C",
+"winRate": 48.98,
+"pickRate": 0.56,
+"banRate": 0.74
+},
+{
+"slug": "joy",
+"name": "Joy",
+"lane": "Jungle",
+"tier": "C",
+"winRate": 48.97,
+"pickRate": 0.14,
+"banRate": 0.2
+},
+{
+"slug": "thamuz",
+"name": "Thamuz",
+"lane": "Exp Lane",
+"tier": "C",
+"winRate": 48.89,
+"pickRate": 0.84,
+"banRate": 1.65
+},
+{
+"slug": "roger",
+"name": "Roger",
+"lane": "Gold Lane",
+"tier": "D",
+"winRate": 48.86,
+"pickRate": 0.28,
+"banRate": 0.1
+},
+{
+"slug": "kalea",
+"name": "Kalea",
+"lane": "Exp Lane",
+"tier": "B",
+"winRate": 48.85,
+"pickRate": 0.29,
+"banRate": 0.83
+},
+{
+"slug": "aurora",
+"name": "Aurora",
+"lane": "Mid Lane",
+"tier": "C",
+"winRate": 48.8,
+"pickRate": 0.62,
+"banRate": 0.39
+},
+{
+"slug": "dyrroth",
+"name": "Dyrroth",
+"lane": "Exp Lane",
+"tier": "B",
+"winRate": 48.78,
+"pickRate": 1.78,
+"banRate": 1.54
+},
+{
+"slug": "karrie",
+"name": "Karrie",
+"lane": "Gold Lane",
+"tier": "C",
+"winRate": 48.75,
+"pickRate": 0.57,
+"banRate": 0.86
+},
+{
+"slug": "johnson",
+"name": "Johnson",
+"lane": "Roam",
+"tier": "C",
+"winRate": 48.72,
+"pickRate": 0.76,
+"banRate": 2.13
+},
+{
+"slug": "kimmy",
+"name": "Kimmy",
+"lane": "Gold Lane",
+"tier": "B",
+"winRate": 48.71,
+"pickRate": 0.79,
+"banRate": 0.52
+},
+{
+"slug": "lunox",
+"name": "Lunox",
+"lane": "Mid Lane",
+"tier": "C",
+"winRate": 48.66,
+"pickRate": 0.27,
+"banRate": 0.21
+},
+{
+"slug": "lapu-lapu",
+"name": "Lapu-Lapu",
+"lane": "Exp Lane",
+"tier": "C",
+"winRate": 48.6,
+"pickRate": 0.34,
+"banRate": 0.28
+},
+{
+"slug": "alpha",
+"name": "Alpha",
+"lane": "Exp Lane",
+"tier": "C",
+"winRate": 48.52,
+"pickRate": 1.29,
+"banRate": 0.7
+},
+{
+"slug": "gusion",
+"name": "Gusion",
+"lane": "Jungle",
+"tier": "B",
+"winRate": 48.48,
+"pickRate": 1.35,
+"banRate": 4.09
+},
+{
+"slug": "melissa",
+"name": "Melissa",
+"lane": "Gold Lane",
+"tier": "B",
+"winRate": 48.48,
+"pickRate": 0.36,
+"banRate": 1.03
+},
+{
+"slug": "phoveus",
+"name": "Phoveus",
+"lane": "Exp Lane",
+"tier": "C",
+"winRate": 48.48,
+"pickRate": 0.27,
+"banRate": 0.61
+},
+{
+"slug": "alucard",
+"name": "Alucard",
+"lane": "Jungle",
+"tier": "C",
+"winRate": 48.46,
+"pickRate": 0.83,
+"banRate": 0.49
+},
+{
+"slug": "selena",
+"name": "Selena",
+"lane": "Jungle",
+"tier": "B",
+"winRate": 48.36,
+"pickRate": 1.65,
+"banRate": 5.64
+},
+{
+"slug": "wanwan",
+"name": "Wanwan",
+"lane": "Gold Lane",
+"tier": "C",
+"winRate": 48.36,
+"pickRate": 0.14,
+"banRate": 0.12
+},
+{
+"slug": "hayabusa",
+"name": "Hayabusa",
+"lane": "Jungle",
+"tier": "C",
+"winRate": 48.35,
+"pickRate": 0.86,
+"banRate": 2.01
+},
+{
+"slug": "lesley",
+"name": "Lesley",
+"lane": "Gold Lane",
+"tier": "B",
+"winRate": 48.2,
+"pickRate": 1.77,
+"banRate": 8.07
+},
+{
+"slug": "luo-yi",
+"name": "Luo Yi",
+"lane": "Mid Lane",
+"tier": "D",
+"winRate": 48.18,
+"pickRate": 0.17,
+"banRate": 0.08
+},
+{
+"slug": "freya",
+"name": "Freya",
+"lane": "Exp Lane",
+"tier": "B",
+"winRate": 48.08,
+"pickRate": 0.7,
+"banRate": 1.99
+},
+{
+"slug": "jawhead",
+"name": "Jawhead",
+"lane": "Exp Lane",
+"tier": "D",
+"winRate": 47.96,
+"pickRate": 0.34,
+"banRate": 0.3
+},
+{
+"slug": "chang-e",
+"name": "Chang'e",
+"lane": "Mid Lane",
+"tier": "D",
+"winRate": 47.93,
+"pickRate": 0.7,
+"banRate": 0.36
+},
+{
+"slug": "arlott",
+"name": "Arlott",
+"lane": "Jungle",
+"tier": "C",
+"winRate": 47.87,
+"pickRate": 0.46,
+"banRate": 0.37
+},
+{
+"slug": "karina",
+"name": "Karina",
+"lane": "Jungle",
+"tier": "C",
+"winRate": 47.85,
+"pickRate": 0.82,
+"banRate": 3.26
+},
+{
+"slug": "pharsa",
+"name": "Pharsa",
+"lane": "Mid Lane",
+"tier": "D",
+"winRate": 47.69,
+"pickRate": 0.37,
+"banRate": 0.19
+},
+{
+"slug": "harley",
+"name": "Harley",
+"lane": "Mid Lane",
+"tier": "C",
+"winRate": 47.62,
+"pickRate": 0.8,
+"banRate": 3.36
+},
+{
+"slug": "nana",
+"name": "Nana",
+"lane": "Mid Lane",
+"tier": "C",
+"winRate": 47.54,
+"pickRate": 2.04,
+"banRate": 4.23
+},
+{
+"slug": "chip",
+"name": "Chip",
+"lane": "Roam",
+"tier": "C",
+"winRate": 47.42,
+"pickRate": 0.04,
+"banRate": 0.22
+},
+{
+"slug": "helcurt",
+"name": "Helcurt",
+"lane": "Jungle",
+"tier": "C",
+"winRate": 47.26,
+"pickRate": 0.57,
+"banRate": 4.91
+},
+{
+"slug": "martis",
+"name": "Martis",
+"lane": "Exp Lane",
+"tier": "C",
+"winRate": 47.18,
+"pickRate": 0.61,
+"banRate": 0.44
+},
+{
+"slug": "esmeralda",
+"name": "Esmeralda",
+"lane": "Roam",
+"tier": "C",
+"winRate": 47.14,
+"pickRate": 0.87,
+"banRate": 2.22
+},
+{
+"slug": "grock",
+"name": "Grock",
+"lane": "Roam",
+"tier": "D",
+"winRate": 47.02,
+"pickRate": 0.36,
+"banRate": 0.72
+},
+{
+"slug": "baxia",
+"name": "Baxia",
+"lane": "Roam",
+"tier": "C",
+"winRate": 47,
+"pickRate": 0.05,
+"banRate": 0.1
+},
+{
+"slug": "balmond",
+"name": "Balmond",
+"lane": "Exp Lane",
+"tier": "D",
+"winRate": 46.86,
+"pickRate": 0.67,
+"banRate": 0.4
+},
+{
+"slug": "zilong",
+"name": "Zilong",
+"lane": "Jungle",
+"tier": "D",
+"winRate": 46.19,
+"pickRate": 0.75,
+"banRate": 0.5
+},
+{
+"slug": "harith",
+"name": "Harith",
+"lane": "Mid Lane",
+"tier": "D",
+"winRate": 45.91,
+"pickRate": 0.14,
+"banRate": 0.05
+},
+{
+"slug": "valentina",
+"name": "Valentina",
+"lane": "Mid Lane",
+"tier": "D",
+"winRate": 45.45,
+"pickRate": 0.19,
+"banRate": 0.18
+},
+{
+"slug": "gatotkaca",
+"name": "Gatotkaca",
+"lane": "Roam",
+"tier": "D",
+"winRate": 45.27,
+"pickRate": 0.58,
+"banRate": 0.3
+},
+{
+"slug": "chou",
+"name": "Chou",
+"lane": "Exp Lane",
+"tier": "C",
+"winRate": 45.09,
+"pickRate": 1.09,
+"banRate": 3.27
+},
+{
+"slug": "tigreal",
+"name": "Tigreal",
+"lane": "Roam",
+"tier": "C",
+"winRate": 44.89,
+"pickRate": 2.04,
+"banRate": 6.53
+},
+{
+"slug": "mathilda",
+"name": "Mathilda",
+"lane": "Roam",
+"tier": "D",
+"winRate": 44.6,
+"pickRate": 0.14,
+"banRate": 0.18
+},
+{
+"slug": "lancelot",
+"name": "Lancelot",
+"lane": "Jungle",
+"tier": "D",
+"winRate": 43.19,
+"pickRate": 0.54,
+"banRate": 0.45
+},
+{
+"slug": "granger",
+"name": "Granger",
+"lane": "Gold Lane",
+"tier": "C",
+"winRate": 42.9,
+"pickRate": 1.4,
+"banRate": 1.66
+},
+{
+"slug": "fanny",
+"name": "Fanny",
+"lane": "Jungle",
+"tier": "C",
+"winRate": 42.37,
+"pickRate": 0.69,
+"banRate": 2.05
+},
+{
+"slug": "franco",
+"name": "Franco",
+"lane": "Roam",
+"tier": "C",
+"winRate": 41.64,
+"pickRate": 1,
+"banRate": 3.39
+}
+]
+}

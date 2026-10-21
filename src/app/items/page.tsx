@@ -13,7 +13,7 @@ export default function ItemsPage() {
     return (
         <>
             <PageHeader
-                index="02"
+                index="03"
                 eyebrow="Equipment"
                 title="Item database"
                 description="Every item in the current dataset with its bonuses, passive effects and build path."

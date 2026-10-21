@@ -14,7 +14,7 @@ export default function EmblemsPage() {
     return (
         <>
             <PageHeader
-                index="03"
+                index="04"
                 eyebrow="Loadout"
                 title="Emblems"
                 description="The role-based emblem sets in the current system, with their stats and the talent pool you can mix across them."

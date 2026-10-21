@@ -1,0 +1,289 @@
+{
+"source": "Mobile Legends Wiki (Fandom)",
+"attribution": "Patch notes adapted from the Mobile Legends Wiki (CC BY-SA).",
+"patches": [
+{
+"version": "2.2.16",
+"title": "Patch Notes 2.2.16",
+"link": "https://mobilelegends.fandom.com/wiki/Patch_Notes_2.2.16",
+"date": "16 September 2026",
+"highlights": [
+"Revamp Hero: Wild-oats Fist - Masha, a Berserker who enters the Feral state by breaking the enemy's wound.",
+"Revamp Hero: The Protector - Bruno, a Marksman who deals massive damage by continuously kicking powerballs.",
+"10th Anniversary art overhaul for Masha, Bruno, Paquito, Kadita, Clint, Luo Yi, Brody, and Badang.",
+"Buffed: Aulus, Argus, Aldous, Lukas.",
+"Adjusted: Odette, Sun."
+],
+"intro": ": This page contains patch notes released on the Official Server.\n\nAn update for Mobile Legends: Bang Bang has been released on the Original Server for the month of September, year 2026. This includes the revamped heroes Masha and Bruno, along with adjustments, battlefield changes and in-game events.\n\nThe update was released on 16 September 2026, 00:00 server time.",
+"designers": "In this patch, we've improved several underperforming Jungler and Exp Lane heroes to help them perform better.\n\nTo celebrate MLBB's 10th anniversary, this patch also features a comprehensive art overhaul for several iconic heroes from different regions, including Masha, Bruno, Paquito, Kadita, Clint, Luo Yi, Brody, and Badang. We've also revamped and optimized the skill mechanics for Masha and Bruno.",
+"changes": {
+"buff": 58,
+"nerf": 40,
+"adjust": 24
+},
+"sections": [
+{
+"title": "From The Designers",
+"body": "In this patch, we've improved several underperforming Jungler and Exp Lane heroes to help them perform better.\n\nTo celebrate MLBB's 10th anniversary, this patch also features a comprehensive art overhaul for several iconic heroes from different regions, including Masha, Bruno, Paquito, Kadita, Clint, Luo Yi, Brody, and Badang. We've also revamped and optimized the skill mechanics for Masha and Bruno."
+},
+{
+"title": "I. Revamped Hero",
+"body": ""
+},
+{
+"title": "II. Hero Adjustments",
+"body": ": The following uses Buff Nerf Adjust to indicate Buff, Nerf, and Adjustment.\n\nHeroes with major changes in this patch:\nAulus Buff, Argus Buff, Aldous Buff, Lukas Buff, Odette Adjust, Sun Adjust, and Marcel Adjust\n\nAulus Buff\n: Aulus takes too long to ramp up, struggles to finish off enemies, and lacks survivability in extended fights. We're addressing these issues by accelerating his ramp-up, condensing his damage into a shorter window, and improving his HP Regen.\n\n: Attributes Adjust\n• Base Attack Speed: 0.88 → 1\n• Physical Attack Growth: 10.5 → 8\n• Attack Speed Growth: 2.5% → 2%\n\n: Fighting Spirit Buff\n• After dealing skill damage to a unit, Aulus gains 2s of Enhanced Basic Attacks (up to 4s).\n• Enhanced Basic Attack: Aulus slams his axe into the ground, dealing damage to targets in a line and recovering his own HP, while applying a slow effect to them. During this state, his Attack Range and Attack Speed are increased.\n• Enhanced Basic Attack's HP Regen (Per Hit): 30 (+ 15% Total Physical Attack)\n\n: The Power of Axe Buff\n• Removed Effect: The first cast grants Hybrid Lifesteal upon hitting a target.\n• New Effect: The first cast stuns targets hit for 0.3s.\n• The second cast can now be used even if the first cast doesn't hit a target.\n• Cooldown: 7s at all levels → 10-8s\n\n: Cleaving Axe Nerf\n• Base Damage (First 4 Strikes): 150-270 → 110-270\n• Base Damage (Last Slash): 450-810 → 330-810\n\nArgus Buff\n: Based on your feedback, we've decided to make another round of balance adjustments and gameplay improvements to Argus. Argus can now trigger Demonic Slash more often and stun enemies with Skill 2. The increased Ultimate damage helps him counterattack or secure kills.\n\n: Passive Adjust\n• New Effect: Argus gains 30% initial Crit Chance.\n• Effect Adjustment: Argus's Crit now triggers an additional Demonic Slash instead of dealing extra damage, but can still trigger other critical-hit effects, including those from Berserker's Fury and Windtalker.\n\n: Skill 2 Buff\n• After a charge, he thrusts his Meteoric Sword, dealing damage and stunning targets hit. Hitting an enemy hero grants an extra Attack Speed bonus.\n• Removed Effect: Meteoric Sword no longer Crits. Its damage now scales with Crit Chance and Crit Damage.\n• New Effect: Damage now benefits from 40% of Crit Chance and Crit Damage.\n\n: Ultimate Adjust\n• If the Ultimate is not on cooldown and Argus takes fatal damage, the Ultimate automatically triggers death immunity for 4s, but does not deal damage. The Ultimate's damage increases as Argus's HP decreases, by up to 50%, reaching the maximum when his HP falls below 30%.\n• Base Damage: 150 - 300 → 300-600\n• Damage Bonus: 50% Total Physical Attack → 180% Extra Physical Attack\n• Cooldown: 42 - 35s → 45s\n\n: Attributes Buff\n• Base Movement Speed: 240 → 260\n\nAldous Buff\n: Exp Lane heroes need to serve as a primary force in early-game skirmishes. Aldous's reliance on Skill 1 stacks for damage forced him to farm passively in the early game, leaving him completely out of sync with the team's pace. To boost his early-game combat capability and income while keeping his core playstyle intact, we've made the following adjustments.\n\n: Passive Buff\n• Gains a shield on the 3rd Basic Attack, Cooldown: 5s → Gains a shield on the next Basic Attack every 8s\n• Base Shield: 500 → 350\n• New Effect: Upon gaining a shield, Aldous gains 60% extra Movement Speed for 1s.\n\n: Skill 1 Buff\n• New Effect: Gains 20% Movement Speed when moving toward enemy heroes while the skill is active.\n• New Effect: Gains 5 stacks of Soul Steal if the attack hits an enemy hero.\n• Soul Steal Stacks Gained on Siege Minion / Other Non-hero Unit Kill: 10/4 → 12/5\n• Soul Steal Stacks Gained on Enemy Hero Kill: 10 → 12\n• Soul Steal Stacks Gained on Siege Minion Kills by Nearby Allies: 5 → 6\n• Soul Steal Stack Cap: 650 → 1000\n• Bonus Damage per Soul Steal Stack: 5 → 3\n\n: Skill 2 Adjust\n• Removed the Movement Speed boost.\n• Base Damage: 100-200 → 200-300\n• Max Damage: 200-400 → 400-600\n\nLukas Buff\n: Lukas was slightly weak in the Exp Lane but too strong as a jungler. To make him stronger in the Exp Lane while preserving his jungler playstyle, we've made some adjustments to him.\n\n: Passive Buff\n• Resolve Gained from Attacking Enemies: 2 → 3.5\n\n: Skill 1 Adjust\n• Added a fan-shaped hitbox in front of Skill 1 when used in human form with 0 stacks.\n• Pulverize Base Damage: 220 - 520 → 280-580\n• Spin Damage: 100 - 200 → 80-180\n• HP Regen: 5% of Max HP → 6% of Max HP\n\n: Skill 2 Adjust\n• Lightning damage after Flash Strike now only triggers once.\n• Sacred Lightning Damage: 50-100 (+ 25% Physical Attack) → 110-310 (+50% Physical Attack)\n\n: Ultimate Nerf\n• Ultimate's Resolve Regen: 1-2 → 0.5-2\n\nOdette Adjust\n: To make Odette feel more like a graceful dancer, she can now move freely at a slightly reduced speed while casting her Ultimate.\n\n: Ultimate Adjust\n• Adjustment: The second cast has been removed. Odette can now move freely at a slightly slower speed during her Ultimate.\n• Removed Effect: Increased the bounce speed and frequency of Passive's sound wave during the Ultimate.\n\nClassic Zilong Nerf\n: We've noticed that Classic Zilong was a bit too strong, even proving hard to handle in Classic mode. As a result, we've reduced his damage and how often he gains Control Immunity. That said. Even after these adjustments, Classic Zilong can still pick off enemy heroes amid the chaos of battle.\n\n: Passive Nerf\n• Damage of Enhanced Basic Attack: 450 (+150% Total Physical Attack) → 360 (+120% Total Physical Attack)\n\n: Ultimate Nerf\n• Cooldown: 35-27s → 43-35s\n\nClassic Akai Buff\n: We've slightly increased Classic Akai's damage and adjusted his Ultimate's knockback frequency to match that of the current Akai.\n\n: Passive Buff\n• Extra Basic Attack Damage Based on Max HP: 2% → 3%\n\n: Skill 2 Buff\n• Shield's Damage: 2% Max HP → 3% Max HP\n\n: Ultimate Buff\n• Increased the Ultimate's knockback frequency.\n\nSun Adjust\n: We've noticed that roaming Sun takes too many resources "
+},
+{
+"title": "III. Battlefield Adjustments",
+"body": ""
+},
+{
+"title": "IV. System Adjustments",
+"body": ""
+},
+{
+"title": "V. Game Modes/Mode Adjustments",
+"body": ""
+},
+{
+"title": "VI. Other",
+"body": "-"
+},
+{
+"title": "VII. Bug Fixes",
+"body": "• Fixed an issue that caused abnormal camera behavior for enemies hit when Yin cast or recast his Ultimate.\n\n―Mobile Legends: Bang Bang"
+}
+]
+},
+{
+"version": "2.1.90",
+"title": "Patch Notes 2.1.90",
+"link": "https://mobilelegends.fandom.com/wiki/Patch_Notes_2.1.90",
+"date": "17 June 2026",
+"highlights": [
+"Buffed: Argus, Aulus, Esmeralda, Eudora, Melissa, Minsitthar +1.",
+"Nerfed: Akai, Baxia, Fredrinn, Zhuxin."
+],
+"intro": "An update for Mobile Legends: Bang Bang has been released on the Original Server for the month of July, year 2026. This includes adjustments, battlefield changes, and in-game events.\n\nThe update was released on 8 July 2026, 00:00 server time.",
+"designers": "We've noticed that the jungle area changes in the new patch have benefited some Tank Junglers too much. Therefore, we're reducing their jungling speed while boosting some underpicked Exp Lane and Jungling heroes.",
+"changes": {
+"buff": 23,
+"nerf": 10,
+"adjust": 4
+},
+"sections": [
+{
+"title": "I. From the Designers",
+"body": "We've noticed that the jungle area changes in the new patch have benefited some Tank Junglers too much. Therefore, we're reducing their jungling speed while boosting some underpicked Exp Lane and Jungling heroes."
+},
+{
+"title": "II. Hero Adjustments",
+"body": "The following uses Buff Nerf Adjust to indicate Buff, Nerf, Adjustment, and Changes.\nHeroes with major changes in this patch: Aulus Buff, Esmeralda Buff, and Nolan Buff.\n\nAkai Nerf\n\n: Reduced Akai's jungling speed, but increased his burst damage as compensation.\n\n: Passive Nerf\n\n• New Effect: Basic Attacks against marked targets remove the mark.\n• Extra Damage: 25 (+ 5% Total HP) → 35 (+ 6% Total HP)\n\nArgus Buff\n\n: We've decided to improve Argus's early-to-mid game combat and laning capabilities. The mighty \"Fallen Angel\" shouldn't be limited to the late game.\n\n: Passive Adjust\n\n• Demonic Slash Damage: 80 (+ 50% Total Physical Attack) → 120 (+ 25% Total Physical Attack)\n• Demonic Slash Regen: 100 (+ 10% Total Physical Attack) → 140\n\n: Skill 2 Buff\n\n• Base Damage: 60-180 → 120-180\n\nAulus Buff\n\n: To reinforce his role as a Fighter reliant on sustained Basic Attacks, we've improved Aulus's sustainability and ability to stay on targets, while slightly reducing his mid-to-late game damage for balance.\n\n: Passive Adjust\n\n• New Effect: Enhanced Basic Attack reduces the target's Movement Speed by 15% for 1s.\n• Enhanced Basic Attack's Base Damage: 135 (+ 20 * Hero Level) → 135 (+ 15 * Hero Level)\n\n: Skill 2 Adjust\n\n• New Effect: The first phase of fan-shaped damage grants 20% Hybrid Lifesteal for 2.5s on hit.\n• Removed Effect: The first phase of fan-shaped damage reduces the target's Movement Speed on hit.\n• Cooldown: 5s → 7s\n\n: Ultimate Buff\n\n• Slightly reduced the backswing time.\n\nBaxia Nerf\n\n: Reduced Baxia's damage output and jungling speed.\n\n: Skill 2 Nerf\n\n• Damage: 140-265 (+ 120% Magic Power) (+ 6% target's Max HP) → 120-220 (+ 100% Magic Power) (+ 5% target's Max HP)\n• New Effect: Max Damage to Creeps: 350-800 → 250-575\n\nEsmeralda Buff\n\n: Slightly increased Esmeralda's early-to-mid game performance.\n\n:  Buff\n\n• Base HP: 2464 → 2660\n• Base Physical Defense: 21 → 25\n\n: Skill 1 Buff\n\n• Cooldown: 8.5s → 8s\n• Base Shield: 400-900 → 500-1000\n\n: Skill 2 Buff\n\n• Slow Effect: 10% → 20%\n\nEudora Buff\n\n: Slightly reduced the hero's Mana Cost.\n\n: Skill 1 Buff\n\n• Mana Cost: 60-90 → 40-65\n\nFredrinn Nerf\n\n: Slightly reduced Fredrinn's jungle clear speed and early-game durability.\n\n:  Nerf\n\n• Base HP: 2600 → 2500\n\n: Skill 1 Nerf\n\n• Damage Increase Against Creeps: 200% → 170%\n\nMelissa Buff\n\n: Slightly reduced the hero's Mana Cost.\n\n: Skill 2 Buff\n\n• Mana Cost: 90 → 70\n\nMinsitthar Buff\n\n: Reduced the Ultimate's early-to-mid game cooldown and increased its late-game damage.\n\n: Ultimate Buff\n\n• Cooldown: 55-45s → 45s at all levels\n• Ultimate's Physical Bonus & Attack Effect Ratio: 40% at all levels → 30%-50%\n\nNolan Buff\n\n: Slightly increased Nolan's sustainability.\n\n: Passive Buff\n\n• Energy Regen Upon Hitting an Enemy with a Rift: 20 → 25\n\nZhuxin Nerf\n\n: Slightly reduced Skill 2's cast range.\n\n: Skill 2 Nerf\n\n• Cast Range: 4.5 → 4.2"
+},
+{
+"title": "III. Battlefield Adjustments",
+"body": ""
+}
+]
+},
+{
+"version": "2.1.88",
+"title": "Patch Notes 2.1.88",
+"link": "https://mobilelegends.fandom.com/wiki/Patch_Notes_2.1.88",
+"date": "17 June 2026",
+"highlights": [
+"New Hero: Fallen Scarlet - Hirara, a geisha ninja from the Scarlet Shadow, armed with dual fans and adorned in crimson maple and the meisen. In her twisted mind, death is the ultimate salvation.",
+"Buffed: Saber, Ruby, Argus, Hanzo, Yin.",
+"Adjusted: Marcel."
+],
+"intro": ": This page contains patch notes released on the Official Server.\n\nAn update for Mobile Legends: Bang Bang has been released on the Original Server for the month of June, year 2026. This includes the new hero Hirara, along with adjustments, battlefield changes, and in-game events.\n\nThe update was released on 17 June 2026, 00:00 server time.",
+"designers": "In this patch, we've boosted most traditional Roaming heroes (including Tanks and backline Supports) to help them perform better in the new season. We've also adjusted the early-game pacing in the jungle. Junglers on the leading team now have more flexible farming routes, while Junglers who are behind have more room to maneuver when their jungle is invaded.",
+"changes": {
+"buff": 65,
+"nerf": 20,
+"adjust": 16
+},
+"sections": [
+{
+"title": "From the Designers",
+"body": "In this patch, we've boosted most traditional Roaming heroes (including Tanks and backline Supports) to help them perform better in the new season. We've also adjusted the early-game pacing in the jungle. Junglers on the leading team now have more flexible farming routes, while Junglers who are behind have more room to maneuver when their jungle is invaded."
+},
+{
+"title": "I. New Hero",
+"body": ""
+},
+{
+"title": "II. Hero Adjustments",
+"body": "Heroes with major changes in this patch: Argus Buff, Saber Buff, Ruby Buff, and Hanzo Buff\n\n: The following uses Buff Nerf Adjust to indicate Buff, Nerf, and Adjustment.\n\nSaber Buff\n: Saber relied too much on a single burst of damage and lacked sustained damage capabilities. Therefore, we've made adjustments to provide sustained damage options before and after casting his Ultimate. We have also adjusted Saber's base attributes and damage bonuses to allow him to build Fighter equipment.\n\n:  Buff\n• Base HP: 2440 → 2500\n• HP Growth: 180 → 195\n• Physical Defense Growth: 4.1 → 4.5\n\n: Orbiting Swords Adjust\n• Orbiting Sword Damage: 75-105 (+ 30% Extra Physical Attack) → 75-125 (+ 25% Extra Physical Attack)\n• Extra Damage: 210-260 (+ 60% Extra Physical Attack) → 200-300 (+ 50% Extra Physical Attack)\n• Mana Cost: 80-105 → 60-85\n• Orbiting sword attack reduces Skill 2 cooldown by 1s → Reduces Skill 1 cooldown by 0.5s and Skill 2 cooldown by 1s\n• Cooldown: 9s → 10s\n• Duration: 5s → 4s\n\n: Charge Adjust\n• Mana Cost: 70-45 → 40-60\n\n: Triple Sweep Buff\n• First Two Strikes: 120-180 (+ 100% Extra Physical Attack) → 120-220 (+ 80% Extra Physical Attack)\n• The Third Strike: 240-360 (+ 200 Extra Physical Attack) → 240-440 (+ 160% Extra Physical Attack)\n\nRuby Buff\n: As a Fighter, Ruby's damage threat to enemies is too low. We want to increase her damage capability while reducing her Lifesteal to balance it. However, her Lifesteal capability when at low HP will remain intact to preserve her core identity.\n\n: Let's Dance! Adjust\n• Ruby no longer starts with the Spell Vamp.\n• Spell Vamp Ratio: 125% → 75%. Increases Lifesteal ratio by 1% for every 1% HP lost, up to 150%.\n\n: Be Good! Buff\n• Scythe Damage: 90 (+ 70%-130% Total Physical Attack) → 280-480 (+ 110% Total Physical Attack)\n• Shockwave Damage: 90 (+ 70%-130% Total Physical Attack) → 140-240 (+ 55% Total Physical Attack)\n• Optimized the skill indicator to show the two damages areas more clearly.\n\n: I'm Offended! Buff\n• Base Damage: 200-480 → 600-1200\n• Cooldown: 26-20s → 40-30s\n\nArgus Buff\n: We've adjusted Argus' attributes from being Assassin-leaning to more of a Fighter, and enhanced his combat capability in the early-to-mid game for smoother power scaling. We've also given his Ultimate a guaranteed effect.\n\n:  Buff\n• Base Attack: 111 → 120\n• Base HP: 2450 → 2600\n• Attack Growth: 6 → 8\n• Attack Speed Growth: 1% → 1.5%\n• Extra Attack Speed Bonus: 100% → 80%\n• Base Movement Speed: 260 → 240\n\n: Warmonger Adjust\n• New Effect: Demonic Slash has a longer attack range than normal Basic Attacks and allows Argus to dash a short distance.\n• Attribute Adjustment: Malice Energy's cap is adjusted to 200.\n• Demonic Slash Damage: 180 (+ 80% Total Physical Attack) → 80 (+ 50% Total Physical Attack)\n• Demonic Slash Regen: 150 (+ 10% Total Physical Attack)  → 100 (+ 10% Total Physical Attack}\n• Demonic Slash ignores: 40% of the target's Physical Defense  → 30% of the target's Physical Defense\n• Energy Regen per Basic Attack: 10 → 25\n• Extra Energy Regen on Crit: 10  → 25\n\n: Demonic Grip Buff\n• Cooldown: 12s → 12-10s\n• New Effect: Slows enemies hit by 40% for 2s\n\n: Meteoric Sword Nerf\n• Cooldown: 10-8s → 8-6s\n• Removed Effect: No longer leaves a Cursed Trail.\n• Base Damage: 120-240 → 60-180\n• New Effect: If hitting an enemy hero, he gains 30-55% Attack Speed (scales with skill level) for the next 3s, during which he immediately restores 50 Malice Energy after casting Demonic Slash.\n• New Effect: The damage of this attack can Crit.\n\n: Eternal Evil Adjust\n• Cooldown: 60s-50s → 42s-35s\n• Removed Effect: Hitting an enemy hero enhances Warmonger.\n• New Effect: The skill will be cast automatically if Argus takes fatal damage when the skill is not or cooldown, granting 3s of Death Immunity.\n• Cooldown: 60s-50s → 42s-35s\n\nMarcel Adjust\n: We aim to reduce the negative experience of facing Marcel's excessive crowd control, while giving him more chances to showcase his individual skills or coordinate with more heroes.\n\n:  Buff\n• Base Physical Defense: 25 → 30\n• Base Magic Defense: 15 → 20\n• Base HP: 2740 → 2950\n• Physical Defense Growth: 2 → 1.5\n• Magic Defense Growth: 1 → 0.5\n• HP Growth: 200 → 160\n• Base HP Regen: 12.4 per second → 22.4 per second\n\n: Platinum Snap Adjust\n• Removed Effect: Basic Attack cannot Crit.\n• Removed Effect: Cannot benefit from extra Attack Speed → Can partially benefit from extra Attack Speed.\n• Removed Effect: Basic Attacks reduce Platinum Snap's cooldown by 1s per target.\n\n: Framed Moment Nerf\n• Removed the immobilize effect.\n• Slow Effect: 20% → 60%\n• Base Damage: 370-520 → 350-700\n• Damage Bonus: (50% Total Physical Attack) (+ 100% Total Magic Defense) (+ 100% Total Physical Defense) → (50% Total Physical Attack) (+ 120% Total Magic Defense) (+ 120% Total Physical Defense)\n\n: Golden Hour Adjust\n• New Effect: Heroes affected by the Ultimate can be targeted.\n• New Effect: Damage of the frozen projectiles is reduced by 50% after a delay.\n• Area Duration: 3s → 2s\n\nHanzo Buff\n: As a single-target burst jungling Assassin, we've enhanced his early-to-mid game damage and improved his ability to contest the Turtle and Lord, while slightly weakening other aspects to keep him balanced.\n\n:  Nerf\n• Base HP 2594 → 2440\n• Attack Speed Growth: 2% → 1%\n\n: Forbidden Ninjutsu Soul Snatch Adjust\n• New Effect: This skill can be used on the Turtle or Lord. Removed damage to units around the locked target.\n\n: Forbidden Ninjutsu Black Mist Buff\n• Initial Base Damage When Knocking Enemies Airborne: 135-210 → 405-630\n• Can now choose the landing area within a certain range.\n\n: Kinjutsu Pinnacle Ninja Buff\n• Cooldown: 24-16s → 18-12s\n• New Effect: If Hanekage is killed, the Ultimate's cooldown is doubled.\n\nYin Buff\n: We're optimizing Yin's Ultimate experience by enhancing interaction within his domain and shifting Lieh's combat style to feel more like a fighter.\n\n: Frenzy Strike Buff\n• Removed Effect: The first half of the attacks will automatically lock onto nearby enemies.\n• "
+},
+{
+"title": "Battlefield Adjustment",
+"body": "-"
+},
+{
+"title": "Skill Wheel Aiming Optimizations",
+"body": "Category:Patch Notes"
+}
+]
+},
+{
+"version": "2.1.67",
+"title": "Patch Notes 2.1.67",
+"link": "https://mobilelegends.fandom.com/wiki/Patch_Notes_2.1.67",
+"date": "21 April 2026",
+"highlights": [
+"Revamp Hero: Warrior of Ferocity - Aulus, A ferocious warrior who gets stronger as he fights.",
+"Buffed: Bruno, Dyrroth, Harith.",
+"Nerfed: Claude, Hanabi, Karrie.",
+"Adjusted: Bane, Beatrix, Brody, Cici, Clint, Irithel +1."
+],
+"intro": ": This page contains patch notes released on the Official Server.\n\nAn update for Mobile Legends: Bang Bang has been released on the Original Server for the month of April, year 2026. This includes the revamp hero Aulus, along with adjustments, battlefield changes and in-game events.\n\nThe update was released on 21 April 2026, 00:00 server time.",
+"designers": "In this patch, we've adjusted the durability attributes of Gold Lane Marksmen based on their early-game laning strength and late-game power. Those with strong early-game laning capabilities have lower base durability, while those with high late-game mobility or long range have lower durability growth. We've also adjusted their base Movement Speed attribute based on their mobility. We've also adjusted Mana Costs for most Gold Lane Marksmen so they are closer to the average Mana Costs of Marksmen.",
+"changes": {
+"buff": 48,
+"nerf": 43,
+"adjust": 29
+},
+"sections": [
+{
+"title": "From The Designers",
+"body": "In this patch, we've adjusted the durability attributes of Gold Lane Marksmen based on their early-game laning strength and late-game power. Those with strong early-game laning capabilities have lower base durability, while those with high late-game mobility or long range have lower durability growth. We've also adjusted their base Movement Speed attribute based on their mobility. We've also adjusted Mana Costs for most Gold Lane Marksmen so they are closer to the average Mana Costs of Marksmen."
+},
+{
+"title": "I. New Hero",
+"body": ""
+},
+{
+"title": "II. Hero Adjustments",
+"body": ": The following uses Buff Nerf Adjust to indicate Buff, Nerf, and Adjustment.\n\nBane Adjust\n\n: We have revamped the art concept for the skill Ale so its new visual effects better fit Bane's background story. The skill has also been renamed to Sea Ink.\n\nBeatrix Adjust\n: To match the attribute adjustments for Marksmen, we've reduced Beatrix's base * Movement Speed, which was significantly higher than that of other Marksmen. For balance, we've also optimized her Ultimate so it can inherit Lifesteal.\n\n: Attributes Nerf\n• Movement Speed: 257 → 245\n• Base HP: 2280 → 2380\n• HP Growth: 170 → 160\n• Base Physical Defense: 20 → 18\n• Base Physical Attack: 110 → 115\n• Physical Attack Growth: 9.5 → 11\n\n: Mechanical Genius Buff\n\n• New Effect: Beatrix gains extra Spell Vamp equal to 100% of her Lifesteal.\n\n: Wesker's Elation Buff\n\n• Wesker's Ultimate Spell Vamp Ratio: 50% → 100%\n\nBrody Adjust\n: Adjusted Brody's power curve by buffing his early and late game while slightly tuning down his mid-game strength. Also optimized Skill 1's mechanics to make its logic more intuitive.\n\n: Attributes Nerf\n• Movement Speed: 253 → 250\n• Base HP: 2290 → 2260\n• HP Growth: 165 → 160\n• Base Physical Defense: 20 → 16\n• Physical Attack Growth: 12 → 14\n\n: Abyss Impact Adjust\n• Base Damage: 150-550 → 200-500\n• Removed Effect: Hitting a target increases subsequent damage.\n• New Effect: This damage also benefits from the passive stack's damage increase.\n• Mana Cost: 40-90 → 50-75\n\n: Corrosive Strike Buff\n• Mana Cost: 75-100 → 90 at all levels\n\n: Torn-Apart Memory Buff\n• Base Damage: 300-540 → 216-540\n• Damage per Stack: 136-232 (+72% Extra Physical Attack) (+4%-6% of target's lost HP) → 94-232 (+72% Extra Physical Attack) (+4%-10% of target's lost HP)\n\nBruno Buff\n: Adjusted the hero to align with Marksman attributes and * Mana Cost adjustments.\n\n: - Buff\n• Movement Speed: 240 → 245\n• Base HP: 2270 → 2320\n• HP Growth: 160 → 150\n: Mecha Legs Buff\n• Mana Cost: 50-100 → 60-85\n: Volley Shot Nerf\n• Mana Cost: 60-35 → 60 at all levels\n\nCici Adjust\n: Fixed several issues and made compensatory adjustments to Skill 1's damage.\n\n: Yoyo Blitz Adjust\n• Base Damage: 60-85 → 65-90\n: Fixed an issue where the damage of Skill 1 during the Ultimate, as well as its damage against minions, was higher than described.\n\nClaude Nerf\n: To balance his relatively weak early-game laning capability as a Marksman, we've enhanced his early-game durability.\n: We have also slightly reduced his early to mid game Ultimate burst potential and added a * Mana Cost to it for balance.\n\n: - Buff\n• Base HP: 2250 → 2380\n• HP Growth: 133 → 130\n• Base Physical Defense: 14 → 18\n: Art of Thievery Nerf\n• Mana Cost: 0 → 35-50\n: Battle Mirror Image Nerf\n• Mana Cost: 0 → 90 at all levels (2nd switch does not consume Mana)\n: Blazing Duet Nerf\n• Base Damage: 140-190 → 120-180\n• Mana Cost: 0 → 100-140\n\nClint Adjust\n: Adjusted the hero to align with Marksman attributes and * Mana Cost adjustments.\n\n: - Buff\n• Movement Speed: 240 → 245\n• Base HP: 2285 → 2260\n• HP Growth: 145 → 160\n• Base Physical Defense: 20 → 16\n\n: Quick Draw Nerf\n• Mana Cost: 50 at all levels → 50-75\n\n: Trapping Recoil Adjust\n• Mana Cost: 65-115 → 80 at all levels\n\nDyrroth Buff\n: Experience optimization: To save Dyrroth the trouble of intentionally accumulating Rage in mid-and-late-game.\n: To improve Dyrroth's power curve during the laning phase, we've adjusted his main skill to Skill 1.\n\n: Wrath of the Abyss Buff\n• Circle Strike Damage: 160% Total Physical Attack → 150%-180% Total Physical Attack (scales with level)\n• Regen Effect: 20 + 8% of Max HP → 7%-10% of Max HP (scales with level)\n• New Effect: Recovers 2%-5% Rage per second (scales with level).\n\n: Burst Strike Buff\n• Cooldown: 5s → 6-4s\n• Base Damage: 200-450 → 240-520\n\n: Spectre Step Adjust\n• Cooldown: 8-4s → 6s\n\nHanabi Nerf\n: Adjusted the hero to align with Marksman attributes and * Mana Cost adjustments.\n\n: - Buff\n• HP Growth: 128 → 130\n\n: Ninjutsu Equinox Nerf\n• Mana Cost: 35-60 → 75-100\n\n: Ninjutsu Soul Scroll Nerf\n• Mana Cost: 35-60 → 50-75\n\nHarith Buff\n: We have slightly adjusted Harith's power curve while maintaining his strong early-to-mid game performance, enabling him to take on the Jungler role.\n\n: - Buff\n• Base HP: 2280 → 2260\n• HP Growth: 155 → 160\n• Base Physical Defense: 19 → 17\n• Physical Defense Growth: 4 → 4.5\n\n: Synchro Fission Adjust\n• Base Damage: 165-290 → 150-300\n• Explosion Damage: 495-870 → 450-900\n• New Effect: This skill deals 60% extra damage to creeps (up to 1500 damage).\n\n: Chrono Dash Buff\n• Enhanced Basic Attack Damage: 200-315 (+ 100% of Total Physical Attack) (+ 60% of Total Magic Power) → 200-350 (+ 100% of Total Physical Attack) (+ 70% of Total Magic Power)\n\n: Zaman Force Buff\n• Slow Effect: 50% initial slow and 15% continuous slow → 40% continuous slow\n\nIrithel Adjust\n: We have reduced Irithel's mid-to-late-game durability due to her high mobility as a late-game Marksman. To balance this change, we have increased her mid-to-late-game damage.\n\n: - Nerf\n• Base HP: 2300 → 2260\n• HP Growth: 160 → 140\n• Base Physical Defense: 17 → 16\n• Physical Attack Growth: 8.5 → 10\n\n: Strafe Buff\n• Cooldown: 10s at all levels → 10-7s\n\nIxia Adjust\n: To balance Ixia's dominant early-game laning as a Marksman, we have reduced her early-game durability.\n: As she lacks movement skills, we have increased her base * Movement Speed.\n: We have also reduced her excessively high * HP Growth while compensating her with improved Mana efficiency and skill * Base Damage.\n\n: - Nerf\n• Movement Speed: 240 → 250\n• Base HP: 2320 → 2260\n• HP Growth: 170 → 155\n• Base Physical Defense: 17 → 16\n\n: Dual Beam Buff\n• Base Damage: 50-250 → 100-250\n• Mana Cost: 40-65 → 35-60\n\n: Star Helix Buff\n• Mana Cost: 75-100 → 65-90\n\n: Full Barrage Nerf\n• Mana Cost: 75-105 → 120 at all levels\n\nKarrie Nerf\n: Adjusted the hero to align with Marksman attributes and * Mana Cost adjustments.\n\n: - Adjust\n• Base HP: 2278 → 2320\n• HP Growth: 165 → 160\n\n: Spinning Lightwheel Nerf\n• Mana "
+},
+{
+"title": "III. Battlefield Adjustments",
+"body": ""
+},
+{
+"title": "IV. System Adjustments",
+"body": ": [Surprise Flip]\n• [New Rewards & Item Adjustments]\n• Surprise Flip will grant special rewards for a limited time during the ALLSTAR event. Check out the reward preview once the event begins for more details."
+},
+{
+"title": "V. Mode Adjustment",
+"body": ""
+},
+{
+"title": "VI. Event Adjustment",
+"body": "ALLSTAR Events\n• The [Tidal Treasure Hunt] event will be available from 04/30 to 06/28 (Server Time). The event features limited drops of rare rewards, such as real gold jewelry and in-game Diamonds. You can also get the new exclusive skin Yu Zhong \"Tidescale Sealord\" and the painted skin Yu Zhong \"Fathomless Sealord\". Spawn effects, battle emotes, a limited-time new vehicle, and limited-time banners are also up for grabs.\n• The [Tide Clash 5vs5] event will be available from 05/08 to 06/16 (Server Time). It supports both Team Mode and Solo Mode. Participate once to get a guaranteed Bait.\n• The [Tidal Boost] event will be available from 05/08 to 06/16 (Server Time). Multiple spending tiers have been added, allowing you to get more Treasure Hunt Coins for the Tidal Treasure Hunt event.\n• The [Tidal Fishing] mini-game will be available from 05/15 to 06/28 (Server Time). Complete the Fish Collection to unlock achievements. Collect 5 Legendary Fish to get an extra exclusive battle emote."
+},
+{
+"title": "VII. Bug Fixes",
+"body": "-\n―Mobile Legends: Bang Bang"
+}
+]
+},
+{
+"version": "2.1.61",
+"title": "Patch Notes 2.1.61",
+"link": "https://mobilelegends.fandom.com/wiki/Patch_Notes_2.1.61",
+"date": "11 March 2026",
+"highlights": [
+"New Hero: Soul Photographer - Marcel, an elegant, mysterious, and bizarre artist whose split soul has fused with his camera.",
+"Buffed: Aurora, Eudora, Gord, Hilda, Kagura, Luo Yi +1.",
+"Nerfed: Freya, Gloo, Ixia.",
+"Adjusted: Cecilion, Chang'e, Claude, Cyclops, Faramis, Kadita +2."
+],
+"intro": ": This page contains patch notes released on the Official Server.\n\nAn update for Mobile Legends: Bang Bang has been released on the Original Server for the month of March, year 2026. This includes the new hero Marcel, along with adjustments, battlefield changes and in-game events.\n\nThe update was released on 11 March 2026, 00:00 server time.",
+"designers": "In this patch, we have adjusted the attributes and Mana Costs of most Mid Lane Mages to bring them closer to the average level. We have also made specific adjustments to certain strong and weak Mages. We hope to see more heroes picked in the Mid Lane.",
+"changes": {
+"buff": 63,
+"nerf": 50,
+"adjust": 46
+},
+"sections": [
+{
+"title": "From The Designers",
+"body": "In this patch, we have adjusted the attributes and Mana Costs of most Mid Lane Mages to bring them closer to the average level. We have also made specific adjustments to certain strong and weak Mages. We hope to see more heroes picked in the Mid Lane."
+},
+{
+"title": "I. New Hero",
+"body": ""
+},
+{
+"title": "II. Hero Adjustments",
+"body": ": The following uses Buff Nerf Adjust to indicate Buff, Nerf, and Adjustment.\n\nAurora Buff\n: To align with the adjustments to Mage attributes and Mana Cost, we have reduced the cooldown of Skill 2.\n\n: - Nerf\n• Physical Defense Growth: 4.1 → 4\n\n: - Nerf\n• Mana Cost: 45-70 → 60-85\n\n: - Buff\n• Cooldown: 14-11s → 12-8s\n\n: - Nerf\n• Mana Cost: 120-160 → 140-180\n\nCecilion Adjust\n: Adjusted the hero to align with Mage Attributes adjustments.\n\n: - Adjust\n• Base HP: 2335 → 2380\n• Base Physical Defense: 18 → 17\n• Physical Defense Growth: 4.1 → 4\n• Movement Speed: 255 → 250\n\nChang'e Adjust\n: Adjusted the hero to align with Mage Attributes and Mana Cost adjustments.\n\n: - Nerf\n• Base HP: 2380 → 2320\n• HP Growth: 145.5 → 145\n• Base Physical Defense: 16 → 17\n• Physical Defense Growth: 3.7 → 4\n• Movement Speed: 250 → 240\n\n: - Buff\n• Mana Cost: 70-95 → 60-85\n\n: - Buff\n• Mana Cost: 60-110 → 60 at all levels\n\n: - Buff\n• Mana Cost: 150-250 → 120-160\n\nClaude Adjust\n: Fixed some issues and adjusted the damage structure of the Ultimate.\n\n: - Adjust\n• Fixed an issue where the number of hits would be missing at certain Attack Speeds. The number of hits of the Ultimate now scales with Attack Speed.\n• Attack Effects: 50% → 40%\n\nCyclops Adjust\n: To align with the adjustments to Mage attributes and Mana Cost, we have reduced Skill 1's cooldown and damage, and adjusted Skill 2's damage scaling ratio across the early and late game.\n\n: - Adjust\n• Base HP: 2400 → 2440\n• HP Growth: 175.1 → 175\n• Physical Defense Growth: 4.2 → 4\n\n: - Buff\n• Cooldown: 8.5s → 7.5s\n• Base Damage: 275-400 → 240-400\n\n: - Adjust\n• Decay Ratio: 60%-90% of original damage → 60%-80% of original damage\n• Magic Bonus: 40% → 65%\n\nEudora Buff\n: To align with the adjustments to Mage attributes and Mana Cost, we have also reduced her skill downtime in the early and mid game.\n\n: - Adjust\n• Base HP: 2403 → 2440\n• HP Growth: 173 → 175\n• Base Physical Defense: 19 → 18\n• Physical Defense Growth: 4.2 → 4\n\n: - Buff\n• Cooldown: 7-5s → 5s at all levels\n• Mana Cost: 50-70 → 70-95\n\n: - Nerf\n• Mana Cost: 70-95 → 80-105\n\nFaramis Adjust\n: To align with the adjustments to Mage attributes and Mana Costs, we've adjusted the Ultimate's early and late game cooldown.\n\n: - Buff\n• Base HP: 2422 → 2500\n• HP Growth: 181 → 185\n• Physical Defense Growth: 4.2 → 4.5\n• Movement Speed: 245 → 240\n\n: - Nerf\n• Mana Cost: 70-120 → 85-135\n\n: - Nerf\n• Mana Cost: 45-70 → 60-90\n\n: - Adjust\n• Cooldown: 80s at all levels → 90-70s\n\nFreya Nerf\n: Freya's HP Regen in the early to mid game was a bit too high, so we have reduced the HP Regen during her Ultimate.\n\n: - Nerf\n• Base HP Regen per Basic Attack: 60-120 → 40-80\n\nGloo Nerf\n: Gloo was exceptionally durable given his high damage, making him frustrating to play against.\n\n: - Nerf\n• Damage Reduction per Stack: 4% → 3%\n\nGord Buff\n: To align with the adjustments to Mage attributes and Mana Cost, we have adjusted the damage distribution and reduced the cooldown of Skill 1.\n\n: - Buff\n• Base HP: 2357 → 2380\n• HP Growth: 142.5 → 145\n• Base Physical Defense: 13 → 17\n• Movement Speed: 240 → 250\n\n: - Buff\n• Damage: 140 (+ 60% Total Magic Power) → 140 +(8* Hero Level) (+ 40% Total Magic Power)\n\n: - Buff\n• Damage: 270-495 (+ Total 80% Magic Power) → 225-425 (+ 65% Total Magic Power)\n• Cooldown: 10 - 7.5s → 8-6s\n• Mana Cost: 90-115 → 80-110\n\n: - Nerf\n• Damage: 30-80 (+14% Total Magic Power) → 30-60 (+10% Total Magic Power)\n\nHilda Buff\n: We've optimized the visual effects of Hilda's Passive Enhanced Basic Attack for better visibility.\n\n: - Buff\n• Added visual effects to indicate when the Enhanced Basic Attack is active.\n\nIxia Nerf\n: Ixia's laning ability was too strong, so we've reduced the Base Damage of Skill 1 and reduced the HP Regen from her Passive when hitting non-hero units.\n: Further reduced the damage of Skill 1.\n\n: - Nerf\n• HP Regen Against Non-Hero Units: 20 (+150* Lifesteal)% → 10 (+150* Lifesteal)%\n\n: - Nerf\n• Damage: 75-300 (+ 80% Total Physical Attack) → 50-250 (+70% Total Physical Attack)\n\nKadita Adjust\n: Adjusted the hero to align with Mage Attributes adjustments.\n\n: - Adjust\n• Base HP: 2370 → 2440\n• HP Growth: 169.7 → 165\n• Movement Speed: 255 → 250\n\nKagura Buff\n: To align with the adjustments to Mage attributes and Mana Cost, we have adjusted the damage distribution: enhanced early-game laning and wave clearing; reduced Ultimate cooldown and damage.\n\n: - Adjust\n• Base HP: 2375 → 2380\n• HP Growth: 146.8 → 145\n• Base Physical Defense: 19 → 17\n• Physical Defense Growth: 3.9 → 4\n\n: - Buff\n• Base Damage: 315-590 → 365-590\n• Mana Cost: 50-80 → 45-70\n\n:ㅤ [Ultimate (When Holding the Umbrella)] Adjust\n\n• Base Damage: 330-470 (+105% Total Magic Power) → 250-420 (+95% Total Magic Power)\n• Cooldown: 43-33s → 36-30s\n• Mana Cost: 85-115 → 60-90\n\n:ㅤㅤ [Ultimate (Without Umbrella)] Adjust\n• Base Damage: 290-390 (+70% Total Magic Power) → 235-355 (+60% Total Magic Power)\n• Extra Damage: 550-800 (+170% Total Magic Power) → 480-720 (+155% Total Magic Power)\n• Cooldown: 43-33s → 36-30s\n• Mana Cost: 85-115 → 60-90\n\nKimmy Adjust\n: Adjusted the hero to align with Mage Attributes adjustments.\n\n: - Adjust\n• Base HP: 2450 → 2380\n• HP Growth: 117.5 → 145\n• Base Physical Defense: 22 → 17\n• Physical Defense Growth: 4.3 → 4\n\nLunox Adjust\n: Adjusted the hero to align with Mage Attributes adjustments.\n\n: - Adjust\n• Base HP: 2621 → 2440\n• HP Growth: 151 → 165\n• Base Physical Defense: 15 → 18\n• Physical Defense Growth: 3.6 → 4\n\nLuo Yi Buff\n: To align with the adjustments to Mage attributes and Mana Cost, we have adjusted the damage distribution and increased Skill 1 damage to improve wave clearing.\n\n: - Nerf\n• Base HP: 2480 → 2440\n• HP Growth: 195 → 175\n• Base Physical Defense: 20 → 18\n• Physical Defense Growth: 4.3 → 4\n\n: - Nerf\n• Base Damage: 365 (+ 20* Hero Level) → 300 (+ 25* Hero Level)\n\n: - Buff\n• Base Damage: 210-510 → 285-510\n• Mana Cost: 50-90 → 50-80\n\n: - Buff\n• Mana Cost: 120-170 → 75-100\n• Cooldown: 12s at all levels → 12-10s\n\nLylia Buff\n: Adjusted the hero to "
+},
+{
+"title": "III. Battlefield Adjustments",
+"body": ""
+},
+{
+"title": "IV. System Adjustments",
+"body": ""
+},
+{
+"title": "V. Mode Adjustments",
+"body": ": Mayhem Mode Returns\n: [Available Time]\n• To meet the passionate expectations of our players, [Mayhem] mode will return for a limited time with some new heroes!\n• Available: 03/27/2026 - 04/22/2026\n\n: [Guide]\n• In [Mayhem] mode, players can freely choose their favorite heroes from owned heroes, mode-specific free heroes, and heroes unlocked by Trial Cards.\n• Heroes will receive tailored super skill enhancements. Heroes start at Lv.4 with faster Gold gain and reduced Arrival cooldown. Let the mayhem begin!\n\n: [New Heroes]\n• New available heroes: Freya, Eudora, Granger, Alpha, Layla, Yu Zhong, Cici, Leomord, Belerick, Badang, X.Borg, Nolan, Zetian, Obsidia, and Sora."
+},
+{
+"title": "VI. Event Adjustment",
+"body": "-"
+},
+{
+"title": "VII. Bug Fixes",
+"body": "-"
+}
+]
+},
+{
+"version": "2.1.47",
+"title": "Patch Notes 2.1.47",
+"link": "https://mobilelegends.fandom.com/wiki/Patch_Notes_2.1.47",
+"date": "8 January 2026",
+"highlights": [
+"Revamp Hero: Lightning Weaver - Eudora, Dean of the Ulturia School of the Magic Academy, Light Elf.",
+"Buffed: Floryn, Hanzo, Lukas, Miya, Suyou.",
+"Nerfed: Aamon, Leomord, Sora, Yu Zhong."
+],
+"intro": ": This page contains patch notes released on the Official Server.\n\nAn update for Mobile Legends: Bang Bang has been released on the Original Server for the month of January, year 2026. This includes the revamp hero Eudora, along with adjustments, battlefield changes and in-game events.\n\nThe update was released on 28 January 2026, 00:00 server time.",
+"designers": "In this patch, we have adjusted some heroes based on their performance in the M7 and the new season's Ranked matches. As the M Championship has just concluded, more hero adjustments will undergo testing on the Advanced Server and be released in the next patch. Good luck ranking up on the battlefield!",
+"changes": {
+"buff": 13,
+"nerf": 11,
+"adjust": 1
+},
+"sections": [
+{
+"title": "From The Designers",
+"body": "In this patch, we have adjusted some heroes based on their performance in the M7 and the new season's Ranked matches. As the M Championship has just concluded, more hero adjustments will undergo testing on the Advanced Server and be released in the next patch. Good luck ranking up on the battlefield!"
+},
+{
+"title": "I. New Hero",
+"body": ""
+},
+{
+"title": "II. Hero Adjustments",
+"body": ": The following uses Buff Nerf Adjust to indicate Buff, Nerf, and Adjustment.\n\nAamon Nerf\n: Fixed some issues and reduced his damage against high-HP targets.\n\n: - Nerf\n• Removed the damage reduction effect when multiple shards hit the same target.\n• Fixed an issue where the actual damage and shard count of Aamon's Ultimate did not match the displayed values.\n• Minimum Damage Per Shard: 45-55 (+12% Total Magic Power) → 35-45 (+10% Total Magic Power)\n• Maximum Damage Per Shard: 75-90 (+20% Total Magic Power) → 70-90 (+20% Total Magic Power)\n\nFloryn Buff\n: Increased the bonus that Equipment [Flower of Hope] grants to teammates.\n\n: - Buff\n• Flower of Hope: +5% Adaptive Attack → +8% Adaptive Attack\n• Flower of Hope Damage: 60 (+ 30% Total Physical Attack) (+ 30% Total Magic Power) → 100 (+ 40% Total Physical Attack) (+ 30% Total Magic Power)\n\nHanzo Buff\n: To enable Hanzo to attack the Turtle and Lord with his Ultimate, we've improved his Ultimate's sustainability in the mid-to-late game. New Energy Regen Mechanic in Hanekage Form: He gains a small amount of Energy when attacking a hero, the Turtle, or the Lord.\n: We have also increased the Max Energy of Hanzo's Ultimate by 10 times, and proportionally increased his current Energy consumption and Energy Regen.\n\n: - Buff\n• Basic Attacks against heroes grant 15 Energy. Basic Attacks against the Turtle and Lord grant 45 Energy. Hitting multiple units with a Basic Attack only grants Energy once.\n• Cooldown: 24-12s → 24-16s\n\nLeomord Nerf\n: We're glad to see Leomord riding into battle again. But his early-game jungle control was too difficult to counter. Therefore, we've reduced Skill 1's extra damage against creeps.\n\n: - Nerf\n• Extra Damage Against Creeps: 200% → 160%\n\nLukas Buff\n: Lukas's strength has improved significantly since the last buff, but his laning ability is still slightly weak, especially his HP Regen.\n\n: - Buff\n• Effect Adjustment: Recover 8% Max HP when hitting a hero → Recover 5% Max HP when hitting a hero or minion\n\nMiya Buff\n: Further increased Miya's survivability.\n\n: - Buff\n• Cooldown: 46-26s → 30-20s\n\nSora Nerf\n: Sora's Crowd Control should be decisive and used at key moments, while his entry capabilities should be frequent and fatal. Therefore, we've adjusted the cooldown of his Ultimate in different forms.\n\n: - Nerf\n• Torrent Form's Cooldown: 24-16s → 32-24s\n\nSuyou Buff\n: Improved the hero's skill casting flexibility in the mid to late game.\n\n: - Buff\n• Cooldown: 8s → 8.5-7s\n\n: - Buff\n• Cooldown: 8s → 8.5-7s\n\n: - Buff\n• Cooldown: 8s → 8.5-7s\n\nYu Zhong Nerf\n: Slightly reduced his dominance in the early to mid game.\n\n: - Nerf\n• Base Damage per Sha Residue Stack: 30 → 20"
+},
+{
+"title": "III. Battlefield Adjustments",
+"body": ""
+},
+{
+"title": "IV. System Adjustments",
+"body": "-"
+},
+{
+"title": "V. Mode Adjustment",
+"body": ""
+},
+{
+"title": "VI. Event Adjustment",
+"body": "-"
+},
+{
+"title": "VII. Bug Fixes",
+"body": "Atlas\n: Fixed the abnormal Movement Speed Bonus gained by Atlas when casting Skill 2 in the Base."
+}
+]
+}
+]
+}

@@ -11,10 +11,12 @@ import { useFavourites } from "@/lib/use-favourites";
 import { useScrolled } from "@/lib/store";
 
 const NAV = [
-    { href: "/heroes", label: "Heroes", code: "01" },
-    { href: "/items", label: "Items", code: "02" },
-    { href: "/emblems", label: "Emblems", code: "03" },
-    { href: "/tools", label: "Tools", code: "04" },
+    { href: "/meta", label: "Meta", code: "01" },
+    { href: "/heroes", label: "Heroes", code: "02" },
+    { href: "/items", label: "Items", code: "03" },
+    { href: "/emblems", label: "Emblems", code: "04" },
+    { href: "/patches", label: "Patches", code: "05" },
+    { href: "/tools", label: "Tools", code: "06" },
 ];
 
 export default function SiteHeader() {

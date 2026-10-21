@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Layers, TrendingUp } from "lucide-react";
 import HeroCard from "@/components/hero/HeroCard";
 import HeroQuickSearch from "@/components/home/HeroQuickSearch";
+import PatchNotesSection from "@/components/patches/PatchNotesSection";
 import { SectionHeader, Badge } from "@/components/ui/primitives";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import {
@@ -204,6 +205,8 @@ export default function HomeSections() {
                     ))}
                 </div>
             </section>
+
+            <PatchNotesSection />
 
             <section className="grid gap-px border border-line bg-line sm:grid-cols-2">
                 <Link

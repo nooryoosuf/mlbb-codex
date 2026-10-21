@@ -12,7 +12,7 @@ export default function CountersPage() {
     return (
         <>
             <PageHeader
-                index="04.2"
+                index="06.2"
                 eyebrow="Tool"
                 title="Counter explorer"
                 description="Choose a hero to see recorded matchups and synergy partners."

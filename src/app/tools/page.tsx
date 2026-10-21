@@ -37,7 +37,7 @@ export default function ToolsPage() {
     return (
         <>
             <PageHeader
-                index="04"
+                index="06"
                 eyebrow="Toolkit"
                 title="Plan before you queue"
                 description="Practical helpers built on the same verified dataset."

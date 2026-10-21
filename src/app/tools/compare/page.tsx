@@ -13,7 +13,7 @@ export default function ComparePage() {
     return (
         <>
             <PageHeader
-                index="04.1"
+                index="06.1"
                 eyebrow="Tool"
                 title="Compare heroes"
                 description="Line up two heroes across base stats, ratings and ability kits."

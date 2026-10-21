@@ -12,7 +12,7 @@ export default function FavouritesPage() {
     return (
         <>
             <PageHeader
-                index="04.3"
+                index="06.3"
                 eyebrow="Tool"
                 title="Favourites"
                 description="A shortlist of the heroes you are learning or main."

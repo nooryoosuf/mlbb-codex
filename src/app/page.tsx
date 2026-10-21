@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HeroMasthead from "@/components/home/HeroMasthead";
+import MetaBand from "@/components/meta/MetaBand";
 import HomeSections from "@/components/home/HomeSections";
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export default function HomePage() {
     return (
         <>
             <HeroMasthead />
+            <MetaBand />
             <HomeSections />
         </>
     );

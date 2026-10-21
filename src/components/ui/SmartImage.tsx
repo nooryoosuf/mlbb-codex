@@ -55,6 +55,7 @@ export default function SmartImage({
                         src={image.src ?? ""}
                         alt={alt}
                         sizes={sizes}
+                        referrerPolicy="no-referrer"
                         loading={priority ? "eager" : "lazy"}
                         decoding="async"
                         fetchPriority={priority ? "high" : "auto"}

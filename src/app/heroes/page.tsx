@@ -13,7 +13,7 @@ export default function HeroesPage() {
     return (
         <>
             <PageHeader
-                index="01"
+                index="02"
                 eyebrow="The roster"
                 title="Every hero. One codex."
                 description={`Search all ${heroes.length} heroes, combine role and lane filters, and open any dossier for verified stats, abilities, skins and matchups.`}
