@@ -49,10 +49,25 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
     const neighbours = getHeroNeighbours(hero.slug);
     const related = getRelatedHeroes(hero, 6);
     const skinsWithArt = hero.skins.filter((skin) => skin.image || getSkinArt(hero.slug, skin.id));
-    const [activeSkin, setActiveSkin] = useState(skinsWithArt[0]?.id ?? "");
+    const nonDefaultSkins = skinsWithArt.length > 1 ? skinsWithArt.slice(1) : skinsWithArt;
+    const latestSkin =
+        [...nonDefaultSkins]
+            .filter((skin) => {
+                const art = getSkinArt(hero.slug, skin.id);
+                return Boolean(art && art.width > art.height);
+            })
+            .sort((a, b) => (a.release ?? "").localeCompare(b.release ?? ""))
+            .at(-1) ??
+        skinsWithArt.at(-1) ??
+        null;
+    const latestSkinArt = latestSkin ? getSkinArt(hero.slug, latestSkin.id) : null;
+    const [activeSkin, setActiveSkin] = useState(latestSkin?.id ?? skinsWithArt[0]?.id ?? "");
     const skinIndex = Math.max(0, skinsWithArt.findIndex((skin) => skin.id === activeSkin));
     const selectedSkin = skinsWithArt[skinIndex] ?? null;
     const selectedArt = selectedSkin ? getSkinArt(hero.slug, selectedSkin.id) : null;
+    const bannerImage = latestSkinArt
+        ? { src: latestSkinArt.url, aspect: "16 / 9", local: false }
+        : heroSplash(hero);
     const ranked = getMetaHero(hero.slug);
 
     function stepSkin(direction: 1 | -1) {
@@ -82,13 +97,13 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
             <section className="relative isolate overflow-hidden border-b border-line">
                 <div className="pointer-events-none absolute inset-0 -z-10">
                     <SmartImage
-                        image={heroSplash(hero)}
+                        image={bannerImage}
                         alt=""
                         name={hero.name}
                         priority
                         sizes="100vw"
                         className="h-full w-full"
-                        imgClassName="object-cover object-top opacity-40"
+                        imgClassName="object-cover object-top opacity-45"
                     />
                     <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--bg)_0%,var(--bg)_35%,transparent_85%)]" />
                     <div className="absolute inset-0 bg-[linear-gradient(0deg,var(--bg)_0%,transparent_65%)]" />
