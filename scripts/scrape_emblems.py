@@ -10,7 +10,9 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 }
 OUTPUT_DIR = "public/assets/builders-hub"
-OUTPUT_JSON = "builders_data.json"
+# Raw scrape output. Run finalize_builders_data.py to normalize it into
+# src/data/builders_data.json (the file the app actually imports).
+OUTPUT_JSON = "builders_data_raw.json"
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
@@ -118,9 +120,9 @@ def main():
                 }
 
     # Write JSON
-    with open(OUTPUT_JSON, 'w') as f:
+    with open(OUTPUT_JSON, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=4)
-    print(f"Data saved to {OUTPUT_JSON}")
+    print(f"Raw data saved to {OUTPUT_JSON}. Next: python scripts/finalize_builders_data.py")
 
 if __name__ == "__main__":
     main()

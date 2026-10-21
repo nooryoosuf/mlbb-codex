@@ -2,71 +2,63 @@ import type { Config } from "tailwindcss";
 
 export default {
     content: [
-        "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-        "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/data/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
         extend: {
             colors: {
-                background: "var(--c-bg)",
-                foreground: "var(--c-fg)",
-                accent: "var(--c-accent)",
-                "accent-dim": "rgba(255, 70, 85, 0.1)",
-                "neon-green": "#00ff9d",
-                "neon-gold": "#ffb700",
-                glass: {
-                    bg: "var(--glass-bg)",
-                    border: "var(--glass-border)",
-                    highlight: "var(--glass-highlight)"
-                }
+                bg: "var(--bg)",
+                elevated: "var(--bg-elevated)",
+                subtle: "var(--bg-subtle)",
+                fg: "var(--fg)",
+                muted: "var(--fg-muted)",
+                faint: "var(--fg-faint)",
+                accent: "var(--accent)",
+                "accent-strong": "var(--accent-strong)",
+                "accent-contrast": "var(--accent-contrast)",
+                "accent-soft": "var(--accent-soft)",
+                line: "var(--border)",
+                "line-strong": "var(--border-strong)",
+                danger: "var(--danger)",
+                success: "var(--success)",
             },
             fontFamily: {
-                display: ["var(--font-display)", "Oswald", "sans-serif"],
-                ui: ["var(--font-ui)", "Rajdhani", "sans-serif"],
-                mono: ["var(--font-mono)", "Share Tech Mono", "monospace"],
+                display: ["var(--font-display)", "ui-serif", "Georgia", "serif"],
+                ui: ["var(--font-ui)", "ui-sans-serif", "system-ui", "sans-serif"],
+                mono: ["var(--font-mono)", "ui-monospace", "monospace"],
             },
-            backgroundImage: {
-                'grid-pattern': "linear-gradient(var(--c-grid) 1px, transparent 1px), linear-gradient(90deg, var(--c-grid) 1px, transparent 1px)",
+            borderRadius: {
+                card: "0.75rem",
+                panel: "1rem",
             },
-            animation: {
-                'grid-move': 'gridMove 60s linear infinite',
-                'glitch-in': 'glitchIn 0.5s step-end',
-                'glitch-action': 'glitchAction 0.2s infinite',
-                'alert-pulse': 'alertPulse 2s infinite',
-                'scan': 'scan 3s linear infinite',
-                'text-glitch': 'glitch 0.2s infinite',
+            boxShadow: {
+                panel: "var(--shadow)",
+            },
+            maxWidth: {
+                shell: "84rem",
+            },
+            transitionTimingFunction: {
+                editorial: "cubic-bezier(0.16, 1, 0.3, 1)",
             },
             keyframes: {
-                gridMove: {
-                    '0%': { transform: 'translate(0, 0)' },
-                    '100%': { transform: 'translate(-50px, -50px)' },
+                "fade-up": {
+                    from: { opacity: "0", transform: "translateY(12px)" },
+                    to: { opacity: "1", transform: "translateY(0)" },
                 },
-                glitch: {
-                    '0%, 100%': { transform: 'translate(0)', textShadow: '2px 2px var(--c-accent), -2px -2px #00ff9d' },
-                    '50%': { transform: 'translate(2px, -2px)', textShadow: '-2px 2px var(--c-accent), 2px -2px #00ff9d' },
+                "fade-in": {
+                    from: { opacity: "0" },
+                    to: { opacity: "1" },
                 },
-                scan: {
-                    '0%': { top: '0%' },
-                    '100%': { top: '100%' },
+                shimmer: {
+                    "100%": { transform: "translateX(100%)" },
                 },
-                glitchIn: {
-                    '0%': { transform: 'translate(5px, -5px)', clipPath: 'inset(10% 0 10% 0)' },
-                    '10%': { transform: 'translate(-5px, 5px)', clipPath: 'inset(20% 0 20% 0)' },
-                    '20%': { transform: 'translate(10px, 0)', clipPath: 'inset(0 10% 0 10%)' },
-                    '30%': { transform: 'translate(0, 0)' },
-                },
-                glitchAction: {
-                    '0%, 100%': { transform: 'translate(0)' },
-                    '20%': { transform: 'translate(-5px, 5px)' },
-                    '40%': { transform: 'translate(-5px, -5px)' },
-                    '60%': { transform: 'translate(5px, 5px)' },
-                    '80%': { transform: 'translate(5px, -5px)' },
-                },
-                alertPulse: {
-                    '0%, 100%': { borderColor: 'var(--c-accent)', background: 'rgba(255, 70, 85, 0.05)' },
-                    '50%': { borderColor: 'white', background: 'rgba(255, 70, 85, 0.2)' },
-                },
+            },
+            animation: {
+                "fade-up": "fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both",
+                "fade-in": "fade-in 0.4s ease-out both",
+                shimmer: "shimmer 1.6s infinite",
             },
         },
     },

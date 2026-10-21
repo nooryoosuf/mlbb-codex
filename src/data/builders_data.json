@@ -2,196 +2,227 @@
     "emblems": [
         {
             "name": "Basic Common",
-            "attributes": "Hybrid Regen: +12, HP: +275, Adaptive Attack: +22",
-            "icon": "/assets/builders-hub/emblem_basic_common.png"
+            "role": "ALL-ROUNDER",
+            "description": "Provides balanced stats suitable for beginners or heroes who need a mix of regeneration and survivability.",
+            "bestFor": "New players, Mana-hungry heroes in early game",
+            "attributes": [
+                "Hybrid Regen: +12",
+                "HP: +275",
+                "Adaptive Attack: +22"
+            ],
+            "icon": "/assets/builders-hub/basic_common_emblem.png"
         },
         {
             "name": "Tank",
-            "attributes": "HP: +500, Hybrid Defense: +10, HP Regen: +4",
-            "icon": "/assets/builders-hub/emblem_tank.png"
+            "role": "DEFENSE",
+            "description": "Maximizes durability and crowd control resilience. Essential for frontline protectors.",
+            "bestFor": "Tanks, Roamers, Durable Fighters",
+            "attributes": [
+                "HP: +500",
+                "Hybrid Defense: +10",
+                "HP Regen: +4"
+            ],
+            "icon": "/assets/builders-hub/tank_emblem.png"
         },
         {
             "name": "Assassin",
-            "attributes": "Adaptive Penetration: +14, Adaptive Attack: +10, Movement Speed: +3%",
-            "icon": "/assets/builders-hub/emblem_assassin.png"
+            "role": "BURST / MOBILITY",
+            "description": "Focuses on high penetration and speed to eliminate key targets quickly.",
+            "bestFor": "Assassins, Burst Fighters, aggressive Marksmen",
+            "attributes": [
+                "Adaptive Penetration: +14",
+                "Adaptive Attack: +10",
+                "Movement Speed: +3%"
+            ],
+            "icon": "/assets/builders-hub/assassin_emblem.png"
         },
         {
             "name": "Mage",
-            "attributes": "Magic Power: +30, Cooldown Reduction: +5%, Magic Penetration: +8",
-            "icon": "/assets/builders-hub/emblem_mage.png"
+            "role": "MAGIC OFFENSE",
+            "description": "Enhances magic power and cooldown reduction for spell-casting dominance.",
+            "bestFor": "Mages, Magic Assassins, Magic Fighters",
+            "attributes": [
+                "Magic Power: +30",
+                "Cooldown Reduction: +5%",
+                "Magic Penetration: +8"
+            ],
+            "icon": "/assets/builders-hub/mage_emblem.png"
         },
         {
             "name": "Fighter",
-            "attributes": "Spell Vamp: +10%, Adaptive Attack: +22, Hybrid Defense: +6",
-            "icon": "/assets/builders-hub/emblem_fighter.png"
+            "role": "SUSTAIN / DAMAGE",
+            "description": "Balanced offense and defense with a focus on sustain through Spell Vamp.",
+            "bestFor": "Fighters, Sustain-heavy Assassins",
+            "attributes": [
+                "Spell Vamp: +10%",
+                "Adaptive Attack: +22",
+                "Hybrid Defense: +6"
+            ],
+            "icon": "/assets/builders-hub/fighter_emblem.png"
         },
         {
             "name": "Support",
-            "attributes": "Healing Effect: +12%, Cooldown Reduction: +10%, Movement Speed: +6%",
-            "icon": "/assets/builders-hub/emblem_support.png"
+            "role": "UTILITY",
+            "description": "Boosts healing effects and reduces cooldowns to aid allies more frequently.",
+            "bestFor": "Healers, Utility Supports, some Tanks",
+            "attributes": [
+                "Healing Effect: +12%",
+                "Cooldown Reduction: +10%",
+                "Movement Speed: +6%"
+            ],
+            "icon": "/assets/builders-hub/support_emblem.png"
         },
         {
             "name": "Marksman",
-            "attributes": "Attack Speed: +15%, Adaptive Attack: +16, Lifesteal: +5%",
-            "icon": "/assets/builders-hub/emblem_marksman.png"
+            "role": "DPS / CRIT",
+            "description": "Increases attack speed and lifesteal for sustained ranged damage.",
+            "bestFor": "Marksmen, some Attack Speed Fighters",
+            "attributes": [
+                "Attack Speed: +15%",
+                "Adaptive Attack: +16",
+                "Lifesteal: +5%"
+            ],
+            "icon": "/assets/builders-hub/marksman_emblem.png"
         }
     ],
-    "talents": {
-        "Thrill": {
+    "talents": [
+        {
             "name": "Thrill",
-            "description": "Gain 16 Adaptive Attack",
             "icon": "/assets/builders-hub/thrill.png",
-            "tier": 1
+            "description": "Gain 16 Adaptive Attack"
         },
-        "Swift": {
+        {
             "name": "Swift",
-            "description": "Gain 10% Extra Attack Speed",
             "icon": "/assets/builders-hub/swift.png",
-            "tier": 1
+            "description": "Gain 10% extra Attack Speed"
         },
-        "Vitality": {
+        {
+            "name": "Wilderness Blessing",
+            "icon": "/assets/builders-hub/wilderness_blessing.png",
+            "description": "Extra Movement Speed in Jungle and River. Movement Speed in the Jungle and Rive is increased by 10%. This bonus is halved when in combat wih enemy heroes, Lord or Turtle"
+        },
+        {
+            "name": "Seasoned Hunter",
+            "icon": "/assets/builders-hub/seasoned_hunter.png",
+            "description": "Increase Jungling Speed. Damage against Lord and Turtle is increased by 15%. This bonus is halved against regular Creeps and doesn't affect the damage of Retribution."
+        },
+        {
+            "name": "Impure Rage",
+            "icon": "/assets/builders-hub/impure_rage.png",
+            "description": "Extra Skill Damage & Restore Mana on Hit. Dealing damage with skills deals 4% of target's Max HP extra Adaptive Damage and restores 2% Mana on hit. If the hero does not use Mana restores 1% HP instead. Cooldown: 5s."
+        },
+        {
+            "name": "Quantum Charge",
+            "icon": "/assets/builders-hub/quantum_charge.png",
+            "description": "Basic Attacks Grant HP Regen & Speed Up. Dealing damage with Basic Attacks increases Movement Speed by 30% for 1.5s and restores 75-180HP (scales with level). Cooldown: 8s."
+        },
+        {
+            "name": "War Cry",
+            "icon": "/assets/builders-hub/war_cry.png",
+            "description": "Increase Sustained Damage. After every 3 Separate Basic Attacks or skill hit an enemy hero, all damage dealt increases by 8% for 6s. Cooldown: 6s."
+        },
+        {
+            "name": "Temporal Reign",
+            "icon": "/assets/builders-hub/temporal_reign.png",
+            "description": "Non-Ultimate Skills Cooldown Reduction. The next Ultimate cast decreases other active skills' remaining cooldowns by 1.5 times within 4s. Cooldown: 20s."
+        },
+        {
             "name": "Vitality",
-            "description": "Gain 225 Max HP",
             "icon": "/assets/builders-hub/vitality.png",
-            "tier": 1
+            "description": "Gain 225 extra max HP."
         },
-        "Rupture": {
+        {
+            "name": "Tenacity",
+            "icon": "/assets/builders-hub/tenacity.png",
+            "description": "Increase Defense at Low HP. When HP is below 50%, Physical & Magic Defense are increased by 15"
+        },
+        {
+            "name": "Concussive Blast",
+            "icon": "/assets/builders-hub/concussive_blast.png",
+            "description": "HP-Based AOE Damage. After the next Basic Attack, deal 100(+7% Total HP) Magic Damage to nearby enemies. Cooldown: 15s"
+        },
+        {
             "name": "Rupture",
-            "description": "Gain 5 Adaptive Penetration",
             "icon": "/assets/builders-hub/rupture.png",
-            "tier": 1
+            "description": "Gain 5 Adaptive Penetration."
         },
-        "Firmness": {
+        {
+            "name": "Master Assassin",
+            "icon": "/assets/builders-hub/master_assassin.png",
+            "description": "Increase Damage to Lone Heroes. If there is only one enemy hero nearby, damage dealt to them is increased by 7%"
+        },
+        {
+            "name": "Killing Spree",
+            "icon": "/assets/builders-hub/killing_spree.png",
+            "description": "Regen and Speed Up After Kill. After killing an enemy hero, instantly recover 15% of Lost HP and gain 20% Movement Speed. Duration: 3s"
+        },
+        {
+            "name": "Festival of Blood",
+            "icon": "/assets/builders-hub/festival_of_blood.png",
+            "description": "Get Extra Spell Vamp. Gain 6% Spell Vamp. Each hero kill or assist grant an additional 0.5% Spell Vamp, up to 8 stacks"
+        },
+        {
+            "name": "Brave Smite",
+            "icon": "/assets/builders-hub/brave_smite.png",
+            "description": "Skill Damage Grants HP Regen. Dealing skill damage to an enemy hero recovers 5% Max HP. Cooldown: 6s."
+        },
+        {
+            "name": "Bargain Hunter",
+            "icon": "/assets/builders-hub/bargain_hunter.png",
+            "description": "Reduce Equipment Cost. Equipment can be purchased at 95% of their base price."
+        },
+        {
+            "name": "Lethal Ignition",
+            "icon": "/assets/builders-hub/lethal_ignition.png",
+            "description": "Extra Damage on Multi-Hits. Dealing damage greater than 7% of an enemy hero's Max HP 3 times within 5s will scorch the target for Adaptive Damage. Cooldown: 15s."
+        },
+        {
             "name": "Firmness",
             "description": "Gain 6 Physical & Magic Defense",
             "icon": "/assets/builders-hub/firmness.png",
             "tier": 1
         },
-        "Agility": {
+        {
             "name": "Agility",
             "description": "Gain 4% Movement Speed",
             "icon": "/assets/builders-hub/agility.png",
             "tier": 1
         },
-        "Fatal": {
+        {
             "name": "Fatal",
             "description": "Gain 5% Critical Chance and 10% Critical Damage",
             "icon": "/assets/builders-hub/fatal.png",
             "tier": 1
         },
-        "Inspire": {
+        {
             "name": "Inspire",
             "description": "Gain 5% Cooldown Reduction",
             "icon": "/assets/builders-hub/inspire.png",
             "tier": 1
         },
-        "Wilderness Blessing": {
-            "name": "Wilderness Blessing",
-            "description": "Movement Speed Bonus in Jungle and River. Movement Speed in the Jungle and River is increased by 10%.",
-            "icon": "/assets/builders-hub/wilderness_blessing.png",
-            "tier": 2
-        },
-        "Seasoned Hunter": {
-            "name": "Seasoned Hunter",
-            "description": "Speed up Jungling. Damage against Lord and Turtle is increased by 15%.",
-            "icon": "/assets/builders-hub/seasoned_hunter.png",
-            "tier": 2
-        },
-        "Tenacity": {
-            "name": "Tenacity",
-            "description": "Defense Bonus when HP is low. When HP is below 50%, Physical & Magic Defense is increased by 15.",
-            "icon": "/assets/builders-hub/tenacity.png",
-            "tier": 2
-        },
-        "Master Assassin": {
-            "name": "Master Assassin",
-            "description": "Damage Bonus against lone enemies. When there is only one enemy hero nearby, damage to that hero is increased by 7%.",
-            "icon": "/assets/builders-hub/master_assassin.png",
-            "tier": 2
-        },
-        "Bargain Hunter": {
-            "name": "Bargain Hunter",
-            "description": "Equipment Discount. Equipment can be purchased at 95% of its price.",
-            "icon": "/assets/builders-hub/bargain_hunter.png",
-            "tier": 2
-        },
-        "Festival of Blood": {
-            "name": "Festival of Blood",
-            "description": "Gain Spell Vamp from kills. Gain 6% Spell Vamp. Each kill or assist grants 0.5% extra Spell Vamp, up to 8 stacks.",
-            "icon": "/assets/builders-hub/festival_of_blood.png",
-            "tier": 2
-        },
-        "Pull Yourself Together": {
+        {
             "name": "Pull Yourself Together",
             "description": "Reduced Battle Spell & Equipment Cooldown. Battle Spell and Active Equipment Cooldown are reduced by 15%.",
             "icon": "/assets/builders-hub/pull_yourself_together.png",
             "tier": 2
         },
-        "Weapon Master": {
+        {
             "name": "Weapon Master",
             "description": "Extra Attack Bonus. Physical Attack and Magic Power gained from Equipment, Emblems, Talents and Skills are increased by 5%.",
             "icon": "/assets/builders-hub/weapon_master.png",
             "tier": 2
         },
-        "Impure Rage": {
-            "name": "Impure Rage",
-            "description": "Extra Skill Damage and Mana Regen. Dealing damage with skills adds extra Adaptive Damage and restores 2% Mana on hit. (3% HP if no mana). Cooldown 5s.",
-            "icon": "/assets/builders-hub/impure_rage.png",
-            "tier": 3
-        },
-        "Quantum Charge": {
-            "name": "Quantum Charge",
-            "description": "Basic Attacks Grant HP Regen & Speed Up. Dealing damage with Basic Attacks increases Movement Speed by 30% for 1.5s and restores 75-180 HP.",
-            "icon": "/assets/builders-hub/quantum_charge.png",
-            "tier": 3
-        },
-        "Killing Spree": {
-            "name": "Killing Spree",
-            "description": "Regen and Speed Up After Kill. After killing an enemy hero, recover 15% Lost HP and gain 20% Movement Speed.",
-            "icon": "/assets/builders-hub/killing_spree.png",
-            "tier": 3
-        },
-        "Lethal Ignition": {
-            "name": "Lethal Ignition",
-            "description": "Extra Damage on multi-hits. Dealing damage greater than 7% Max HP 3 times in 5s burns the target for extra damage.",
-            "icon": "/assets/builders-hub/lethal_ignition.png",
-            "tier": 3
-        },
-        "Brave Smite": {
-            "name": "Brave Smite",
-            "description": "HP Regen on Skill Damage. Dealing Skill Damage to an enemy hero restores 4% Max HP. Cooldown 6s.",
-            "icon": "/assets/builders-hub/brave_smite.png",
-            "tier": 3
-        },
-        "Focusing Mark": {
+        {
             "name": "Focusing Mark",
             "description": "Damage Bonus for Allies. Dealing damage to an enemy hero increases allies' damage to them by 6% for 3s.",
             "icon": "/assets/builders-hub/focusing_mark.png",
             "tier": 3
         },
-        "Weakness Finder": {
+        {
             "name": "Weakness Finder",
             "description": "Basic Attacks slow down enemies. Basic Attacks have a chance to reduce target's Movement Speed by 90% and Attack Speed by 50%.",
             "icon": "/assets/builders-hub/weakness_finder.png",
             "tier": 3
-        },
-        "Concussive Blast": {
-            "name": "Concussive Blast",
-            "description": "Area Damage after Basic Attack. After next Basic Attack, deal Magic Damage to nearby enemies based on HP. Cooldown 15s.",
-            "icon": "/assets/builders-hub/concussive_blast.png",
-            "tier": 3
-        },
-        "War Cry": {
-            "name": "War Cry",
-            "description": "Damage Bonus after 3 attacks. After dealing damage with Basic Attacks or Skills 3 consecutive times, all damage increased by 8% for 6s.",
-            "icon": "/assets/builders-hub/war_cry.png",
-            "tier": 3
-        },
-        "Temporal Reign": {
-            "name": "Temporal Reign",
-            "description": "Reduced Ultimate Cooldown. Casting Ultimate reduces other skill's remaining cooldowns by 1.5 times. Cooldown 20s.",
-            "icon": "/assets/builders-hub/temporal_reign.png",
-            "tier": 3
         }
-    }
+    ]
 }

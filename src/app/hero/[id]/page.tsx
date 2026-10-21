@@ -1,18 +1,50 @@
-import { heroes } from "@/data/heroes";
-import HeroClientView from "./HeroClientView";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import HeroProfile from "@/components/hero/HeroProfile";
+import { heroes, getHero } from "@/data";
 
-export async function generateStaticParams() {
-    return heroes.map((hero) => ({
-        id: hero.id,
-    }));
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+    return heroes.map((hero) => ({ id: hero.slug }));
 }
 
-export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ id: string }>;
+}): Promise<Metadata> {
     const { id } = await params;
-    const hero = heroes.find(h => h.id === id);
+    const hero = getHero(id);
+    if (!hero) return { title: "Hero not found" };
 
-    if (!hero) return notFound();
+    const description = `${hero.name}${hero.title ? `, ${hero.title}` : ""} — ${[
+        ...hero.roles,
+        ...hero.lanes,
+    ].join(" · ")}. Verified base stats, abilities, skins, and matchups.`;
 
-    return <HeroClientView hero={hero} />;
+    return {
+        title: hero.name,
+        description,
+        alternates: { canonical: `/hero/${hero.slug}` },
+        openGraph: {
+            title: `${hero.name} — MLBB Codex`,
+            description,
+            url: `/hero/${hero.slug}`,
+            images: hero.splash ? [{ url: hero.splash, alt: `${hero.name} splash art` }] : undefined,
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: `${hero.name} — MLBB Codex`,
+            description,
+            images: hero.splash ? [hero.splash] : undefined,
+        },
+    };
+}
+
+export default async function HeroPage({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
+    const hero = getHero(id);
+    if (!hero) notFound();
+    return <HeroProfile hero={hero} />;
 }
