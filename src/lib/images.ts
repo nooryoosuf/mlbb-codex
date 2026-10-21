@@ -1,4 +1,5 @@
 import type { Hero } from "@/data";
+import { getSkinArt } from "@/data/skin-art";
 import { asset } from "@/lib/base-path";
 
 const FALLBACK_HUE_SEED = 0;
@@ -25,7 +26,29 @@ export function heroPortrait(hero: Pick<Hero, "portrait" | "slug">): ResolvedIma
     };
 }
 
-export function heroSplash(hero: Pick<Hero, "splash" | "portrait">): ResolvedImage {
+export function heroSplash(
+    hero: Pick<Hero, "splash" | "portrait"> & Partial<Pick<Hero, "slug" | "skins">>
+): ResolvedImage {
+    if (hero.slug && hero.skins && hero.skins.length > 0) {
+        const candidates = hero.skins.length > 1 ? hero.skins.slice(1) : hero.skins;
+        const latest =
+            [...candidates]
+                .filter((skin) => {
+                    const art = getSkinArt(hero.slug!, skin.id);
+                    return Boolean(art && art.width > art.height);
+                })
+                .sort((a, b) => (a.release ?? "").localeCompare(b.release ?? ""))
+                .at(-1) ??
+            hero.skins.at(-1);
+        const latestArt = latest ? getSkinArt(hero.slug, latest.id) : null;
+        if (latestArt) {
+            return {
+                src: latestArt.url,
+                aspect: "16 / 9",
+                local: false,
+            };
+        }
+    }
     return {
         src: asset(hero.splash),
         aspect: "16 / 9",
