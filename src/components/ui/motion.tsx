@@ -88,7 +88,7 @@ export function SplitLines({
     return (
         <span className={className}>
             {lines.map((line, index) => (
-                <span key={index} className="block overflow-hidden">
+                <span key={index} className="-my-[0.08em] block overflow-x-visible overflow-y-clip py-[0.08em]">
                     <motion.span
                         className={`block ${lineClassName}`}
                         initial={reduce ? false : { y: "110%" }}

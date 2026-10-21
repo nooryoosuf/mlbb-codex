@@ -35,8 +35,10 @@ export default function SmartImage({
     fit = "cover",
     aspect,
 }: SmartImageProps) {
-    const [failed, setFailed] = useState(false);
-    const [loaded, setLoaded] = useState(false);
+    const [failedSrc, setFailedSrc] = useState<string | null>(null);
+    const [loadedSrc, setLoadedSrc] = useState<string | null>(null);
+    const failed = Boolean(image.src && failedSrc === image.src);
+    const loaded = Boolean(image.src && loadedSrc === image.src);
     const showFallback = !image.src || failed;
 
     return (
@@ -52,6 +54,7 @@ export default function SmartImage({
                     {!loaded && <div className="absolute inset-0 animate-pulse bg-line" aria-hidden="true" />}
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
+                        key={image.src ?? alt}
                         src={image.src ?? ""}
                         alt={alt}
                         sizes={sizes}
@@ -59,8 +62,8 @@ export default function SmartImage({
                         loading={priority ? "eager" : "lazy"}
                         decoding="async"
                         fetchPriority={priority ? "high" : "auto"}
-                        onLoad={() => setLoaded(true)}
-                        onError={() => setFailed(true)}
+                        onLoad={() => setLoadedSrc(image.src)}
+                        onError={() => setFailedSrc(image.src)}
                         className={`h-full w-full transition-opacity duration-500 ${
                             fit === "contain" ? "object-contain" : "object-cover"
                         } ${loaded ? "opacity-100" : "opacity-0"} ${imgClassName}`}

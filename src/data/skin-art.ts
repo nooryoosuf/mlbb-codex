@@ -9,8 +9,8 @@ export interface SkinArtwork {
 const art = raw.skins as Record<string, Record<string, SkinArtwork>>;
 
 /**
- * Vertical (9:16) skin poster from the Mobile Legends Wiki, when one exists.
- * Falls back to null so callers can use the local MLBBDex thumbnail.
+ * Full-width (16:9) skin splash artwork from MLBBDex / Mobile Legends Wiki.
+ * Falls back to null so callers can use the skin thumbnail if ever needed.
  */
 export function getSkinArt(heroSlug: string, skinId: string): SkinArtwork | null {
     return art[heroSlug]?.[skinId] ?? null;

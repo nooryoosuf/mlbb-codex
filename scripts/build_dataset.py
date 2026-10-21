@@ -363,6 +363,7 @@ def main() -> None:
                     "image": DEX + rel if rel else None,
                 }
             )
+        skins.sort(key=lambda item: (len(item["id"]), item["id"]))
 
         gallery = [
             {"name": clean_text(illus_name), "image": DEX + rel}

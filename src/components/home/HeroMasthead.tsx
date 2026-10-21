@@ -91,7 +91,7 @@ export default function HeroMasthead() {
                             </span>
                         </motion.div>
 
-                        <h1 className="display whitespace-normal text-[clamp(2.6rem,8vw,6.6rem)] sm:whitespace-nowrap">
+                        <h1 className="display text-[clamp(2.5rem,5.5vw,5.4rem)] leading-[0.94]">
                             <SplitLines
                                 lines={[
                                     <span key="a">Know every hero.</span>,
@@ -154,7 +154,7 @@ export default function HeroMasthead() {
                                     />
                                 </div>
                                 <div className="min-w-0 flex-1">
-                                    <h2 className="display truncate text-3xl leading-none transition-colors group-hover:text-accent">
+                                    <h2 className="display text-3xl leading-[1.04] transition-colors group-hover:text-accent">
                                         {spotlight.name}
                                     </h2>
                                     <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-muted">

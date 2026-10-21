@@ -630,16 +630,6 @@
   "splash": "/splash/aldous.webp",
   "skins": [
    {
-    "id": "106410",
-    "name": "Fathom Terror",
-    "release": "2025-08-15",
-    "availability": "Limited",
-    "rarity": "Exceptional",
-    "label": "Special",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/aldous/skins/106410-fathom-terror.webp"
-   },
-   {
     "id": "641",
     "name": "Contractor",
     "release": "2018-07-24",
@@ -739,6 +729,16 @@
     "label": "Mistbenders",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/aldous/skins/649-mistbender-aldous.webp"
+   },
+   {
+    "id": "106410",
+    "name": "Fathom Terror",
+    "release": "2025-08-15",
+    "availability": "Limited",
+    "rarity": "Exceptional",
+    "label": "Special",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/aldous/skins/106410-fathom-terror.webp"
    }
   ],
   "gallery": [
@@ -1755,28 +1755,6 @@
   "splash": "/splash/angela.webp",
   "skins": [
    {
-    "id": "105510",
-    "name": "Avatar of Time",
-    "release": "2023-04-16",
-    "availability": "Limited",
-    "rarity": "Exquisite",
-    "label": "Annual StarLight",
-    "price": {
-     "other": "2023 StarLight Fest"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/angela/skins/105510-avatar-of-time.webp"
-   },
-   {
-    "id": "105511",
-    "name": "Strings of Fate",
-    "release": "2025-02-07",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "Kishin Densetsu",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/angela/skins/105511-strings-of-fate.webp"
-   },
-   {
     "id": "551",
     "name": "Bunnylove",
     "release": "2018-02-06",
@@ -1878,6 +1856,28 @@
     "label": "The Aspirants",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/angela/skins/559-cyber-cherubin.webp"
+   },
+   {
+    "id": "105510",
+    "name": "Avatar of Time",
+    "release": "2023-04-16",
+    "availability": "Limited",
+    "rarity": "Exquisite",
+    "label": "Annual StarLight",
+    "price": {
+     "other": "2023 StarLight Fest"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/angela/skins/105510-avatar-of-time.webp"
+   },
+   {
+    "id": "105511",
+    "name": "Strings of Fate",
+    "release": "2025-02-07",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "Kishin Densetsu",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/angela/skins/105511-strings-of-fate.webp"
    }
   ],
   "gallery": [
@@ -4594,16 +4594,6 @@
   "splash": "/splash/beatrix.webp",
   "skins": [
    {
-    "id": "1010510",
-    "name": "Sky Force Maverick",
-    "release": "2025-09-20",
-    "availability": "Limited",
-    "rarity": "Deluxe",
-    "label": "Finals MVP",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/beatrix/skins/1010510-sky-force-maverick.webp"
-   },
-   {
     "id": "1051",
     "name": "Dawnbreak Soldier",
     "release": "2021-03-19",
@@ -4687,6 +4677,16 @@
      "dm": "749"
     },
     "image": "https://mlbbdex.com/visuels/heros/beatrix/skins/1057-vibrant-fiesta.webp"
+   },
+   {
+    "id": "1010510",
+    "name": "Sky Force Maverick",
+    "release": "2025-09-20",
+    "availability": "Limited",
+    "rarity": "Deluxe",
+    "label": "Finals MVP",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/beatrix/skins/1010510-sky-force-maverick.webp"
    }
   ],
   "gallery": [
@@ -5638,16 +5638,6 @@
   "splash": "/splash/bruno.webp",
   "skins": [
    {
-    "id": "101210",
-    "name": "The Purifier",
-    "release": "202X",
-    "availability": "Limited",
-    "rarity": "Exquisite",
-    "label": "Collector",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/bruno/skins/101210-the-purifier.webp"
-   },
-   {
     "id": "121",
     "name": "The Protector",
     "release": "2016",
@@ -5753,6 +5743,16 @@
      "other": "MLBB X Neymar Jr Collab Events"
     },
     "image": "https://mlbbdex.com/visuels/heros/bruno/skins/129-neymar-jr.webp"
+   },
+   {
+    "id": "101210",
+    "name": "The Purifier",
+    "release": "202X",
+    "availability": "Limited",
+    "rarity": "Exquisite",
+    "label": "Collector",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/bruno/skins/101210-the-purifier.webp"
    }
   ],
   "gallery": [
@@ -6413,40 +6413,6 @@
   "splash": "/splash/chang-e.webp",
   "skins": [
    {
-    "id": "106110",
-    "name": "Tech Tensai",
-    "release": "2024-03-05",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "The Aspirants",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/chang-e/skins/106110-tech-tensai.webp"
-   },
-   {
-    "id": "106111",
-    "name": "Moonglow Troupe",
-    "release": "2025-06-18",
-    "availability": "Limited",
-    "rarity": "Exceptional",
-    "label": "Special",
-    "price": {
-     "other": "S37 First Recharge"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/chang-e/skins/106111-moonglow-troupe.webp"
-   },
-   {
-    "id": "106112",
-    "name": "Golden Osmanthus",
-    "release": "2026-09-25",
-    "availability": "Limited",
-    "rarity": "Common",
-    "label": "Elite",
-    "price": {
-     "other": "Limited-time Event"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/chang-e/skins/106112-golden-osmanthus.webp"
-   },
-   {
     "id": "611",
     "name": "Moon Palace Immortal",
     "release": "2018-07-24",
@@ -6548,6 +6514,40 @@
     "label": "Lunar Festival",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/chang-e/skins/619-new-moon.webp"
+   },
+   {
+    "id": "106110",
+    "name": "Tech Tensai",
+    "release": "2024-03-05",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "The Aspirants",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/chang-e/skins/106110-tech-tensai.webp"
+   },
+   {
+    "id": "106111",
+    "name": "Moonglow Troupe",
+    "release": "2025-06-18",
+    "availability": "Limited",
+    "rarity": "Exceptional",
+    "label": "Special",
+    "price": {
+     "other": "S37 First Recharge"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/chang-e/skins/106111-moonglow-troupe.webp"
+   },
+   {
+    "id": "106112",
+    "name": "Golden Osmanthus",
+    "release": "2026-09-25",
+    "availability": "Limited",
+    "rarity": "Common",
+    "label": "Elite",
+    "price": {
+     "other": "Limited-time Event"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/chang-e/skins/106112-golden-osmanthus.webp"
    }
   ],
   "gallery": [
@@ -6938,54 +6938,6 @@
   "splash": "/splash/chou.webp",
   "skins": [
    {
-    "id": "102610",
-    "name": "Dragon Shiryu",
-    "release": "2022-10-27",
-    "availability": "Limited",
-    "rarity": "Deluxe",
-    "label": "Saint Seiya",
-    "price": {
-     "other": "Obtained via the MLBB × Saint Seiya event"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/chou/skins/102610-dragon-shiryu.webp"
-   },
-   {
-    "id": "102611",
-    "name": "Libra Shiryu",
-    "release": "2022-10-24",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "Saint Seiya",
-    "price": {
-     "other": "Obtained via the MLBB × Saint Seiya event"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/chou/skins/102611-libra-shiryu.webp"
-   },
-   {
-    "id": "102612",
-    "name": "ECHO",
-    "release": "2023-08-14",
-    "availability": "Limited",
-    "rarity": "Deluxe",
-    "label": "Champion",
-    "price": {
-     "dm": "899"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/chou/skins/102612-echo.webp"
-   },
-   {
-    "id": "102614",
-    "name": "Starforger's Glory",
-    "release": "2026-09-18",
-    "availability": "Limited",
-    "rarity": "Exceptional",
-    "label": "Special 10th",
-    "price": {
-     "other": "Limited-time Event"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/chou/skins/102614-starforger-s-glory.webp"
-   },
-   {
     "id": "261",
     "name": "Kung Fu Boy",
     "release": "2016",
@@ -7087,6 +7039,54 @@
      "dm": "899"
     },
     "image": "https://mlbbdex.com/visuels/heros/chou/skins/269-s-t-u-n-chou.webp"
+   },
+   {
+    "id": "102610",
+    "name": "Dragon Shiryu",
+    "release": "2022-10-27",
+    "availability": "Limited",
+    "rarity": "Deluxe",
+    "label": "Saint Seiya",
+    "price": {
+     "other": "Obtained via the MLBB × Saint Seiya event"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/chou/skins/102610-dragon-shiryu.webp"
+   },
+   {
+    "id": "102611",
+    "name": "Libra Shiryu",
+    "release": "2022-10-24",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "Saint Seiya",
+    "price": {
+     "other": "Obtained via the MLBB × Saint Seiya event"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/chou/skins/102611-libra-shiryu.webp"
+   },
+   {
+    "id": "102612",
+    "name": "ECHO",
+    "release": "2023-08-14",
+    "availability": "Limited",
+    "rarity": "Deluxe",
+    "label": "Champion",
+    "price": {
+     "dm": "899"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/chou/skins/102612-echo.webp"
+   },
+   {
+    "id": "102614",
+    "name": "Starforger's Glory",
+    "release": "2026-09-18",
+    "availability": "Limited",
+    "rarity": "Exceptional",
+    "label": "Special 10th",
+    "price": {
+     "other": "Limited-time Event"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/chou/skins/102614-starforger-s-glory.webp"
    }
   ],
   "gallery": [
@@ -7486,38 +7486,6 @@
   "splash": "/splash/claude.webp",
   "skins": [
    {
-    "id": "106510",
-    "name": "Heart Aflame",
-    "release": "2024-03-16",
-    "availability": "Limited",
-    "rarity": "Deluxe",
-    "label": "Valentine",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/claude/skins/106510-heart-aflame.webp"
-   },
-   {
-    "id": "106511",
-    "name": "Challenger's Spark",
-    "release": "2024-03-16",
-    "availability": "Limited",
-    "rarity": "Deluxe",
-    "label": "M6",
-    "price": {
-     "other": "M6 Pass"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/claude/skins/106511-challenger-s-spark.webp"
-   },
-   {
-    "id": "106512",
-    "name": "Cosmic Blaze",
-    "release": "2024-03-16",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "PRIME",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/claude/skins/106512-cosmic-blaze.webp"
-   },
-   {
     "id": "651",
     "name": "Master Thief",
     "release": "2022-02-22",
@@ -7617,6 +7585,38 @@
     "label": "Sanrio",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/claude/skins/659-bad-bro.webp"
+   },
+   {
+    "id": "106510",
+    "name": "Heart Aflame",
+    "release": "2024-03-16",
+    "availability": "Limited",
+    "rarity": "Deluxe",
+    "label": "Valentine",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/claude/skins/106510-heart-aflame.webp"
+   },
+   {
+    "id": "106511",
+    "name": "Challenger's Spark",
+    "release": "2024-03-16",
+    "availability": "Limited",
+    "rarity": "Deluxe",
+    "label": "M6",
+    "price": {
+     "other": "M6 Pass"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/claude/skins/106511-challenger-s-spark.webp"
+   },
+   {
+    "id": "106512",
+    "name": "Cosmic Blaze",
+    "release": "2024-03-16",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "PRIME",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/claude/skins/106512-cosmic-blaze.webp"
    }
   ],
   "gallery": [
@@ -7811,40 +7811,6 @@
   "splash": "/splash/clint.webp",
   "skins": [
    {
-    "id": "101310",
-    "name": "Captain of the Reefs",
-    "release": "2024",
-    "availability": "Available",
-    "rarity": "Deluxe",
-    "label": "Epic",
-    "price": {
-     "dm": "899"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/clint/skins/101310-captain-of-the-reefs.webp"
-   },
-   {
-    "id": "101311",
-    "name": "Scarlet Musketeer",
-    "release": "2026-09-16",
-    "availability": "Available",
-    "rarity": "Common",
-    "label": null,
-    "price": {
-     "dm": "269"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/clint/skins/101311-scarlet-musketeer.webp"
-   },
-   {
-    "id": "101312",
-    "name": "Dragon's Maw",
-    "release": "2024-12-21",
-    "availability": "Limited",
-    "rarity": "Deluxe",
-    "label": "Mythic 2024",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/clint/skins/101312-dragon-s-maw.webp"
-   },
-   {
     "id": "131",
     "name": "West Justice",
     "release": "2016",
@@ -7948,6 +7914,40 @@
     "label": "Collector",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/clint/skins/139-crimson-blast.webp"
+   },
+   {
+    "id": "101310",
+    "name": "Captain of the Reefs",
+    "release": "2024",
+    "availability": "Available",
+    "rarity": "Deluxe",
+    "label": "Epic",
+    "price": {
+     "dm": "899"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/clint/skins/101310-captain-of-the-reefs.webp"
+   },
+   {
+    "id": "101311",
+    "name": "Scarlet Musketeer",
+    "release": "2026-09-16",
+    "availability": "Available",
+    "rarity": "Common",
+    "label": null,
+    "price": {
+     "dm": "269"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/clint/skins/101311-scarlet-musketeer.webp"
+   },
+   {
+    "id": "101312",
+    "name": "Dragon's Maw",
+    "release": "2024-12-21",
+    "availability": "Limited",
+    "rarity": "Deluxe",
+    "label": "Mythic 2024",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/clint/skins/101312-dragon-s-maw.webp"
    }
   ],
   "gallery": [
@@ -8137,16 +8137,6 @@
   "splash": "/splash/cyclops.webp",
   "skins": [
    {
-    "id": "103310",
-    "name": "SpongeBob",
-    "release": "2025-12-19",
-    "availability": "Limited",
-    "rarity": "Deluxe",
-    "label": "SpongeBob",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/cyclops/skins/103310-spongebob.webp"
-   },
-   {
     "id": "331",
     "name": "Starsoul Magician",
     "release": "2017",
@@ -8250,6 +8240,16 @@
     "label": "Collector",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/cyclops/skins/339-yokai-warlock.webp"
+   },
+   {
+    "id": "103310",
+    "name": "SpongeBob",
+    "release": "2025-12-19",
+    "availability": "Limited",
+    "rarity": "Deluxe",
+    "label": "SpongeBob",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/cyclops/skins/103310-spongebob.webp"
    }
   ],
   "gallery": [
@@ -9823,16 +9823,6 @@
   "splash": "/splash/eudora.webp",
   "skins": [
    {
-    "id": "101510",
-    "name": "Midnight's Allure",
-    "release": "2026-02-11",
-    "availability": "Limited",
-    "rarity": "Deluxe",
-    "label": "Covenant",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/eudora/skins/101510-midnight-s-allure.webp"
-   },
-   {
     "id": "151",
     "name": "Lightning Weaver",
     "release": "2016",
@@ -9919,6 +9909,16 @@
     "label": "Atomic",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/eudora/skins/158-atomic-pop-eudora.webp"
+   },
+   {
+    "id": "101510",
+    "name": "Midnight's Allure",
+    "release": "2026-02-11",
+    "availability": "Limited",
+    "rarity": "Deluxe",
+    "label": "Covenant",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/eudora/skins/101510-midnight-s-allure.webp"
    }
   ],
   "gallery": [
@@ -10089,48 +10089,6 @@
   "splash": "/splash/fanny.webp",
   "skins": [
    {
-    "id": "101710",
-    "name": "Blade of Kibou",
-    "release": "2022-01-22",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "The Aspirants",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/fanny/skins/101710-blade-of-kibou.webp"
-   },
-   {
-    "id": "101711",
-    "name": "Heart Afloat",
-    "release": "2022-02",
-    "availability": "Limited",
-    "rarity": "Deluxe",
-    "label": "Valentine",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/fanny/skins/101711-heart-afloat.webp"
-   },
-   {
-    "id": "101712",
-    "name": "Mikasa",
-    "release": "2023-02-18",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "Attack on Titan",
-    "price": {
-     "other": "Obtained via the [[MLBB × Attack on Titan]] event"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/fanny/skins/101712-mikasa.webp"
-   },
-   {
-    "id": "101714",
-    "name": "P.ACE Fanny",
-    "release": "2025-10-09",
-    "availability": "Limited",
-    "rarity": "Deluxe",
-    "label": "P.ACE",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/fanny/skins/101714-p-ace-fanny.webp"
-   },
-   {
     "id": "171",
     "name": "Blade Dancer",
     "release": "2016",
@@ -10234,6 +10192,48 @@
      "other": "S22 First Recharge"
     },
     "image": "https://mlbbdex.com/visuels/heros/fanny/skins/179-imperial-warrior.webp"
+   },
+   {
+    "id": "101710",
+    "name": "Blade of Kibou",
+    "release": "2022-01-22",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "The Aspirants",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/fanny/skins/101710-blade-of-kibou.webp"
+   },
+   {
+    "id": "101711",
+    "name": "Heart Afloat",
+    "release": "2022-02",
+    "availability": "Limited",
+    "rarity": "Deluxe",
+    "label": "Valentine",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/fanny/skins/101711-heart-afloat.webp"
+   },
+   {
+    "id": "101712",
+    "name": "Mikasa",
+    "release": "2023-02-18",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "Attack on Titan",
+    "price": {
+     "other": "Obtained via the [[MLBB × Attack on Titan]] event"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/fanny/skins/101712-mikasa.webp"
+   },
+   {
+    "id": "101714",
+    "name": "P.ACE Fanny",
+    "release": "2025-10-09",
+    "availability": "Limited",
+    "rarity": "Deluxe",
+    "label": "P.ACE",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/fanny/skins/101714-p-ace-fanny.webp"
    }
   ],
   "gallery": [
@@ -10920,28 +10920,6 @@
     "image": "https://mlbbdex.com/visuels/heros/franco/skins/101-frozen-warrior.webp"
    },
    {
-    "id": "101010",
-    "name": "Quantum Vanguard",
-    "release": "2024-08-09",
-    "availability": "Available",
-    "rarity": "Exceptional",
-    "label": "MPL",
-    "price": {
-     "dm": "749"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/franco/skins/101010-quantum-vanguard.webp"
-   },
-   {
-    "id": "101011",
-    "name": "Captain of the Lost",
-    "release": "2026-02-19",
-    "availability": "Limited",
-    "rarity": "Exceptional",
-    "label": "Special",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/franco/skins/101011-captain-of-the-lost.webp"
-   },
-   {
     "id": "102",
     "name": "Masterchef",
     "release": "2016",
@@ -11034,6 +11012,28 @@
      "mc": "200"
     },
     "image": "https://mlbbdex.com/visuels/heros/franco/skins/109-king-of-hell.webp"
+   },
+   {
+    "id": "101010",
+    "name": "Quantum Vanguard",
+    "release": "2024-08-09",
+    "availability": "Available",
+    "rarity": "Exceptional",
+    "label": "MPL",
+    "price": {
+     "dm": "749"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/franco/skins/101010-quantum-vanguard.webp"
+   },
+   {
+    "id": "101011",
+    "name": "Captain of the Lost",
+    "release": "2026-02-19",
+    "availability": "Limited",
+    "rarity": "Exceptional",
+    "label": "Special",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/franco/skins/101011-captain-of-the-lost.webp"
    }
   ],
   "gallery": [
@@ -11466,18 +11466,6 @@
   "splash": "/splash/freya.webp",
   "skins": [
    {
-    "id": "102210",
-    "name": "Galactic Vanquisher",
-    "release": "2024-01-06",
-    "availability": "Available",
-    "rarity": "Supreme",
-    "label": "Legend",
-    "price": {
-     "mc": "200"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/freya/skins/102210-galactic-vanquisher.webp"
-   },
-   {
     "id": "221",
     "name": "Valkyrie",
     "release": "2017",
@@ -11582,6 +11570,18 @@
      "dm": "899"
     },
     "image": "https://mlbbdex.com/visuels/heros/freya/skins/229-s-a-b-e-r-manhunter.webp"
+   },
+   {
+    "id": "102210",
+    "name": "Galactic Vanquisher",
+    "release": "2024-01-06",
+    "availability": "Available",
+    "rarity": "Supreme",
+    "label": "Legend",
+    "price": {
+     "mc": "200"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/freya/skins/102210-galactic-vanquisher.webp"
    }
   ],
   "gallery": [
@@ -12488,26 +12488,6 @@
   "splash": "/splash/granger.webp",
   "skins": [
    {
-    "id": "107910",
-    "name": "Exorcist Granger",
-    "release": "2023-02-18",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "The Exorcists",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/granger/skins/107910-exorcist-granger.webp"
-   },
-   {
-    "id": "107911",
-    "name": "Alluring Enigma",
-    "release": "2024-02-13",
-    "availability": "Limited",
-    "rarity": "Deluxe",
-    "label": "Valentine",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/granger/skins/107911-alluring-enigma.webp"
-   },
-   {
     "id": "791",
     "name": "Death Chanter",
     "release": "2019-04-23",
@@ -12611,6 +12591,26 @@
      "dm": "749"
     },
     "image": "https://mlbbdex.com/visuels/heros/granger/skins/799-hellbringer.webp"
+   },
+   {
+    "id": "107910",
+    "name": "Exorcist Granger",
+    "release": "2023-02-18",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "The Exorcists",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/granger/skins/107910-exorcist-granger.webp"
+   },
+   {
+    "id": "107911",
+    "name": "Alluring Enigma",
+    "release": "2024-02-13",
+    "availability": "Limited",
+    "rarity": "Deluxe",
+    "label": "Valentine",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/granger/skins/107911-alluring-enigma.webp"
    }
   ],
   "gallery": [
@@ -13074,28 +13074,6 @@
   "splash": "/splash/guinevere.webp",
   "skins": [
    {
-    "id": "108010",
-    "name": "Elegant Butterfly",
-    "release": "2024-03-16",
-    "availability": "Limited",
-    "rarity": "Common",
-    "label": "Elite",
-    "price": {
-     "other": "S31 First Recharge"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/guinevere/skins/108010-elegant-butterfly.webp"
-   },
-   {
-    "id": "108012",
-    "name": "Daybreak Halo",
-    "release": "2025-10-03",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "The Aspirants",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/guinevere/skins/108012-daybreak-halo.webp"
-   },
-   {
     "id": "801",
     "name": "Ms. Violet",
     "release": "2019-02-21",
@@ -13197,6 +13175,28 @@
     "label": "Legend",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/guinevere/skins/809-psion-of-tomorrow.webp"
+   },
+   {
+    "id": "108010",
+    "name": "Elegant Butterfly",
+    "release": "2024-03-16",
+    "availability": "Limited",
+    "rarity": "Common",
+    "label": "Elite",
+    "price": {
+     "other": "S31 First Recharge"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/guinevere/skins/108010-elegant-butterfly.webp"
+   },
+   {
+    "id": "108012",
+    "name": "Daybreak Halo",
+    "release": "2025-10-03",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "The Aspirants",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/guinevere/skins/108012-daybreak-halo.webp"
    }
   ],
   "gallery": [
@@ -13386,40 +13386,6 @@
   "splash": "/splash/gusion.webp",
   "skins": [
    {
-    "id": "105610",
-    "name": "Soul Revelation",
-    "release": "2023-04-16",
-    "availability": "Available",
-    "rarity": "Deluxe",
-    "label": "Epic",
-    "price": {
-     "dm": "899"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/gusion/skins/105610-soul-revelation.webp"
-   },
-   {
-    "id": "105611",
-    "name": "Dimension Walker",
-    "release": "2023-11-09",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "Double 11",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/gusion/skins/105611-dimension-walker.webp"
-   },
-   {
-    "id": "105613",
-    "name": "Desert Spider",
-    "release": "2024-07-01",
-    "availability": "Limited",
-    "rarity": "Exceptional",
-    "label": "StarLight",
-    "price": {
-     "other": "2024/07 StarLight Member"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/gusion/skins/105613-desert-spider.webp"
-   },
-   {
     "id": "561",
     "name": "Holy Blade",
     "release": "2018-04-17",
@@ -13523,6 +13489,40 @@
     "label": "Collector",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/gusion/skins/569-night-owl.webp"
+   },
+   {
+    "id": "105610",
+    "name": "Soul Revelation",
+    "release": "2023-04-16",
+    "availability": "Available",
+    "rarity": "Deluxe",
+    "label": "Epic",
+    "price": {
+     "dm": "899"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/gusion/skins/105610-soul-revelation.webp"
+   },
+   {
+    "id": "105611",
+    "name": "Dimension Walker",
+    "release": "2023-11-09",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "Double 11",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/gusion/skins/105611-dimension-walker.webp"
+   },
+   {
+    "id": "105613",
+    "name": "Desert Spider",
+    "release": "2024-07-01",
+    "availability": "Limited",
+    "rarity": "Exceptional",
+    "label": "StarLight",
+    "price": {
+     "other": "2024/07 StarLight Member"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/gusion/skins/105613-desert-spider.webp"
    }
   ],
   "gallery": [
@@ -13713,48 +13713,6 @@
   "splash": "/splash/hanabi.webp",
   "skins": [
    {
-    "id": "106010",
-    "name": "Vessel of Rage",
-    "release": "2023-12-09",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "Soul Vessels",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/hanabi/skins/106010-vessel-of-rage.webp"
-   },
-   {
-    "id": "106011",
-    "name": "Chic Glamour",
-    "release": "2025-01",
-    "availability": "Limited",
-    "rarity": "Exceptional",
-    "label": "StarLight",
-    "price": {
-     "other": "2025/09 StarLight Member"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/hanabi/skins/106011-chic-glamour.webp"
-   },
-   {
-    "id": "106012",
-    "name": "Neonscape Icon",
-    "release": "2026-02-17",
-    "availability": "Limited",
-    "rarity": "Exceptional",
-    "label": "Golden Month 2026",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/hanabi/skins/106012-neonscape-icon.webp"
-   },
-   {
-    "id": "106013",
-    "name": "Twin Crescent",
-    "release": "2026-02-17",
-    "availability": "Limited",
-    "rarity": "Exceptional",
-    "label": "Golden Month",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/hanabi/skins/106013-twin-crescent.webp"
-   },
-   {
     "id": "601",
     "name": "Scarlet Flower",
     "release": "2018-04-17",
@@ -13856,6 +13814,48 @@
     "label": "ALLSTAR",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/hanabi/skins/609-moonlit-ninja.webp"
+   },
+   {
+    "id": "106010",
+    "name": "Vessel of Rage",
+    "release": "2023-12-09",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "Soul Vessels",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/hanabi/skins/106010-vessel-of-rage.webp"
+   },
+   {
+    "id": "106011",
+    "name": "Chic Glamour",
+    "release": "2025-01",
+    "availability": "Limited",
+    "rarity": "Exceptional",
+    "label": "StarLight",
+    "price": {
+     "other": "2025/09 StarLight Member"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/hanabi/skins/106011-chic-glamour.webp"
+   },
+   {
+    "id": "106012",
+    "name": "Neonscape Icon",
+    "release": "2026-02-17",
+    "availability": "Limited",
+    "rarity": "Exceptional",
+    "label": "Golden Month 2026",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/hanabi/skins/106012-neonscape-icon.webp"
+   },
+   {
+    "id": "106013",
+    "name": "Twin Crescent",
+    "release": "2026-02-17",
+    "availability": "Limited",
+    "rarity": "Exceptional",
+    "label": "Golden Month",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/hanabi/skins/106013-twin-crescent.webp"
    }
   ],
   "gallery": [
@@ -14600,18 +14600,6 @@
   "splash": "/splash/harley.webp",
   "skins": [
    {
-    "id": "104210",
-    "name": "Dreaming Koi",
-    "release": "2026-01-01",
-    "availability": "Limited",
-    "rarity": "Exceptional",
-    "label": "StarLight",
-    "price": {
-     "other": "2026/01 StarLight Member"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/harley/skins/104210-dreaming-koi.webp"
-   },
-   {
     "id": "421",
     "name": "Mage Genius",
     "release": "2017-08-11",
@@ -14713,6 +14701,18 @@
      "other": "S32 First Recharge"
     },
     "image": "https://mlbbdex.com/visuels/heros/harley/skins/429-star-magician.webp"
+   },
+   {
+    "id": "104210",
+    "name": "Dreaming Koi",
+    "release": "2026-01-01",
+    "availability": "Limited",
+    "rarity": "Exceptional",
+    "label": "StarLight",
+    "price": {
+     "other": "2026/01 StarLight Member"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/harley/skins/104210-dreaming-koi.webp"
    }
   ],
   "gallery": [
@@ -14888,38 +14888,6 @@
   "splash": "/splash/hayabusa.webp",
   "skins": [
    {
-    "id": "102110",
-    "name": "Exorcist Hayabusa",
-    "release": "2024-05",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "The Exorcists",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/hayabusa/skins/102110-exorcist-hayabusa.webp"
-   },
-   {
-    "id": "102111",
-    "name": "Kakashi Hatake",
-    "release": "2025-05-02",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "Naruto",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/hayabusa/skins/102111-kakashi-hatake.webp"
-   },
-   {
-    "id": "102112",
-    "name": "Kitsune's Shadow",
-    "release": "2026-10-01",
-    "availability": "Limited",
-    "rarity": "Exceptional",
-    "label": "StarLight",
-    "price": {
-     "other": "2026/10 StarLight Reward"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/hayabusa/skins/102112-kitsune-s-shadow.webp"
-   },
-   {
     "id": "211",
     "name": "Crimson Shadow",
     "release": "2016",
@@ -15023,6 +14991,38 @@
      "other": "S27 First Recharge"
     },
     "image": "https://mlbbdex.com/visuels/heros/hayabusa/skins/219-techie-ninja.webp"
+   },
+   {
+    "id": "102110",
+    "name": "Exorcist Hayabusa",
+    "release": "2024-05",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "The Exorcists",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/hayabusa/skins/102110-exorcist-hayabusa.webp"
+   },
+   {
+    "id": "102111",
+    "name": "Kakashi Hatake",
+    "release": "2025-05-02",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "Naruto",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/hayabusa/skins/102111-kakashi-hatake.webp"
+   },
+   {
+    "id": "102112",
+    "name": "Kitsune's Shadow",
+    "release": "2026-10-01",
+    "availability": "Limited",
+    "rarity": "Exceptional",
+    "label": "StarLight",
+    "price": {
+     "other": "2026/10 StarLight Reward"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/hayabusa/skins/102112-kitsune-s-shadow.webp"
    }
   ],
   "gallery": [
@@ -16609,16 +16609,6 @@
   "splash": "/splash/jawhead.webp",
   "skins": [
    {
-    "id": "105410",
-    "name": "Proto Guardian",
-    "release": "2025-07-05",
-    "availability": "Limited",
-    "rarity": "Deluxe",
-    "label": "Dino Pals",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/jawhead/skins/105410-proto-guardian.webp"
-   },
-   {
     "id": "541",
     "name": "Steel Sweetheart",
     "release": "2018-02-06",
@@ -16722,6 +16712,16 @@
      "other": "Season 33"
     },
     "image": "https://mlbbdex.com/visuels/heros/jawhead/skins/549-victory-loader.webp"
+   },
+   {
+    "id": "105410",
+    "name": "Proto Guardian",
+    "release": "2025-07-05",
+    "availability": "Limited",
+    "rarity": "Deluxe",
+    "label": "Dino Pals",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/jawhead/skins/105410-proto-guardian.webp"
    }
   ],
   "gallery": [
@@ -17909,30 +17909,6 @@
   "splash": "/splash/kagura.webp",
   "skins": [
    {
-    "id": "102510",
-    "name": "Jade Blossom",
-    "release": "2024-10-18",
-    "availability": "Limited",
-    "rarity": "Deluxe",
-    "label": "Epic",
-    "price": {
-     "dm": "899"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/kagura/skins/102510-jade-blossom.webp"
-   },
-   {
-    "id": "102511",
-    "name": "Lady Parasol",
-    "release": "2025-09-17",
-    "availability": "Limited",
-    "rarity": "Exceptional",
-    "label": "Special",
-    "price": {
-     "other": "S37 First Recharge"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/kagura/skins/102511-lady-parasol.webp"
-   },
-   {
     "id": "251",
     "name": "Onmyouji Master",
     "release": "2016",
@@ -18034,6 +18010,30 @@
     "label": "Clouds",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/kagura/skins/259-beyond-the-clouds-kagura.webp"
+   },
+   {
+    "id": "102510",
+    "name": "Jade Blossom",
+    "release": "2024-10-18",
+    "availability": "Limited",
+    "rarity": "Deluxe",
+    "label": "Epic",
+    "price": {
+     "dm": "899"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/kagura/skins/102510-jade-blossom.webp"
+   },
+   {
+    "id": "102511",
+    "name": "Lady Parasol",
+    "release": "2025-09-17",
+    "availability": "Limited",
+    "rarity": "Exceptional",
+    "label": "Special",
+    "price": {
+     "other": "S37 First Recharge"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/kagura/skins/102511-lady-parasol.webp"
    }
   ],
   "gallery": [
@@ -18937,28 +18937,6 @@
   "splash": "/splash/karrie.webp",
   "skins": [
    {
-    "id": "104010",
-    "name": "Ice Talon",
-    "release": "2023-08-02",
-    "availability": "Available",
-    "rarity": "Deluxe",
-    "label": "Epic",
-    "price": {
-     "dm": "899"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/karrie/skins/104010-ice-talon.webp"
-   },
-   {
-    "id": "104011",
-    "name": "Breath of Naraka",
-    "release": "2025-02-07",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "Kishin Densetsu",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/karrie/skins/104011-breath-of-naraka.webp"
-   },
-   {
     "id": "401",
     "name": "Lost Star",
     "release": "2017",
@@ -19062,6 +19040,28 @@
      "other": "S23 First Recharge"
     },
     "image": "https://mlbbdex.com/visuels/heros/karrie/skins/409-wheel-of-justice.webp"
+   },
+   {
+    "id": "104010",
+    "name": "Ice Talon",
+    "release": "2023-08-02",
+    "availability": "Available",
+    "rarity": "Deluxe",
+    "label": "Epic",
+    "price": {
+     "dm": "899"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/karrie/skins/104010-ice-talon.webp"
+   },
+   {
+    "id": "104011",
+    "name": "Breath of Naraka",
+    "release": "2025-02-07",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "Kishin Densetsu",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/karrie/skins/104011-breath-of-naraka.webp"
    }
   ],
   "gallery": [
@@ -20011,50 +20011,6 @@
   "splash": "/splash/lancelot.webp",
   "skins": [
    {
-    "id": "104710",
-    "name": "Empyrean Flame",
-    "release": "2021-11-21",
-    "availability": "Available",
-    "rarity": "Deluxe",
-    "label": "Dragon Tamer",
-    "price": {
-     "dm": "899"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/lancelot/skins/104710-empyrean-flame.webp"
-   },
-   {
-    "id": "104711",
-    "name": "Marques of Blades",
-    "release": "2024",
-    "availability": "Limited",
-    "rarity": "Common",
-    "label": "Elite",
-    "price": {
-     "other": "S30 First Recharge"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/lancelot/skins/104711-marques-of-blades.webp"
-   },
-   {
-    "id": "104712",
-    "name": "Guardian of the Shrine",
-    "release": "2025-02-07",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "Kishin Densetsu",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/lancelot/skins/104712-guardian-of-the-shrine.webp"
-   },
-   {
-    "id": "104713",
-    "name": "Blade of Devotion",
-    "release": "2026-02-01",
-    "availability": "Limited",
-    "rarity": "Exquisite",
-    "label": "Valentine 2026",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/lancelot/skins/104713-blade-of-devotion.webp"
-   },
-   {
     "id": "471",
     "name": "Blade of Roses",
     "release": "2018-02-06",
@@ -20156,6 +20112,50 @@
     "label": "Champion",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/lancelot/skins/479-bren-esports.webp"
+   },
+   {
+    "id": "104710",
+    "name": "Empyrean Flame",
+    "release": "2021-11-21",
+    "availability": "Available",
+    "rarity": "Deluxe",
+    "label": "Dragon Tamer",
+    "price": {
+     "dm": "899"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/lancelot/skins/104710-empyrean-flame.webp"
+   },
+   {
+    "id": "104711",
+    "name": "Marques of Blades",
+    "release": "2024",
+    "availability": "Limited",
+    "rarity": "Common",
+    "label": "Elite",
+    "price": {
+     "other": "S30 First Recharge"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/lancelot/skins/104711-marques-of-blades.webp"
+   },
+   {
+    "id": "104712",
+    "name": "Guardian of the Shrine",
+    "release": "2025-02-07",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "Kishin Densetsu",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/lancelot/skins/104712-guardian-of-the-shrine.webp"
+   },
+   {
+    "id": "104713",
+    "name": "Blade of Devotion",
+    "release": "2026-02-01",
+    "availability": "Limited",
+    "rarity": "Exquisite",
+    "label": "Valentine 2026",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/lancelot/skins/104713-blade-of-devotion.webp"
    }
   ],
   "gallery": [
@@ -20632,48 +20632,6 @@
   "splash": "/splash/layla.webp",
   "skins": [
    {
-    "id": "101810",
-    "name": "Twilight Waltz",
-    "release": "2023-10-01",
-    "availability": "Limited",
-    "rarity": "Exceptional",
-    "label": "StarLight",
-    "price": {
-     "other": "2023/10 StarLight Member"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/layla/skins/101810-twilight-waltz.webp"
-   },
-   {
-    "id": "101811",
-    "name": "Paranormal Operative",
-    "release": "2024-07-09",
-    "availability": "Limited",
-    "rarity": "Exquisite",
-    "label": "Collector",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/layla/skins/101811-paranormal-operative.webp"
-   },
-   {
-    "id": "101812",
-    "name": "The Beacon",
-    "release": "2025-11-05",
-    "availability": "Limited",
-    "rarity": "Supreme",
-    "label": "Legend Nexus Sea",
-    "price": {},
-    "image": null
-   },
-   {
-    "id": "101813",
-    "name": "Prismatic Rhythm",
-    "release": "2026-10-09",
-    "availability": "Limited",
-    "rarity": "Exquisite",
-    "label": "Collector 10th",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/layla/skins/101813-prismatic-rhythm.webp"
-   },
-   {
     "id": "181",
     "name": "Energy Gunner",
     "release": "2016",
@@ -20779,6 +20737,48 @@
     "label": "The Aspirants",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/layla/skins/189-miss-hikari.webp"
+   },
+   {
+    "id": "101810",
+    "name": "Twilight Waltz",
+    "release": "2023-10-01",
+    "availability": "Limited",
+    "rarity": "Exceptional",
+    "label": "StarLight",
+    "price": {
+     "other": "2023/10 StarLight Member"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/layla/skins/101810-twilight-waltz.webp"
+   },
+   {
+    "id": "101811",
+    "name": "Paranormal Operative",
+    "release": "2024-07-09",
+    "availability": "Limited",
+    "rarity": "Exquisite",
+    "label": "Collector",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/layla/skins/101811-paranormal-operative.webp"
+   },
+   {
+    "id": "101812",
+    "name": "The Beacon",
+    "release": "2025-11-05",
+    "availability": "Limited",
+    "rarity": "Supreme",
+    "label": "Legend Nexus Sea",
+    "price": {},
+    "image": null
+   },
+   {
+    "id": "101813",
+    "name": "Prismatic Rhythm",
+    "release": "2026-10-09",
+    "availability": "Limited",
+    "rarity": "Exquisite",
+    "label": "Collector 10th",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/layla/skins/101813-prismatic-rhythm.webp"
    }
   ],
   "gallery": [
@@ -21000,16 +21000,6 @@
   "splash": "/splash/leomord.webp",
   "skins": [
    {
-    "id": "106710",
-    "name": "Auspicious Blaze",
-    "release": "2026-02-13",
-    "availability": "Limited",
-    "rarity": "Deluxe",
-    "label": "Lunar Festival",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/leomord/skins/106710-auspicious-blaze.webp"
-   },
-   {
     "id": "671",
     "name": "Sworn Sword",
     "release": "2022-02-22",
@@ -21111,6 +21101,16 @@
      "dm": "899"
     },
     "image": "https://mlbbdex.com/visuels/heros/leomord/skins/679-nightmare-count.webp"
+   },
+   {
+    "id": "106710",
+    "name": "Auspicious Blaze",
+    "release": "2026-02-13",
+    "availability": "Limited",
+    "rarity": "Deluxe",
+    "label": "Lunar Festival",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/leomord/skins/106710-auspicious-blaze.webp"
    }
   ],
   "gallery": [
@@ -21292,48 +21292,6 @@
   "splash": "/splash/lesley.webp",
   "skins": [
    {
-    "id": "105310",
-    "name": "Hawk-eyed Sniper",
-    "release": "2021-11-21",
-    "availability": "Limited",
-    "rarity": "Exquisite",
-    "label": "Annual Starlight",
-    "price": {
-     "other": "2021 StarLight Fest"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/lesley/skins/105310-hawk-eyed-sniper.webp"
-   },
-   {
-    "id": "105311",
-    "name": "Deadeye Spectre",
-    "release": "2024-03-05",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "The Aspirants",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/lesley/skins/105311-deadeye-spectre.webp"
-   },
-   {
-    "id": "105312",
-    "name": "Meowkin Hunter",
-    "release": "2025-07-04",
-    "availability": "Limited",
-    "rarity": "Deluxe",
-    "label": "Mystic Meow",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/lesley/skins/105312-meowkin-hunter.webp"
-   },
-   {
-    "id": "105313",
-    "name": "Duchess of Tides",
-    "release": "2025-02-07",
-    "availability": "Limited",
-    "rarity": "Deluxe",
-    "label": "Covenant",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/lesley/skins/105313-duchess-of-tides.webp"
-   },
-   {
     "id": "531",
     "name": "Deadly Sniper",
     "release": "2018-02-06",
@@ -21435,6 +21393,48 @@
     "label": "Collector",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/lesley/skins/539-falcon-mistress.webp"
+   },
+   {
+    "id": "105310",
+    "name": "Hawk-eyed Sniper",
+    "release": "2021-11-21",
+    "availability": "Limited",
+    "rarity": "Exquisite",
+    "label": "Annual Starlight",
+    "price": {
+     "other": "2021 StarLight Fest"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/lesley/skins/105310-hawk-eyed-sniper.webp"
+   },
+   {
+    "id": "105311",
+    "name": "Deadeye Spectre",
+    "release": "2024-03-05",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "The Aspirants",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/lesley/skins/105311-deadeye-spectre.webp"
+   },
+   {
+    "id": "105312",
+    "name": "Meowkin Hunter",
+    "release": "2025-07-04",
+    "availability": "Limited",
+    "rarity": "Deluxe",
+    "label": "Mystic Meow",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/lesley/skins/105312-meowkin-hunter.webp"
+   },
+   {
+    "id": "105313",
+    "name": "Duchess of Tides",
+    "release": "2025-02-07",
+    "availability": "Limited",
+    "rarity": "Deluxe",
+    "label": "Covenant",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/lesley/skins/105313-duchess-of-tides.webp"
    }
   ],
   "gallery": [
@@ -21627,16 +21627,6 @@
   "splash": "/splash/ling.webp",
   "skins": [
    {
-    "id": "108410",
-    "name": "Neobeast Ling",
-    "release": "2025-04-12",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "Neobeast 2",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/ling/skins/108410-neobeast-ling.webp"
-   },
-   {
     "id": "841",
     "name": "Cyan Finch",
     "release": "2019-11-24",
@@ -21724,6 +21714,16 @@
     "label": "Kung Fu Panda",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/ling/skins/848-lord-shen.webp"
+   },
+   {
+    "id": "108410",
+    "name": "Neobeast Ling",
+    "release": "2025-04-12",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "Neobeast 2",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/ling/skins/108410-neobeast-ling.webp"
    }
   ],
   "gallery": [
@@ -22420,30 +22420,6 @@
   "splash": "/splash/lunox.webp",
   "skins": [
    {
-    "id": "106810",
-    "name": "Nature's Harmony",
-    "release": "2023-02-18",
-    "availability": "Limited",
-    "rarity": "Common",
-    "label": "Elite",
-    "price": {
-     "other": "S33 First Recharge"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/lunox/skins/106810-nature-s-harmony.webp"
-   },
-   {
-    "id": "106811",
-    "name": "Quantum Polarity",
-    "release": "2025-09-26",
-    "availability": "Available",
-    "rarity": "Exceptional",
-    "label": "MPL",
-    "price": {
-     "dm": "749"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/lunox/skins/106811-quantum-polarity.webp"
-   },
-   {
     "id": "681",
     "name": "Twilight Goddess",
     "release": "2022-02-22",
@@ -22549,6 +22525,30 @@
      "mc": "200"
     },
     "image": "https://mlbbdex.com/visuels/heros/lunox/skins/689-divine-goddess.webp"
+   },
+   {
+    "id": "106810",
+    "name": "Nature's Harmony",
+    "release": "2023-02-18",
+    "availability": "Limited",
+    "rarity": "Common",
+    "label": "Elite",
+    "price": {
+     "other": "S33 First Recharge"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/lunox/skins/106810-nature-s-harmony.webp"
+   },
+   {
+    "id": "106811",
+    "name": "Quantum Polarity",
+    "release": "2025-09-26",
+    "availability": "Available",
+    "rarity": "Exceptional",
+    "label": "MPL",
+    "price": {
+     "dm": "749"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/lunox/skins/106811-quantum-polarity.webp"
    }
   ],
   "gallery": [
@@ -25322,28 +25322,6 @@
   "splash": "/splash/moskov.webp",
   "skins": [
    {
-    "id": "103110",
-    "name": "Violet Spear",
-    "release": "2023-05-01",
-    "availability": "Limited",
-    "rarity": "Exceptional",
-    "label": "StarLight",
-    "price": {
-     "other": "2023/05 StarLight Member"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/moskov/skins/103110-violet-spear.webp"
-   },
-   {
-    "id": "103111",
-    "name": "Infernal Wrymlord",
-    "release": "2024-04-06",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "ALLSTAR 2024",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/moskov/skins/103111-infernal-wrymlord.webp"
-   },
-   {
     "id": "311",
     "name": "Spear of Quiescence",
     "release": "2017",
@@ -25447,6 +25425,28 @@
     "label": "ABYSS",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/moskov/skins/319-doom-incarnate.webp"
+   },
+   {
+    "id": "103110",
+    "name": "Violet Spear",
+    "release": "2023-05-01",
+    "availability": "Limited",
+    "rarity": "Exceptional",
+    "label": "StarLight",
+    "price": {
+     "other": "2023/05 StarLight Member"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/moskov/skins/103110-violet-spear.webp"
+   },
+   {
+    "id": "103111",
+    "name": "Infernal Wrymlord",
+    "release": "2024-04-06",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "ALLSTAR 2024",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/moskov/skins/103111-infernal-wrymlord.webp"
    }
   ],
   "gallery": [
@@ -27067,16 +27067,6 @@
   "splash": "/splash/odette.webp",
   "skins": [
    {
-    "id": "104610",
-    "name": "Song of Devotion",
-    "release": "2026-02-01",
-    "availability": "Limited",
-    "rarity": "Exquisite",
-    "label": "Valentine 2026",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/odette/skins/104610-song-of-devotion.webp"
-   },
-   {
     "id": "461",
     "name": "Swan Princess",
     "release": "2017-09-29",
@@ -27178,6 +27168,16 @@
      "other": "2024/09 StarLight Reward"
     },
     "image": "https://mlbbdex.com/visuels/heros/odette/skins/469-wisdom-of-the-stars.webp"
+   },
+   {
+    "id": "104610",
+    "name": "Song of Devotion",
+    "release": "2026-02-01",
+    "availability": "Limited",
+    "rarity": "Exquisite",
+    "label": "Valentine 2026",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/odette/skins/104610-song-of-devotion.webp"
    }
   ],
   "gallery": [
@@ -27657,28 +27657,6 @@
   "splash": "/splash/pharsa.webp",
   "skins": [
    {
-    "id": "105210",
-    "name": "Neon Shingetsu",
-    "release": "2023-10-16",
-    "availability": "Available",
-    "rarity": "Deluxe",
-    "label": "Epic",
-    "price": {
-     "dm": "899"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/pharsa/skins/105210-neon-shingetsu.webp"
-   },
-   {
-    "id": "105211",
-    "name": "Neobeast Pharsa",
-    "release": "2025-04-12",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "Neobeast 2",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/pharsa/skins/105211-neobeast-pharsa.webp"
-   },
-   {
     "id": "521",
     "name": "Wings of Vengeance",
     "release": "2017-12-27",
@@ -27778,6 +27756,28 @@
     "label": "MSC 2022",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/pharsa/skins/529-hierophant.webp"
+   },
+   {
+    "id": "105210",
+    "name": "Neon Shingetsu",
+    "release": "2023-10-16",
+    "availability": "Available",
+    "rarity": "Deluxe",
+    "label": "Epic",
+    "price": {
+     "dm": "899"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/pharsa/skins/105210-neon-shingetsu.webp"
+   },
+   {
+    "id": "105211",
+    "name": "Neobeast Pharsa",
+    "release": "2025-04-12",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "Neobeast 2",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/pharsa/skins/105211-neobeast-pharsa.webp"
    }
   ],
   "gallery": [
@@ -28748,16 +28748,6 @@
   "splash": "/splash/roger.webp",
   "skins": [
    {
-    "id": "103910",
-    "name": "Invoker's Restraint",
-    "release": "2025-08-08",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "Metro Zero",
-    "price": {},
-    "image": null
-   },
-   {
     "id": "391",
     "name": "Dire Wolf Hunter",
     "release": "2017-08-11",
@@ -28859,6 +28849,16 @@
     "label": "Transformers",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/roger/skins/399-grimlock.webp"
+   },
+   {
+    "id": "103910",
+    "name": "Invoker's Restraint",
+    "release": "2025-08-08",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "Metro Zero",
+    "price": {},
+    "image": null
    }
   ],
   "gallery": [
@@ -29042,26 +29042,6 @@
   "splash": "/splash/ruby.webp",
   "skins": [
    {
-    "id": "102910",
-    "name": "Crescent Dervish",
-    "release": "2025-02-28",
-    "availability": "Limited",
-    "rarity": "Exceptional",
-    "label": "Golden Month",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/ruby/skins/102910-crescent-dervish.webp"
-   },
-   {
-    "id": "102911",
-    "name": "Neon Edge",
-    "release": "2025-02-28",
-    "availability": "Limited",
-    "rarity": "Exceptional",
-    "label": "Golden Month",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/ruby/skins/102911-neon-edge.webp"
-   },
-   {
     "id": "291",
     "name": "Little Red Hood",
     "release": "2017-08-11",
@@ -29161,6 +29141,26 @@
      "dm": "749"
     },
     "image": "https://mlbbdex.com/visuels/heros/ruby/skins/299-soul-reaper.webp"
+   },
+   {
+    "id": "102910",
+    "name": "Crescent Dervish",
+    "release": "2025-02-28",
+    "availability": "Limited",
+    "rarity": "Exceptional",
+    "label": "Golden Month",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/ruby/skins/102910-crescent-dervish.webp"
+   },
+   {
+    "id": "102911",
+    "name": "Neon Edge",
+    "release": "2025-02-28",
+    "availability": "Limited",
+    "rarity": "Exceptional",
+    "label": "Golden Month",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/ruby/skins/102911-neon-edge.webp"
    }
   ],
   "gallery": [
@@ -29669,26 +29669,6 @@
   "splash": "/splash/selena.webp",
   "skins": [
    {
-    "id": "106311",
-    "name": "Curse of Cinder",
-    "release": "2025-03-10",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "Zenith",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/selena/skins/106311-curse-of-cinder.webp"
-   },
-   {
-    "id": "106312",
-    "name": "Silverbolt Raiko",
-    "release": "2026-10-09",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "The Aspirants",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/selena/skins/106312-silverbolt-raiko.webp"
-   },
-   {
     "id": "631",
     "name": "Abyssal Witch",
     "release": "2018-07-24",
@@ -29788,6 +29768,26 @@
     "label": "ABYSS",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/selena/skins/639-lady-vengeance.webp"
+   },
+   {
+    "id": "106311",
+    "name": "Curse of Cinder",
+    "release": "2025-03-10",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "Zenith",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/selena/skins/106311-curse-of-cinder.webp"
+   },
+   {
+    "id": "106312",
+    "name": "Silverbolt Raiko",
+    "release": "2026-10-09",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "The Aspirants",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/selena/skins/106312-silverbolt-raiko.webp"
    }
   ],
   "gallery": [
@@ -29972,16 +29972,6 @@
   "splash": "/splash/silvanna.webp",
   "skins": [
    {
-    "id": "109010",
-    "name": "Meowkin Warden",
-    "release": "2025-06-11",
-    "availability": "Limited",
-    "rarity": "Deluxe",
-    "label": "Mystic Meow",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/silvanna/skins/109010-meowkin-warden.webp"
-   },
-   {
     "id": "901",
     "name": "Imperial Knightess",
     "release": "2019-12-17",
@@ -30081,6 +30071,16 @@
     "label": "Special",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/silvanna/skins/909-classroom-charm.webp"
+   },
+   {
+    "id": "109010",
+    "name": "Meowkin Warden",
+    "release": "2025-06-11",
+    "availability": "Limited",
+    "rarity": "Deluxe",
+    "label": "Mystic Meow",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/silvanna/skins/109010-meowkin-warden.webp"
    }
   ],
   "gallery": [
@@ -30521,16 +30521,6 @@
   "splash": "/splash/sun.webp",
   "skins": [
    {
-    "id": "102710",
-    "name": "Celestial Rebel",
-    "release": "2026-10-01",
-    "availability": "Limited",
-    "rarity": "Exquisite",
-    "label": "Collector",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/sun/skins/102710-celestial-rebel.webp"
-   },
-   {
     "id": "271",
     "name": "Monkey King",
     "release": "2017-08-11",
@@ -30622,6 +30612,16 @@
     "label": "Collector",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/sun/skins/278-wicked-flames.webp"
+   },
+   {
+    "id": "102710",
+    "name": "Celestial Rebel",
+    "release": "2026-10-01",
+    "availability": "Limited",
+    "rarity": "Exquisite",
+    "label": "Collector",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/sun/skins/102710-celestial-rebel.webp"
    }
   ],
   "gallery": [
@@ -32007,18 +32007,6 @@
   "splash": "/splash/vale.webp",
   "skins": [
    {
-    "id": "106610",
-    "name": "Windborne Waltz",
-    "release": "2026-09-16",
-    "availability": "Limited",
-    "rarity": "Exceptional",
-    "label": "Special",
-    "price": {
-     "other": "S42 First Recharge"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/vale/skins/106610-windborne-waltz.webp"
-   },
-   {
     "id": "661",
     "name": "Windtalker",
     "release": "2019-01-29",
@@ -32120,6 +32108,18 @@
     "label": "Naruto",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/vale/skins/669-gaara.webp"
+   },
+   {
+    "id": "106610",
+    "name": "Windborne Waltz",
+    "release": "2026-09-16",
+    "availability": "Limited",
+    "rarity": "Exceptional",
+    "label": "Special",
+    "price": {
+     "other": "S42 First Recharge"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/vale/skins/106610-windborne-waltz.webp"
    }
   ],
   "gallery": [
@@ -32553,26 +32553,6 @@
   "splash": "/splash/valir.webp",
   "skins": [
    {
-    "id": "105710",
-    "name": "Arcane Seeker",
-    "release": "2018-08",
-    "availability": "Limited",
-    "rarity": "Common",
-    "label": "Elite",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/valir/skins/105710-arcane-seeker.webp"
-   },
-   {
-    "id": "105711",
-    "name": "Kyo Kusanagi",
-    "release": "2024-04-24",
-    "availability": "Limited",
-    "rarity": "Grand",
-    "label": "KOF",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/valir/skins/105711-kyo-kusanagi.webp"
-   },
-   {
     "id": "571",
     "name": "Son of Flames",
     "release": "2018-04-17",
@@ -32674,6 +32654,26 @@
     "label": "Saint Seiya",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/valir/skins/579-leo-ikki.webp"
+   },
+   {
+    "id": "105710",
+    "name": "Arcane Seeker",
+    "release": "2018-08",
+    "availability": "Limited",
+    "rarity": "Common",
+    "label": "Elite",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/valir/skins/105710-arcane-seeker.webp"
+   },
+   {
+    "id": "105711",
+    "name": "Kyo Kusanagi",
+    "release": "2024-04-24",
+    "availability": "Limited",
+    "rarity": "Grand",
+    "label": "KOF",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/valir/skins/105711-kyo-kusanagi.webp"
    }
   ],
   "gallery": [
@@ -32860,18 +32860,6 @@
   "splash": "/splash/vexana.webp",
   "skins": [
    {
-    "id": "103810",
-    "name": "Eternal Vow",
-    "release": "2026-02-06",
-    "availability": "Available",
-    "rarity": "Deluxe",
-    "label": "Epic",
-    "price": {
-     "dm": "899"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/vexana/skins/103810-eternal-vow.webp"
-   },
-   {
     "id": "381",
     "name": "Shimmer of Hope",
     "release": "2017-05-31",
@@ -32959,6 +32947,18 @@
     "label": "The Aspirants",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/vexana/skins/388-twilight-star.webp"
+   },
+   {
+    "id": "103810",
+    "name": "Eternal Vow",
+    "release": "2026-02-06",
+    "availability": "Available",
+    "rarity": "Deluxe",
+    "label": "Epic",
+    "price": {
+     "dm": "899"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/vexana/skins/103810-eternal-vow.webp"
    }
   ],
   "gallery": [
@@ -35529,48 +35529,6 @@
   "splash": "/splash/zilong.webp",
   "skins": [
    {
-    "id": "101610",
-    "name": "Empyrean Paladin",
-    "release": "2022",
-    "availability": "Limited",
-    "rarity": "Exquisite",
-    "label": "Collector",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/zilong/skins/101610-empyrean-paladin.webp"
-   },
-   {
-    "id": "101611",
-    "name": "Storm Rider",
-    "release": "2022",
-    "availability": "Limited",
-    "rarity": "Exceptional",
-    "label": "515",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/zilong/skins/101611-storm-rider.webp"
-   },
-   {
-    "id": "101612",
-    "name": "Dragon of Prosperity",
-    "release": "2024-02-09",
-    "availability": "Limited",
-    "rarity": "Deluxe",
-    "label": "Lunar Festival",
-    "price": {},
-    "image": "https://mlbbdex.com/visuels/heros/zilong/skins/101612-dragon-of-prosperity.webp"
-   },
-   {
-    "id": "101613",
-    "name": "Ascendant of Flame",
-    "release": "2026-10-16",
-    "availability": "Available",
-    "rarity": "Deluxe",
-    "label": "Create",
-    "price": {
-     "dm": "899"
-    },
-    "image": "https://mlbbdex.com/visuels/heros/zilong/skins/101613-ascendant-of-flame.webp"
-   },
-   {
     "id": "161",
     "name": "Spear of Dragon",
     "release": "2017-08-11",
@@ -35669,6 +35627,48 @@
     "label": "Summer",
     "price": {},
     "image": "https://mlbbdex.com/visuels/heros/zilong/skins/169-summer-waves.webp"
+   },
+   {
+    "id": "101610",
+    "name": "Empyrean Paladin",
+    "release": "2022",
+    "availability": "Limited",
+    "rarity": "Exquisite",
+    "label": "Collector",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/zilong/skins/101610-empyrean-paladin.webp"
+   },
+   {
+    "id": "101611",
+    "name": "Storm Rider",
+    "release": "2022",
+    "availability": "Limited",
+    "rarity": "Exceptional",
+    "label": "515",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/zilong/skins/101611-storm-rider.webp"
+   },
+   {
+    "id": "101612",
+    "name": "Dragon of Prosperity",
+    "release": "2024-02-09",
+    "availability": "Limited",
+    "rarity": "Deluxe",
+    "label": "Lunar Festival",
+    "price": {},
+    "image": "https://mlbbdex.com/visuels/heros/zilong/skins/101612-dragon-of-prosperity.webp"
+   },
+   {
+    "id": "101613",
+    "name": "Ascendant of Flame",
+    "release": "2026-10-16",
+    "availability": "Available",
+    "rarity": "Deluxe",
+    "label": "Create",
+    "price": {
+     "dm": "899"
+    },
+    "image": "https://mlbbdex.com/visuels/heros/zilong/skins/101613-ascendant-of-flame.webp"
    }
   ],
   "gallery": [

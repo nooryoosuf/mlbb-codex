@@ -48,7 +48,7 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
     const favourite = ready && isFavourite(hero.slug);
     const neighbours = getHeroNeighbours(hero.slug);
     const related = getRelatedHeroes(hero, 6);
-    const skinsWithArt = hero.skins.filter((skin) => skin.image);
+    const skinsWithArt = hero.skins.filter((skin) => skin.image || getSkinArt(hero.slug, skin.id));
     const [activeSkin, setActiveSkin] = useState(skinsWithArt[0]?.id ?? "");
     const skinIndex = Math.max(0, skinsWithArt.findIndex((skin) => skin.id === activeSkin));
     const selectedSkin = skinsWithArt[skinIndex] ?? null;
@@ -233,44 +233,54 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
                                         <h2 id="skins-heading" className="display text-3xl">Skins</h2>
                                     </div>
                                     <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">
-                                        {skinsWithArt.length} with artwork
+                                        {skinsWithArt.length} skins · full splash
                                     </span>
                                 </div>
 
-                                <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_13rem]">
-                                    <div className="relative border border-line bg-[radial-gradient(ellipse_at_50%_0%,var(--accent-soft),transparent_65%)]">
+                                <div className="space-y-3">
+                                    <div className="relative overflow-hidden border border-line bg-elevated">
                                         <button
                                             type="button"
                                             onClick={() => setLightboxOpen(true)}
-                                            className="group relative grid h-[clamp(26rem,62vh,42rem)] w-full place-items-center p-4"
+                                            className="group relative block w-full overflow-hidden bg-black/40"
                                             aria-label={`Open ${selectedSkin.name} at full size`}
                                         >
                                             <SmartImage
+                                                key={selectedSkin.id}
                                                 image={
                                                     selectedArt
-                                                        ? { src: selectedArt.url, aspect: "9 / 16", local: false }
+                                                        ? {
+                                                              src: selectedArt.url,
+                                                              aspect: `${selectedArt.width} / ${selectedArt.height}`,
+                                                              local: false,
+                                                          }
                                                         : skinImage(selectedSkin.image)
                                                 }
-                                                alt={`${selectedSkin.name} full skin artwork`}
+                                                alt={`${selectedSkin.name} full skin splash artwork`}
                                                 name={selectedSkin.name}
                                                 fit="contain"
-                                                aspect="auto"
-                                                sizes="(max-width: 1024px) 100vw, 45vw"
-                                                className="h-full w-full bg-transparent"
-                                                imgClassName="drop-shadow-[0_24px_60px_rgba(0,0,0,0.55)] transition-transform duration-500 ease-editorial group-hover:scale-[1.02]"
+                                                aspect="16 / 9"
+                                                sizes="(max-width: 1024px) 100vw, 68vw"
+                                                className="w-full bg-black/40"
+                                                imgClassName="transition-transform duration-500 ease-editorial group-hover:scale-[1.02]"
                                             />
-                                            <span className="absolute right-3 top-3 inline-flex items-center gap-1.5 border border-line-strong bg-bg/70 px-2 py-1 font-mono text-[9px] uppercase tracking-[0.16em] text-faint backdrop-blur transition-colors group-hover:text-accent">
+                                            <span className="
+                                                absolute right-3 top-3 inline-flex items-center gap-1.5
+                                                border border-line-strong bg-bg/75 px-2.5 py-1
+                                                font-mono text-[9px] uppercase tracking-[0.16em] text-faint
+                                                backdrop-blur transition-colors group-hover:text-accent
+                                            ">
                                                 <Maximize2 size={10} aria-hidden="true" />
-                                                {selectedArt ? "9:16 full art" : "Full image"}
+                                                Full splash
                                             </span>
                                         </button>
 
                                         <div className="flex items-center justify-between gap-3 border-t border-line bg-bg/60 px-4 py-3">
                                             <div className="min-w-0">
-                                                <h3 className="display truncate text-xl leading-none">{selectedSkin.name}</h3>
+                                                <h3 className="display truncate text-xl leading-[1.05]">{selectedSkin.name}</h3>
                                                 <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.16em] text-faint">
-                                                    {selectedSkin.rarity ?? "Skin"} · {String(skinIndex + 1).padStart(2, "0")} / {String(skinsWithArt.length).padStart(2, "0")}
-                                                    {selectedArt ? ` · ${selectedArt.width}×${selectedArt.height}` : " · thumbnail"}
+                                                    {selectedSkin.label ?? selectedSkin.rarity ?? "Skin"} · {String(skinIndex + 1).padStart(2, "0")} / {String(skinsWithArt.length).padStart(2, "0")}
+                                                    {selectedArt ? ` · ${selectedArt.width}×${selectedArt.height}` : ""}
                                                 </p>
                                             </div>
                                             <div className="flex shrink-0 items-center gap-1">
@@ -294,32 +304,38 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
                                         </div>
                                     </div>
 
-                                    <div className="flex gap-2 overflow-x-auto pb-1 lg:max-h-[clamp(24rem,58vh,38rem)] lg:flex-col lg:overflow-y-auto lg:pb-0 lg:pr-1">
+                                    <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
                                         {skinsWithArt.map((skin) => {
                                             const active = skin.id === selectedSkin.id;
+                                            const art = getSkinArt(hero.slug, skin.id);
                                             return (
                                                 <button
                                                     key={skin.id}
                                                     type="button"
                                                     onClick={() => setActiveSkin(skin.id)}
                                                     aria-pressed={active}
-                                                    className={`group relative flex shrink-0 flex-col border text-left transition-colors ${
+                                                    className={`group relative flex flex-col overflow-hidden border text-left transition-colors ${
                                                         active ? "border-accent bg-accent-soft/40" : "border-line bg-elevated hover:border-line-strong"
                                                     }`}
                                                 >
-                                                    <div className="grid h-24 w-20 place-items-center p-1.5 sm:h-28 sm:w-full lg:h-28">
+                                                    <div className="w-full overflow-hidden bg-black/30">
                                                         <SmartImage
-                                                            image={skinImage(skin.image)}
-                                                            alt={`${skin.name} thumbnail`}
+                                                            image={
+                                                                art
+                                                                    ? { src: art.url, aspect: "16 / 9", local: false }
+                                                                    : skinImage(skin.image)
+                                                            }
+                                                            alt={`${skin.name} splash thumbnail`}
                                                             name={skin.name}
-                                                            fit="contain"
-                                                            aspect="auto"
-                                                            sizes="112px"
-                                                            className="h-full w-full bg-transparent"
+                                                            fit="cover"
+                                                            aspect="16 / 9"
+                                                            sizes="(max-width: 640px) 48vw, 220px"
+                                                            className="w-full"
+                                                            imgClassName="transition-transform duration-500 ease-editorial group-hover:scale-[1.04]"
                                                         />
                                                     </div>
-                                                    <span className="block border-t border-line px-2 py-1.5">
-                                                        <span className="block truncate font-mono text-[9px] uppercase tracking-[0.1em] text-muted">
+                                                    <span className="block border-t border-line px-2.5 py-2">
+                                                        <span className="block truncate font-mono text-[9px] uppercase tracking-[0.1em] text-muted group-hover:text-fg">
                                                             {skin.name}
                                                         </span>
                                                     </span>
@@ -328,10 +344,6 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
                                         })}
                                     </div>
                                 </div>
-
-                                <p className="mt-3 font-mono text-[9px] uppercase tracking-[0.16em] text-faint">
-                                    Vertical 9:16 art from the Mobile Legends Wiki (CC BY-SA) when available; otherwise the local thumbnail, uncropped.
-                                </p>
                             </section>
                         )}
 
