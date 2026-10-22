@@ -18,6 +18,7 @@ import {
     ArrowLeft,
     X,
     Maximize2,
+    BookOpen,
 } from "lucide-react";
 import SmartImage from "@/components/ui/SmartImage";
 import { useFavourites } from "@/lib/use-favourites";
@@ -492,6 +493,19 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
                                 </ul>
                             </section>
                         )}
+
+                        <Link
+                            href={`/lore/heroes/${hero.slug}`}
+                            className="group flex items-center justify-between gap-3 border border-line bg-elevated px-5 py-4 transition-colors hover:border-accent"
+                        >
+                            <span>
+                                <span className="block text-sm font-medium">Read the lore dossier</span>
+                                <span className="mt-0.5 block font-mono text-[9px] uppercase tracking-[0.16em] text-faint">
+                                    Origins, factions and relationships
+                                </span>
+                            </span>
+                            <BookOpen size={17} className="shrink-0 text-accent" aria-hidden="true" />
+                        </Link>
 
                         <Link
                             href={`/tools/compare?a=${hero.slug}`}

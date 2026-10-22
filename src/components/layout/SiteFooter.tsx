@@ -9,6 +9,8 @@ const MARQUEE = [
     "skill data",
     "skins",
     "matchups",
+    "lore dossiers",
+    "the Land of Dawn",
 ];
 
 export default function SiteFooter() {
@@ -61,6 +63,7 @@ export default function SiteFooter() {
                                 <li><Link href="/items" className="transition-colors hover:text-accent">Items</Link></li>
                                 <li><Link href="/emblems" className="transition-colors hover:text-accent">Emblems</Link></li>
                                 <li><Link href="/patches" className="transition-colors hover:text-accent">Patch notes</Link></li>
+                                <li><Link href="/lore" className="transition-colors hover:text-accent">Lore</Link></li>
                             </ul>
                         </div>
                         <div>

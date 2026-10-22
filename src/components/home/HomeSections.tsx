@@ -13,6 +13,7 @@ import {
     countByLane,
     getLatestPatch,
 } from "@/data";
+import { LORE_STATS } from "@/data/lore";
 
 const FEATURED_SLUGS = ["fanny", "gusion", "chou", "tigreal", "lancelot", "angela"];
 
@@ -207,6 +208,69 @@ export default function HomeSections() {
             </section>
 
             <PatchNotesSection />
+
+            <section>
+                <SectionHeader
+                    index="06"
+                    eyebrow="Lore"
+                    title="The story behind the stats"
+                    description="Sourced dossiers, a relationship graph and an atlas of the Land of Dawn — because every pick has a history."
+                    action={
+                        <Link href="/lore" className="link-arrow">
+                            Explore the lore <ArrowRight size={13} aria-hidden="true" />
+                        </Link>
+                    }
+                />
+                <div className="grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+                    {[
+                        {
+                            href: "/lore/heroes",
+                            label: "Dossiers",
+                            title: "Every hero file",
+                            body: `${LORE_STATS.heroes} sourced origins, species, affiliations and relationships.`,
+                        },
+                        {
+                            href: "/lore/relationships",
+                            label: "Graph",
+                            title: "Who knows whom",
+                            body: `${LORE_STATS.relations} cited links across kinship, romance and war.`,
+                        },
+                        {
+                            href: "/lore/world",
+                            label: "Atlas",
+                            title: "The Land of Dawn",
+                            body: `${LORE_STATS.regions} regions, their subregions and ${LORE_STATS.places - LORE_STATS.regions} places.`,
+                        },
+                        {
+                            href: "/lore/timeline",
+                            label: "History",
+                            title: "Five eras",
+                            body: "From the Ancient Ones to the present age, without invented dates.",
+                        },
+                    ].map((entry) => (
+                        <Link
+                            key={entry.href}
+                            href={entry.href}
+                            className="group flex flex-col justify-between bg-elevated p-5 transition-colors hover:bg-subtle"
+                        >
+                            <div>
+                                <div className="flex items-center justify-between">
+                                    <span className="eyebrow">{entry.label}</span>
+                                    <ArrowUpRight
+                                        size={14}
+                                        className="text-faint transition-colors group-hover:text-accent"
+                                        aria-hidden="true"
+                                    />
+                                </div>
+                                <h3 className="display mt-6 text-2xl transition-colors group-hover:text-accent">
+                                    {entry.title}
+                                </h3>
+                                <p className="mt-2 text-sm leading-relaxed text-muted">{entry.body}</p>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+            </section>
 
             <section className="grid gap-px border border-line bg-line sm:grid-cols-2">
                 <Link

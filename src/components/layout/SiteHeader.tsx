@@ -17,6 +17,7 @@ const NAV = [
     { href: "/emblems", label: "Emblems", code: "04" },
     { href: "/patches", label: "Patches", code: "05" },
     { href: "/tools", label: "Tools", code: "06" },
+    { href: "/lore", label: "Lore", code: "07" },
 ];
 
 export default function SiteHeader() {
@@ -64,7 +65,7 @@ export default function SiteHeader() {
                         </span>
                     </Link>
 
-                    <nav className="ml-6 hidden h-full items-center md:flex" aria-label="Primary">
+                    <nav className="ml-6 hidden h-full items-center lg:flex" aria-label="Primary">
                         {NAV.map((item) => {
                             const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
                             return (
@@ -128,7 +129,7 @@ export default function SiteHeader() {
                         <button
                             type="button"
                             onClick={() => setOpen((value) => !value)}
-                            className="grid h-8 w-8 place-items-center text-muted transition-colors hover:text-fg md:hidden"
+                            className="grid h-8 w-8 place-items-center text-muted transition-colors hover:text-fg lg:hidden"
                             aria-label={open ? "Close menu" : "Open menu"}
                             aria-expanded={open}
                         >
@@ -145,7 +146,7 @@ export default function SiteHeader() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.25 }}
-                        className="fixed inset-x-0 bottom-0 top-14 z-40 overflow-y-auto bg-bg md:hidden"
+                        className="fixed inset-x-0 bottom-0 top-14 z-40 overflow-y-auto bg-bg lg:hidden"
                     >
                         <nav className="mx-auto max-w-shell px-4 py-8" aria-label="Mobile">
                             {NAV.map((item, index) => (
