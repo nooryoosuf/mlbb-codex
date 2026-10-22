@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { placeholderGradient, initials, type ResolvedImage } from "@/lib/images";
 
 interface SmartImageProps {
@@ -40,6 +40,17 @@ export default function SmartImage({
     const failed = Boolean(image.src && failedSrc === image.src);
     const loaded = Boolean(image.src && loadedSrc === image.src);
     const showFallback = !image.src || failed;
+    const syncLoadedState = useCallback(
+        (node: HTMLImageElement | null) => {
+            if (!node?.complete) return;
+            if (node.naturalWidth > 0) {
+                setLoadedSrc(image.src);
+            } else {
+                setFailedSrc(image.src);
+            }
+        },
+        [image.src],
+    );
 
     return (
         <div
@@ -55,6 +66,7 @@ export default function SmartImage({
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                         key={image.src ?? alt}
+                        ref={syncLoadedState}
                         src={image.src ?? ""}
                         alt={alt}
                         sizes={sizes}

@@ -25,6 +25,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/lore/world",
         "/lore/timeline",
         "/lore/discoveries",
+        "/community",
+        "/community/birthday-twin",
     ];
 
     return [

@@ -3,6 +3,7 @@ import { ArrowRight, ArrowUpRight, Layers, TrendingUp } from "lucide-react";
 import HeroCard from "@/components/hero/HeroCard";
 import HeroQuickSearch from "@/components/home/HeroQuickSearch";
 import PatchNotesSection from "@/components/patches/PatchNotesSection";
+import SmartImage from "@/components/ui/SmartImage";
 import { SectionHeader, Badge } from "@/components/ui/primitives";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import {
@@ -13,7 +14,15 @@ import {
     countByLane,
     getLatestPatch,
 } from "@/data";
+import {
+    BIRTHDAYS,
+    BIRTHDAY_STATS,
+    SHARED_BIRTHDAY_DATES,
+    getBirthdayHeroes,
+} from "@/data/birthdays";
 import { LORE_STATS } from "@/data/lore";
+import { asset } from "@/lib/base-path";
+import { formatBirthday } from "@/lib/birthdays";
 
 const FEATURED_SLUGS = ["fanny", "gusion", "chou", "tigreal", "lancelot", "angela"];
 
@@ -52,6 +61,12 @@ export default function HomeSections() {
         .slice(0, 5);
     const latestPatch = getLatestPatch();
     const totalRole = roleCounts.reduce((sum, entry) => sum + entry.count, 0);
+    const specimenDate =
+        SHARED_BIRTHDAY_DATES.find((date) => getBirthdayHeroes(date).length >= 3) ??
+        SHARED_BIRTHDAY_DATES[0] ??
+        BIRTHDAYS[0]?.date ??
+        "01-01";
+    const specimenHeroes = getBirthdayHeroes(specimenDate).slice(0, 3);
 
     return (
         <div className="mx-auto max-w-shell space-y-24 px-4 py-20 sm:px-6 lg:px-8">
@@ -269,6 +284,88 @@ export default function HomeSections() {
                             </div>
                         </Link>
                     ))}
+                </div>
+            </section>
+
+            <section>
+                <SectionHeader
+                    index="07"
+                    eyebrow="Community"
+                    title="Who shares your birthday?"
+                    description={`${BIRTHDAY_STATS.documented} documented hero birthdays, ${BIRTHDAY_STATS.sharedDates} shared dates and a card to keep.`}
+                    action={
+                        <Link href="/community/birthday-twin" className="link-arrow">
+                            Find your twin <ArrowRight size={13} aria-hidden="true" />
+                        </Link>
+                    }
+                />
+                <div className="grid gap-px border border-line bg-line lg:grid-cols-[1.05fr_0.95fr]">
+                    <Link
+                        href="/community/birthday-twin"
+                        className="group relative overflow-hidden bg-elevated p-7 transition-colors hover:bg-subtle sm:p-9"
+                    >
+                        <div className="flex items-center justify-between gap-4">
+                            <span className="eyebrow">Birthday Twin / 01</span>
+                            <ArrowUpRight
+                                size={18}
+                                className="text-faint transition-colors group-hover:text-accent"
+                                aria-hidden="true"
+                            />
+                        </div>
+                        <h3 className="display mt-10 max-w-md text-4xl transition-colors group-hover:text-accent sm:text-5xl">
+                            The day you were born is in the roster.
+                        </h3>
+                        <p className="mt-4 max-w-md text-sm leading-relaxed text-muted">
+                            Pick a month and day, reveal every matching hero, and leave with a
+                            branded card. Dates are sourced, and shared birthdays are expected.
+                        </p>
+                        <span className="mt-8 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
+                            Open the reveal
+                            <ArrowUpRight size={12} aria-hidden="true" />
+                        </span>
+                    </Link>
+
+                    <div className="relative overflow-hidden bg-bg p-4 sm:p-6">
+                        <div className="pointer-events-none absolute inset-0 grid-lines opacity-50" />
+                        <div className="relative flex h-full flex-col justify-between gap-4">
+                            <div className="flex items-center justify-between gap-3 border-b border-line pb-3 font-mono text-[9px] uppercase tracking-[0.16em] text-faint">
+                                <span>Shared date</span>
+                                <span className="text-accent">{formatBirthday(specimenDate)}</span>
+                            </div>
+                            <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                                {specimenHeroes.map((hero) => (
+                                    <div
+                                        key={hero.slug}
+                                        className="border border-line bg-elevated p-1.5"
+                                    >
+                                        <SmartImage
+                                            image={{
+                                                src: asset(hero.portrait),
+                                                aspect: "240 / 390",
+                                                local: true,
+                                            }}
+                                            alt={`${hero.name} portrait`}
+                                            name={hero.name}
+                                            priority
+                                            sizes="(max-width: 640px) 28vw, 11rem"
+                                        />
+                                        <div className="px-1 pb-1 pt-2">
+                                            <div className="display truncate text-sm leading-none sm:text-base">
+                                                {hero.name}
+                                            </div>
+                                            <div className="mt-1 truncate font-mono text-[7px] uppercase tracking-[0.12em] text-faint">
+                                                {hero.roles.join(" / ")}
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                            <p className="text-xs leading-relaxed text-faint">
+                                {specimenHeroes.length} heroes on one date. Your birthday may have
+                                more.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
 

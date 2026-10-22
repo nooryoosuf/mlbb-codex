@@ -12,6 +12,7 @@ const MARQUEE = [
     "matchups",
     "lore dossiers",
     "the Land of Dawn",
+    "birthday twins",
 ];
 
 export default function SiteFooter() {
@@ -68,6 +69,7 @@ export default function SiteFooter() {
                                 <li><Link href="/emblems" className="transition-colors hover:text-accent">Emblems</Link></li>
                                 <li><Link href="/patches" className="transition-colors hover:text-accent">Patch notes</Link></li>
                                 <li><Link href="/lore" className="transition-colors hover:text-accent">Lore</Link></li>
+                                <li><Link href="/community" className="transition-colors hover:text-accent">Community</Link></li>
                             </ul>
                         </div>
                         <div>
@@ -77,6 +79,7 @@ export default function SiteFooter() {
                                 <li><Link href="/tools/counters" className="transition-colors hover:text-accent">Counters</Link></li>
                                 <li><Link href="/tools/favourites" className="transition-colors hover:text-accent">Favourites</Link></li>
                                 <li><Link href="/tools/random" className="transition-colors hover:text-accent">Random picker</Link></li>
+                                <li><Link href="/community/birthday-twin" className="transition-colors hover:text-accent">Birthday Twin</Link></li>
                             </ul>
                         </div>
                         <div>
