@@ -66,7 +66,14 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
     const selectedSkin = skinsWithArt[skinIndex] ?? null;
     const selectedArt = selectedSkin ? getSkinArt(hero.slug, selectedSkin.id) : null;
     const bannerImage = latestSkinArt
-        ? { src: latestSkinArt.url, aspect: "16 / 9", local: false }
+        ? {
+              src: latestSkinArt.hdUrl ?? latestSkinArt.url,
+              aspect:
+                  latestSkinArt.hdWidth && latestSkinArt.hdHeight
+                      ? `${latestSkinArt.hdWidth} / ${latestSkinArt.hdHeight}`
+                      : "16 / 9",
+              local: false,
+          }
         : heroSplash(hero);
     const ranked = getMetaHero(hero.slug);
 
@@ -265,8 +272,11 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
                                                 image={
                                                     selectedArt
                                                         ? {
-                                                              src: selectedArt.url,
-                                                              aspect: `${selectedArt.width} / ${selectedArt.height}`,
+                                                              src: selectedArt.hdUrl ?? selectedArt.url,
+                                                              aspect:
+                                                                  selectedArt.hdWidth && selectedArt.hdHeight
+                                                                      ? `${selectedArt.hdWidth} / ${selectedArt.hdHeight}`
+                                                                      : `${selectedArt.width} / ${selectedArt.height}`,
                                                               local: false,
                                                           }
                                                         : skinImage(selectedSkin.image)
@@ -295,7 +305,9 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
                                                 <h3 className="display truncate text-xl leading-[1.05]">{selectedSkin.name}</h3>
                                                 <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.16em] text-faint">
                                                     {selectedSkin.label ?? selectedSkin.rarity ?? "Skin"} · {String(skinIndex + 1).padStart(2, "0")} / {String(skinsWithArt.length).padStart(2, "0")}
-                                                    {selectedArt ? ` · ${selectedArt.width}×${selectedArt.height}` : ""}
+                                                    {selectedArt
+                                                        ? ` · ${selectedArt.hdWidth ?? selectedArt.width}×${selectedArt.hdHeight ?? selectedArt.height}`
+                                                        : ""}
                                                 </p>
                                             </div>
                                             <div className="flex shrink-0 items-center gap-1">
@@ -545,7 +557,7 @@ export default function HeroProfile({ hero }: { hero: Hero }) {
                     >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                            src={selectedArt?.url ?? selectedSkin?.image ?? ""}
+                            src={selectedArt?.hdUrl ?? selectedArt?.url ?? selectedSkin?.image ?? ""}
                             alt={`${selectedSkin?.name ?? "Skin"} artwork`}
                             referrerPolicy="no-referrer"
                             className="max-h-full max-w-full object-contain"

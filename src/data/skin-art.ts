@@ -4,6 +4,10 @@ export interface SkinArtwork {
     url: string;
     width: number;
     height: number;
+    /** High-resolution splash used for hero banners and full-screen artwork. */
+    hdUrl?: string;
+    hdWidth?: number;
+    hdHeight?: number;
 }
 
 const art = raw.skins as Record<string, Record<string, SkinArtwork>>;

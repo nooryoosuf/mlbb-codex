@@ -43,8 +43,11 @@ export function heroSplash(
         const latestArt = latest ? getSkinArt(hero.slug, latest.id) : null;
         if (latestArt) {
             return {
-                src: latestArt.url,
-                aspect: "16 / 9",
+                src: latestArt.hdUrl ?? latestArt.url,
+                aspect:
+                    latestArt.hdWidth && latestArt.hdHeight
+                        ? `${latestArt.hdWidth} / ${latestArt.hdHeight}`
+                        : "16 / 9",
                 local: false,
             };
         }
