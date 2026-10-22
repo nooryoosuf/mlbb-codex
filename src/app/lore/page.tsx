@@ -7,7 +7,7 @@ import { ConfidenceBadge } from "@/components/lore/LoreSources";
 import SmartImage from "@/components/ui/SmartImage";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { SectionHeader } from "@/components/ui/primitives";
-import { heroPortrait } from "@/lib/images";
+import { heroSplash } from "@/lib/images";
 import {
     LORE_ARCS,
     LORE_DISCOVERIES,
@@ -65,6 +65,7 @@ const EXPLORE = [
 export default function LorePage() {
     const discovery = getDiscoveryOfTheDay();
     const featured = getFeaturedLoreHeroes().slice(0, 6);
+    const cover = featured[0]?.hero;
     const regions = LORE_WORLD.filter((entry) => entry.kind === "region");
     const subregions = LORE_WORLD.filter((entry) => entry.kind === "subregion");
     const landmarks = LORE_WORLD.filter((entry) => entry.kind === "landmark");
@@ -76,6 +77,8 @@ export default function LorePage() {
                 eyebrow="The Land of Dawn"
                 title="The story behind the roster."
                 description="Lore assembled from official Mobile Legends material and the community wiki, with every claim cited and every ambiguity marked. Start with a hero, a place, or the century that broke Necrokeep."
+                image={cover ? heroSplash(cover) : undefined}
+                imageAlt={cover ? `${cover.name} skin artwork` : ""}
                 meta={
                     <div className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase tracking-[0.18em] text-faint">
                         <span><span className="text-fg">{LORE_STATS.heroes}</span> dossiers</span>
@@ -124,39 +127,38 @@ export default function LorePage() {
                             </Link>
                         }
                     />
-                    <Stagger className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+                    <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         {featured.map((entry) => (
                             <StaggerItem key={entry.hero.slug}>
                                 <Link
                                     href={`/lore/heroes/${entry.hero.slug}`}
                                     className="group block border border-line bg-elevated transition-colors hover:border-accent"
                                 >
-                                    <div className="relative aspect-[3/4] overflow-hidden bg-subtle">
+                                    <div className="relative aspect-[16/10] overflow-hidden bg-subtle">
                                         <SmartImage
-                                            image={heroPortrait(entry.hero)}
-                                            alt={`${entry.hero.name} portrait`}
+                                            image={heroSplash(entry.hero)}
+                                            alt={`${entry.hero.name} skin artwork`}
                                             name={entry.hero.name}
-                                            sizes="(max-width: 640px) 45vw, 16vw"
+                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                             className="h-full w-full"
-                                            imgClassName="object-cover object-top transition-transform duration-700 ease-editorial group-hover:scale-[1.06]"
+                                            imgClassName="object-cover object-top transition-transform duration-700 ease-editorial group-hover:scale-[1.05]"
                                         />
-                                        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,rgba(4,5,6,0.92)_0%,transparent_60%)]" />
-                                        <div className="absolute inset-x-0 bottom-0 p-2.5">
-                                            <h3 className="display text-xl leading-none text-white">{entry.hero.name}</h3>
-                                            <p className="mt-1 truncate font-mono text-[8px] uppercase tracking-[0.14em] text-white/55">
+                                        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,rgba(4,5,6,0.94)_0%,rgba(4,5,6,0.12)_58%,transparent_100%)]" />
+                                        <div className="absolute inset-x-0 bottom-0 p-5">
+                                            <h3 className="display text-3xl leading-none text-white">{entry.hero.name}</h3>
+                                            <p className="mt-1.5 truncate font-mono text-[9px] uppercase tracking-[0.16em] text-white/60">
                                                 {entry.profile?.epithet}
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="flex items-center justify-between px-2.5 py-2">
-                                        <span className="font-mono text-[8px] uppercase tracking-[0.12em] text-faint">
+                                    <div className="flex items-center justify-between gap-3 px-5 py-3">
+                                        <span className="truncate font-mono text-[9px] uppercase tracking-[0.14em] text-faint">
                                             {entry.region?.name ?? entry.facts.origin}
                                         </span>
-                                        <ArrowUpRight
-                                            size={11}
-                                            className="text-accent opacity-0 transition-opacity group-hover:opacity-100"
-                                            aria-hidden="true"
-                                        />
+                                        <span className="inline-flex shrink-0 items-center gap-1 font-mono text-[9px] uppercase tracking-[0.14em] text-accent">
+                                            Dossier
+                                            <ArrowUpRight size={11} aria-hidden="true" />
+                                        </span>
                                     </div>
                                 </Link>
                             </StaggerItem>

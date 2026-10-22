@@ -45,6 +45,18 @@
     color-scheme: light;
   }
 
+  .brand-logo-light {
+    display: none;
+  }
+
+  .light .brand-logo-light {
+    display: block;
+  }
+
+  .light .brand-logo-dark {
+    display: none;
+  }
+
   * {
     border-color: var(--border);
   }

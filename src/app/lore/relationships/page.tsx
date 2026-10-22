@@ -39,6 +39,7 @@ export default function RelationshipsPage() {
                 regionName: region?.name ?? hero.region ?? "Unplaced",
                 featured: Boolean(getLoreProfile(hero.slug)),
                 degree: degree.get(hero.slug) ?? 0,
+                portrait: hero.portrait,
             };
         })
         .sort((left, right) => left.name.localeCompare(right.name));

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Search, X, Heart, Sun, Moon, ArrowUpRight } from "lucide-react";
 import CommandPalette from "@/components/search/CommandPalette";
+import BrandLogo from "@/components/layout/BrandLogo";
 import { useTheme } from "@/lib/use-theme";
 import { useFavourites } from "@/lib/use-favourites";
 import { useScrolled } from "@/lib/store";
@@ -57,9 +58,10 @@ export default function SiteHeader() {
             >
                 <div className="mx-auto flex h-14 max-w-shell items-center gap-2 px-4 sm:px-6 lg:px-8">
                     <Link href="/" className="group flex items-center gap-2.5" aria-label="MLBB Codex home">
-                        <span className="clip-notch-sm grid h-7 w-7 place-items-center bg-accent font-display text-sm leading-none text-accent-contrast transition-transform duration-300 group-hover:-translate-y-0.5">
-                            C
-                        </span>
+                        <BrandLogo
+                            className="h-7 transition-transform duration-300 group-hover:-translate-y-0.5"
+                            label="MLBB Codex"
+                        />
                         <span className="display hidden text-lg leading-none tracking-wide sm:block">
                             MLBB<span className="text-accent">/</span>CODEX
                         </span>

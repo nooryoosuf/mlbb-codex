@@ -3,6 +3,8 @@
 import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { Crosshair, Minus, Plus, Search, X } from "lucide-react";
+import SmartImage from "@/components/ui/SmartImage";
+import { heroPortrait } from "@/lib/images";
 import { RELATION_META, RELATION_TYPES, type RelationType } from "@/data/lore";
 
 export interface GraphNode {
@@ -12,6 +14,7 @@ export interface GraphNode {
     regionName: string;
     featured: boolean;
     degree: number;
+    portrait: string | null;
 }
 
 export interface GraphEdge {
@@ -28,8 +31,8 @@ interface Point {
     node: GraphNode;
 }
 
-const CELL_W = 300;
-const CELL_H = 250;
+const CELL_W = 320;
+const CELL_H = 270;
 const PADDING = 60;
 const COLUMNS = 4;
 const GOLDEN = Math.PI * (3 - Math.sqrt(5));
@@ -64,7 +67,7 @@ function buildLayout(nodes: GraphNode[]) {
         const row = Math.floor(groupIndex / COLUMNS);
         const cx = PADDING + column * CELL_W + CELL_W / 2;
         const cy = PADDING + row * CELL_H + CELL_H / 2;
-        const spread = Math.min(78, 16 + Math.sqrt(group.nodes.length) * 17);
+        const spread = Math.min(96, 18 + Math.sqrt(group.nodes.length) * 20);
 
         group.nodes
             .slice()
@@ -334,6 +337,10 @@ export default function RelationshipGraph({
                                     Boolean(focus && !isSelected && !isHovered && !focusNeighbours.has(node.slug));
                                 const showLabel =
                                     isSelected || isHovered || node.featured || (needleLower.length > 0 && isMatch === true);
+                                const radius = isSelected || isHovered ? 16 : 12.5;
+                                const portraitSrc = node.portrait
+                                    ? heroPortrait({ portrait: node.portrait, slug: node.slug }).src
+                                    : null;
 
                                 return (
                                     <g
@@ -358,19 +365,50 @@ export default function RelationshipGraph({
                                         opacity={dim ? 0.2 : 1}
                                         style={{ cursor: "pointer" }}
                                     >
-                                        <circle
-                                            r={isSelected || isHovered ? 8 : 5.5}
-                                            fill={isSelected ? "var(--accent)" : "var(--bg)"}
-                                            stroke={isSelected ? "var(--accent)" : "var(--fg-muted)"}
-                                            strokeWidth={1.4}
-                                        />
+                                        {portraitSrc ? (
+                                            <>
+                                                <defs>
+                                                    <clipPath id={`rel-node-${node.slug}`}>
+                                                        <circle r={radius} />
+                                                    </clipPath>
+                                                </defs>
+                                                <image
+                                                    href={portraitSrc}
+                                                    x={-radius}
+                                                    y={-radius}
+                                                    width={radius * 2}
+                                                    height={radius * 2}
+                                                    preserveAspectRatio="xMidYMin slice"
+                                                    clipPath={`url(#rel-node-${node.slug})`}
+                                                />
+                                                <circle
+                                                    r={radius}
+                                                    fill="none"
+                                                    stroke={isSelected ? "var(--accent)" : "var(--line-strong)"}
+                                                    strokeWidth={isSelected ? 2 : 1.4}
+                                                />
+                                            </>
+                                        ) : (
+                                            <circle
+                                                r={radius * 0.72}
+                                                fill={isSelected ? "var(--accent)" : "var(--bg)"}
+                                                stroke={isSelected ? "var(--accent)" : "var(--fg-muted)"}
+                                                strokeWidth={1.4}
+                                            />
+                                        )}
                                         {node.degree >= 6 && !isSelected && !isHovered && (
-                                            <circle r={9.5} fill="none" stroke="var(--accent)" strokeOpacity={0.35} strokeWidth={1} />
+                                            <circle
+                                                r={radius + 2}
+                                                fill="none"
+                                                stroke="var(--accent)"
+                                                strokeOpacity={0.35}
+                                                strokeWidth={1}
+                                            />
                                         )}
                                         {showLabel && (
                                             <text
                                                 x={0}
-                                                y={-11}
+                                                y={-(radius + 5)}
                                                 textAnchor="middle"
                                                 className="fill-current font-mono"
                                                 style={{ fontSize: 9, letterSpacing: "0.06em" }}
@@ -396,11 +434,22 @@ export default function RelationshipGraph({
                 {selectedNode ? (
                     <div className="border border-line bg-elevated">
                         <div className="flex items-start justify-between gap-3 border-b border-line px-4 py-3">
-                            <div className="min-w-0">
-                                <h3 className="display truncate text-2xl leading-none">{selectedNode.name}</h3>
-                                <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.16em] text-faint">
-                                    {selectedNode.regionName} · {selectedNode.degree} links
-                                </p>
+                            <div className="flex min-w-0 items-center gap-3">
+                                <span className="h-16 w-12 shrink-0 overflow-hidden border border-line bg-subtle">
+                                    <SmartImage
+                                        image={heroPortrait({ portrait: selectedNode.portrait, slug: selectedNode.slug })}
+                                        alt=""
+                                        name={selectedNode.name}
+                                        sizes="48px"
+                                        className="h-full w-full"
+                                    />
+                                </span>
+                                <div className="min-w-0">
+                                    <h3 className="display truncate text-2xl leading-none">{selectedNode.name}</h3>
+                                    <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.16em] text-faint">
+                                        {selectedNode.regionName} A� {selectedNode.degree} links
+                                    </p>
+                                </div>
                             </div>
                             <button
                                 type="button"
@@ -420,23 +469,36 @@ export default function RelationshipGraph({
                                         onClick={() => setSelected(other!.slug)}
                                         className="group w-full px-4 py-2.5 text-left transition-colors hover:bg-subtle"
                                     >
-                                        <span className="flex items-center gap-2">
-                                            <span
-                                                className="h-1.5 w-1.5 shrink-0"
-                                                style={{ backgroundColor: RELATION_META[edge.type].color }}
-                                            />
-                                            <span className="text-sm text-fg transition-colors group-hover:text-accent">
-                                                {other!.name}
+                                        <span className="flex items-center gap-3">
+                                            <span className="h-12 w-9 shrink-0 overflow-hidden border border-line bg-subtle">
+                                                <SmartImage
+                                                    image={heroPortrait({ portrait: other!.portrait, slug: other!.slug })}
+                                                    alt=""
+                                                    name={other!.name}
+                                                    sizes="36px"
+                                                    className="h-full w-full"
+                                                />
                                             </span>
-                                            <span className="ml-auto font-mono text-[8px] uppercase tracking-[0.12em] text-faint">
-                                                {edge.label}
+                                            <span className="min-w-0 flex-1">
+                                                <span className="flex items-center gap-2">
+                                                    <span
+                                                        className="h-1.5 w-1.5 shrink-0"
+                                                        style={{ backgroundColor: RELATION_META[edge.type].color }}
+                                                    />
+                                                    <span className="text-sm text-fg transition-colors group-hover:text-accent">
+                                                        {other!.name}
+                                                    </span>
+                                                    <span className="ml-auto font-mono text-[8px] uppercase tracking-[0.12em] text-faint">
+                                                        {edge.label}
+                                                    </span>
+                                                </span>
+                                                {edge.note && (
+                                                    <span className="mt-1 block text-[11px] leading-relaxed text-muted">
+                                                        {edge.note}
+                                                    </span>
+                                                )}
                                             </span>
                                         </span>
-                                        {edge.note && (
-                                            <span className="mt-1 block text-[11px] leading-relaxed text-muted">
-                                                {edge.note}
-                                            </span>
-                                        )}
                                     </button>
                                 </li>
                             ))}

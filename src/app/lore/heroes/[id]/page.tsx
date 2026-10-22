@@ -6,7 +6,7 @@ import PageHeader from "@/components/layout/PageHeader";
 import LoreSources, { ConfidenceBadge } from "@/components/lore/LoreSources";
 import SmartImage from "@/components/ui/SmartImage";
 import { Badge } from "@/components/ui/primitives";
-import { heroPortrait } from "@/lib/images";
+import { heroPortrait, heroSplash } from "@/lib/images";
 import { heroes } from "@/data";
 import {
     CONFIDENCE_LABEL,
@@ -105,6 +105,10 @@ export default async function LoreHeroPage({ params }: { params: Promise<{ id: s
                 eyebrow="Lore dossier"
                 title={hero.name}
                 description={profile?.epithet ?? hero.title ?? undefined}
+                image={heroSplash(hero)}
+                imageAlt={`${hero.name} skin artwork`}
+                portrait={heroPortrait(hero)}
+                portraitAlt={`${hero.name} portrait`}
                 meta={
                     <div className="flex flex-wrap items-center gap-2">
                         <Badge tone="accent">Lore dossier</Badge>
@@ -222,19 +226,32 @@ export default async function LoreHeroPage({ params }: { params: Promise<{ id: s
                                                                 href={`/lore/heroes/${item.hero.slug}`}
                                                                 className="group block px-4 py-2.5 transition-colors hover:bg-subtle"
                                                             >
-                                                                <div className="flex items-baseline justify-between gap-2">
-                                                                    <span className="text-sm text-fg transition-colors group-hover:text-accent">
-                                                                        {item.hero.name}
+                                                                <div className="flex items-center gap-3">
+                                                                    <span className="h-12 w-9 shrink-0 overflow-hidden border border-line bg-subtle">
+                                                                        <SmartImage
+                                                                            image={heroPortrait(item.hero)}
+                                                                            alt=""
+                                                                            name={item.hero.name}
+                                                                            sizes="36px"
+                                                                            className="h-full w-full"
+                                                                        />
                                                                     </span>
-                                                                    <span className="font-mono text-[8px] uppercase tracking-[0.12em] text-faint">
-                                                                        {item.label}
-                                                                    </span>
+                                                                    <div className="min-w-0 flex-1">
+                                                                        <div className="flex items-baseline justify-between gap-2">
+                                                                            <span className="text-sm text-fg transition-colors group-hover:text-accent">
+                                                                                {item.hero.name}
+                                                                            </span>
+                                                                            <span className="font-mono text-[8px] uppercase tracking-[0.12em] text-faint">
+                                                                                {item.label}
+                                                                            </span>
+                                                                        </div>
+                                                                        {item.note && (
+                                                                            <p className="mt-1 text-[11px] leading-relaxed text-muted">
+                                                                                {item.note}
+                                                                            </p>
+                                                                        )}
+                                                                    </div>
                                                                 </div>
-                                                                {item.note && (
-                                                                    <p className="mt-1 text-[11px] leading-relaxed text-muted">
-                                                                        {item.note}
-                                                                    </p>
-                                                                )}
                                                             </Link>
                                                         </li>
                                                     ))}

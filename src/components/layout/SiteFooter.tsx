@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BrandLogo from "@/components/layout/BrandLogo";
 import { heroes, items, patches } from "@/data";
 
 const MARQUEE = [
@@ -37,8 +38,11 @@ export default function SiteFooter() {
             <div className="mx-auto max-w-shell px-4 sm:px-6 lg:px-8">
                 <div className="grid gap-12 py-14 lg:grid-cols-[1.2fr_1fr]">
                     <div>
-                        <div className="display text-5xl leading-none sm:text-6xl">
-                            MLBB<span className="text-accent">/</span>CODEX
+                        <div className="flex items-center gap-4">
+                            <BrandLogo className="h-12" label="MLBB Codex" />
+                            <div className="display text-5xl leading-none sm:text-6xl">
+                                MLBB<span className="text-accent">/</span>CODEX
+                            </div>
                         </div>
                         <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted">
                             A companion database for Mobile Legends: Bang Bang. Every hero, item and
